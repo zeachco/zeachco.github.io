@@ -8,7 +8,7 @@ const App = () => {
           <h1 className="title">Oh Hi!</h1>
           <h2 className="subtitle">This is my github.</h2>
           <p>
-            This project autobuild with Travis<br />
+            This project autobuild with Travis 2<br />
             <img src="//travis-ci.org/zeachco/zeachco.github.io.svg?branch=master" alt="Travis status badge" />
           </p>
         </div>
