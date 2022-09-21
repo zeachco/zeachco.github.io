@@ -26,7 +26,7 @@ export const skills: Skill[] = [
 		percent: 30,
 		start: new Date('2004-03'),
 		end: new Date('2013-07'),
-		note: 'This was my first web language along with cPanel, MySQL and Linux (LAMP stack). Nowadays I use nodejs for my server needs. Mainly worked with versions 4.3..5.3'
+		note: 'This was my first web language along with cPanel, MySQL and Linux (LAMP stack). Nowadays I use nodejs for my server needs. Mainly worked with versions 4.x .. 5.3'
 	},
 	{
 		name: 'React',

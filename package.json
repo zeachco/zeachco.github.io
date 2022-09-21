@@ -30,6 +30,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@fontsource/fira-mono": "^4.5.0"
+		"@fontsource/fira-mono": "^4.5.0",
+		"svelte-canvas": "^0.7.1"
 	}
 }
