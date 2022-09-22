@@ -27,15 +27,18 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Setup Pages
-        uses: actions/configure-pages@v2
-      - name: Build with Jekyll
-        uses: actions/jekyll-build-pages@v1
+
+      - name: Install and build
+        uses: actions/setup-node@v3
         with:
-          source: ./
-          destination: ./_site
+          node-version: 18
+      - run: npm install
+      - run: npm run build
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
+        with:
+          path: $GITHUB_WORKSPACE/build
 
   # Deployment job
   deploy:

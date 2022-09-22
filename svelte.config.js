@@ -10,8 +10,8 @@ const config = {
 	kit: {
 		adapter: adapterGhpages({
 			// default options are shown
-			pages: 'docs',
-			assets: 'docs',
+			pages: 'build',
+			assets: 'build',
 			fallback: null,
 		}),
 	},
