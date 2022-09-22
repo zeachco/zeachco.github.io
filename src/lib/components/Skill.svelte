@@ -23,12 +23,15 @@
 		notes = skill.note;
 	}
 
-	const percent: number = skill.percent || 0;
+	$: percent = skill.percent || 0;
 
 	const labels = skill.labels || [];
 </script>
 
 <div class="card">
+	{#if percent}
+		<Meter {percent} />
+	{/if}
 	<h3>{skill.name} <small>{experienceTime}</small></h3>
 	<div class="labels no-print">
 		{#each labels as label}
@@ -36,7 +39,4 @@
 		{/each}
 	</div>
 	<p>{notes}</p>
-	{#if percent}
-		<Meter {percent} />
-	{/if}
 </div>
