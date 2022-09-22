@@ -1,4 +1,4 @@
-import adapter from '@sveltejs/adapter-auto';
+import adapterGhpages from 'svelte-adapter-ghpages';
 import preprocess from 'svelte-preprocess';
 
 /** @type {import('@sveltejs/kit').Config} */
@@ -8,8 +8,13 @@ const config = {
 	preprocess: preprocess(),
 
 	kit: {
-		adapter: adapter()
-	}
+		adapter: adapterGhpages({
+			// default options are shown
+			pages: 'docs',
+			assets: 'docs',
+			fallback: null,
+		}),
+	},
 };
 
 export default config;

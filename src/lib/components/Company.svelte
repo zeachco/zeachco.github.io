@@ -25,7 +25,7 @@
 	const labels = company.labels || [];
 </script>
 
-<div class="skill">
+<div class="card">
 	<h3>{company.name} <small>{experienceTime}</small></h3>
 	<span class="labels no-print">
 		{#each labels as label}
@@ -34,18 +34,3 @@
 	</span>
 	<p>{notes}</p>
 </div>
-
-<style>
-	div {
-		display: inline-block;
-	}
-
-	.labels {
-		display: flex;
-		justify-content: flex-start;
-		flex-wrap: wrap;
-	}
-	small {
-		color: gray;
-	}
-</style>

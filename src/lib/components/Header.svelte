@@ -1,14 +1,17 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import Contact from './Contact.svelte';
+
 	const labels = {
 		'/': 'All',
 		'/skills': 'Skills',
-		'/projects': 'Projects',
+		// '/projects': 'Projects',
 		'/companies': 'Companies',
-		'/hobbies': 'Hobbies'
+		// '/hobbies': 'Hobbies'
 	} as const;
-	const links = ['/', '/skills', '/projects', '/companies', '/hobbies'] as const;
+
+	type Label = keyof typeof labels;
+	const links = Object.keys(labels) as Label[];
 </script>
 
 <header class="no-print">

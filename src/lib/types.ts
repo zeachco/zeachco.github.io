@@ -17,8 +17,8 @@ export type Label = keyof typeof labels;
 export interface Company {
 	name: string;
 	note?: string;
-	start: string;
-	end?: string;
+	start: Date;
+	end?: Date;
 	labels?: string[];
 }
 
@@ -26,18 +26,18 @@ export interface Project {
 	name: string;
 	note?: string;
 	company?: Company;
-	start: string;
-	end?: string;
+	start: Date;
+	end?: Date;
 	labels?: string[];
 }
 
-export interface Skill {
+export interface PersonalSkill {
 	name: string;
 	note?: string;
 	percent: number;
 	projects?: Project;
-	start?: string;
-	end?: string;
+	start: Date;
+	end?: Date;
 	labels?: string[];
 }
 

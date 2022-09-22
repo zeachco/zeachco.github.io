@@ -1,20 +1,16 @@
 <script lang="ts">
-    import Speedometer from "svelte-speedometer"
-
-    export let percent = 0;
+	export let percent = 0;
 </script>
 
-<div>
+<span>
+	<div class="no-print" />
 
-<!-- <Speedometer minValue={0} maxValue={100} value={percent} /> -->
-</div>
+	Confidence and experience level is above {percent.toFixed(1)}%
+</span>
 
 <style>
-	div {
-		float: right;
-        /* background: black; */
-        width: 64px;
-        height: 16px;
-        transform: scale(.25);
+	span {
+		color: gray;
+		font-size: smaller;
 	}
 </style>

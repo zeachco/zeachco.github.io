@@ -1,6 +1,6 @@
-import type { Skill } from '$lib/types';
+import type { PersonalSkill } from '$lib/types';
 
-export const skills: Skill[] = [
+export const skills: PersonalSkill[] = [
 	{
 		name: 'Javascript',
 		start: '2006-05-15',
@@ -24,14 +24,14 @@ export const skills: Skill[] = [
 	},
 	{
 		name: 'React',
-		percent: 80,
+		percent: 90,
 		labels: ['library', 'programing'],
 		note: "Most early project were transforming JQuery site into React sites. But along the road I've worked with lots of hybrids Reacts apps that were scoped under Angular, Backbone or vanilla JS. Biggest project were HTML Games, 3D editors (with webGL) and WYSIWYG editors with complex interfaces.",
 		start: '2013-08',
 	},
 	{
 		name: 'Vue',
-		percent: 80,
+		percent: 30,
 		labels: ['library', 'programing'],
 		start: '2018',
 		end: '2020',
@@ -60,7 +60,7 @@ export const skills: Skill[] = [
 	},
 	{
 		name: 'Basic',
-		percent: 60,
+		percent: 80,
 		note: 'Started of TI-83 devices making videos games at school for other students. Followed up quickly with the equivalent on PC',
 		start: '2003-05',
 		end: '2007-03',
@@ -71,4 +71,15 @@ export const skills: Skill[] = [
 		note: 'Primary OS at home for work, games, servers, devops, medias and personal life, first tryied it out when Windows Vista was announced. Quite functional with WLS nowadays',
 		start: '2007-05',
 	},
-];
+	{
+		name: 'Ruby on Rails',
+		percent: 30,
+		start: '2019-08',
+	},
+].map((s) => {
+	return {
+		...s,
+		start: new Date(s.start),
+		end: s.end ? new Date(s.end) : new Date(),
+	};
+});

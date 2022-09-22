@@ -102,8 +102,15 @@ Builded a node.js proxy server and a node.js command line interface to help auto
 	{
 		name: 'Shopify',
 		start: '2019-11',
+		end: '2022-11',
 		note: `
 Senior developer (current employment) Since 2019/11
 Development of internal libraries to handle Shopify Payments infinite forms variation including legal, banking, product information, business details and additional owners' information. Wrote, maintained and deployed many tested solutions and participated in training other devs and enforcing good coding practices. Enforcing security and good practice methods around React and NodeJS envs.`,
 	},
-];
+].map((s) => {
+	return {
+		...s,
+		start: new Date(s.start),
+		end: s.end ? new Date(s.end) : undefined,
+	};
+});

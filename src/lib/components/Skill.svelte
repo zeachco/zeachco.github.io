@@ -1,11 +1,11 @@
 <script lang="ts">
-	import type { Company, Skill } from '../types';
+	import type { PersonalSkill } from '$lib/types';
 	import Label from './Label.svelte';
 	import Meter from './Meter.svelte';
 
 	export let small = false;
 
-	export let skill: Skill;
+	export let skill: PersonalSkill;
 
 	let experienceTime = '';
 
@@ -23,15 +23,12 @@
 		notes = skill.note;
 	}
 
-    const percent:number = skill.percent || 0
+	const percent: number = skill.percent || 0;
 
 	const labels = skill.labels || [];
 </script>
 
-<div class="skill">
-	{#if percent}
-		<Meter percent={percent} />
-	{/if}
+<div class="card">
 	<h3>{skill.name} <small>{experienceTime}</small></h3>
 	<div class="labels no-print">
 		{#each labels as label}
@@ -39,19 +36,7 @@
 		{/each}
 	</div>
 	<p>{notes}</p>
+	{#if percent}
+		<Meter {percent} />
+	{/if}
 </div>
-
-<style>
-	div {
-		display: inline-block;
-	}
-
-	.labels {
-		display: flex;
-		justify-content: flex-start;
-		flex-wrap: wrap;
-	}
-	small {
-		color: gray;
-	}
-</style>

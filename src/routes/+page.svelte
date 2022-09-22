@@ -1,11 +1,11 @@
 <script lang="ts">
-	import Companies from '$lib/components/Companies.svelte';
-	import Skills from '$lib/components/Skills.svelte';
+	import Companies from '$lib/components/Containers/Companies.svelte';
+	import Skills from '$lib/components/Containers/Skills.svelte';
 </script>
 
 <svelte:head>
-	<title>Skills</title>
-	<meta name="description" content="Svelte demo app" />
+	<title>Printable CV</title>
+	<meta name="description" content="Printable CV" />
 </svelte:head>
 
 <Companies />
