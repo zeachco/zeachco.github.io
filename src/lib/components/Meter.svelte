@@ -1,15 +1,20 @@
-<script module='ts'>
-    import { Canvas, Layer, t } from "svelte-canvas";
+<script lang="ts">
+    import Speedometer from "svelte-speedometer"
 
-    $: render = ({ context, width, height }) => {
-      context.fillStyle = `hsl(${$t / 40}, 100%, 50%)`;
-      context.beginPath();
-      context.arc(($t / 4) % width, ($t / 4) % height, 100, 0, Math.PI * 2);
-      context.fill();
-    };
+    export let percent = 0;
+</script>
 
-  </script>
+<div>
 
-  <Canvas width={640} height={640}>
-    <Layer {render} />
-  </Canvas>
+<!-- <Speedometer minValue={0} maxValue={100} value={percent} /> -->
+</div>
+
+<style>
+	div {
+		float: right;
+        /* background: black; */
+        width: 64px;
+        height: 16px;
+        transform: scale(.25);
+	}
+</style>

@@ -1,10 +1,10 @@
 <script>
-	import Skills from "$lib/components/Skills.svelte";
+	import Companies from "$lib/components/Companies.svelte";
 </script>
 
 <svelte:head>
-	<title>Skills</title>
+	<title>Compagnies</title>
 	<meta name="description" content="Svelte demo app" />
 </svelte:head>
 
-<Skills />
+<Companies />

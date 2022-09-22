@@ -1,18 +1,23 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import Contact from './Contact.svelte';
-	const labels = {'/': 'Home', 'skills': 'Skills'} as const
-	const links = ['/', 'skills'] as const
+	const labels = {
+		'/': 'All',
+		'/skills': 'Skills',
+		'/projects': 'Projects',
+		'/companies': 'Companies',
+		'/hobbies': 'Hobbies'
+	} as const;
+	const links = ['/', '/skills', '/projects', '/companies', '/hobbies'] as const;
 </script>
 
 <header class="no-print">
-
 	<nav data-sveltekit-prefetch>
 		<ul>
 			{#each links as link}
-			<li class:active={$page.url.pathname === link}>
-				<a href={link}>{labels[link]}</a>
-			</li>
+				<li class:active={$page.url.pathname === link}>
+					<a href={link}>{labels[link]}</a>
+				</li>
 			{/each}
 		</ul>
 		<Contact />

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import {contact} from '../../lib/data/data'
+	import {contact} from '../data'
 </script>
 <div>
 	<h2>{contact.name}</h2>
