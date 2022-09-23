@@ -11,13 +11,15 @@ export function ensureIntersectionObserver() {
 	});
 }
 
-export function viewport(element: HTMLElement) {
+export function viewport(element: HTMLElement, callback: any) {
 	ensureIntersectionObserver();
 
 	intersectionObserver.observe(element);
+	element.addEventListener('enterViewport', callback);
 
 	return {
 		destroy() {
+			element.removeEventListener('enterViewport', callback);
 			intersectionObserver.unobserve(element);
 		},
 	};

@@ -34,7 +34,7 @@
 		if (value.toFixed(2) === step.toFixed(2)) stopAnimation(name);
 	};
 	function setup(el: HTMLCanvasElement, percent: number) {
-		viewport(el);
+		viewport(el, reset);
 		animate = window.innerWidth >= 678
 		value = percent / 100;
 		step = 0;
@@ -67,8 +67,7 @@
 	<canvas
 		on:click|preventDefault={reset}
 		use:setup={percent}
-		use:viewport
-		on:enterViewport={() => reset()}
+		use:viewport={reset}
 		title={`Confidence and experience level is above ${percent.toFixed(1)}%`}
 	/>
 </span>
