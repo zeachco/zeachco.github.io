@@ -24,13 +24,15 @@
 		Sort by
 		<select value={sortKey} on:change={handleChange}>
 			{#each keys as key, i (key)}
-				<option id={i+''} animate:flip value={key}>{labels[key]}</option>
+				<option id={i + ''} animate:flip value={key}>{labels[key]}</option>
 			{/each}
 		</select>
 	</div>
 	<div class="flex-list">
 		{#each sorted as skill, i (skill)}
-			<SkillComponent {skill} />
+			<div>
+				<SkillComponent {skill} />
+			</div>
 		{/each}
 	</div>
 </section>

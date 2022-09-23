@@ -26,22 +26,31 @@
 	}
 
 	const labels = skill.labels || [];
-	let {name} = skill
-
-	$: innerWidth = 0
+	let { name } = skill;
 </script>
 
-<svelte:window bind:innerWidth  />
-
 <div class="card">
-	{#if percent && innerWidth>768}
-		<Meter {...{percent, name}} />
-	{/if}
-	<h2>{name} <small>{experienceTime}</small></h2>
+	<div class="notes">
+		{#if percent}
+			<Meter {...{ percent, name }} />
+		{/if}
+		<h2>{name} <small>{experienceTime}</small></h2>
+		<p>{notes}</p>
+	</div>
 	<div class="labels no-print">
 		{#each labels as label}
 			<Label name={label} />
 		{/each}
 	</div>
-	<p>{notes}</p>
 </div>
+
+<style>
+	.card {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+	}
+	.labels {
+		margin: auto;
+	}
+</style>

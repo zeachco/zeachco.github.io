@@ -84,9 +84,23 @@ export const skills: PersonalSkill[] = [
 	{
 		name: 'CSS & SASS',
 		percent: 85,
-		labels: ['client'],
+		labels: ['programing', 'client'],
 		start: '2005-02',
 		note: 'I was never much of a photoshop nor powerpoint type of guy. I always relied on CSS directly to beautify my documents. Today is more about composing foundational liraries, adjusting to responsive needs and devices or creating unique animations',
+	},
+	{
+		name: 'Canvas 2D',
+		percent: 95,
+		labels: ['programing', 'client'],
+		start: '2005-02',
+		note: 'Quite used to engines such as Phaser and Pixi.js, I prefer to keep things lightweight when I prototype and for that I use the native canvas API when writting my games',
+	},
+	{
+		name: 'Canvas 3D',
+		percent: 75,
+		labels: ['programing', 'client'],
+		start: '2005-02',
+		note: 'Mainly throught THREE.js and other math libraries because writting custom shader by hand is too niche for my projects',
 	},
 	{
 		name: 'French',

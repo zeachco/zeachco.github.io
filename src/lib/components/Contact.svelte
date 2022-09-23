@@ -1,13 +1,13 @@
 <script lang="ts">
 	import {contact} from '../data/contact'
 </script>
-<div>
+<section>
 	<h1>{contact.name}</h1>
 	<h2><a href={`mailto:${contact.email}`}>{contact.email}</a> | <a href={`telto:${contact.phone}`}>{contact.phone}</a></h2>
-</div>
+</section>
 
 <style>
-    div {
+    section {
 		text-align: center;
 		position: relative;
 		padding: 0 1em 0 1em;
