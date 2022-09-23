@@ -13,6 +13,7 @@
 		position: relative;
 		padding: 0 1em 0 1em;
 		margin: 0;
+		border-bottom-left-radius: 1em;
 		background: var(--background);
 		background-size: contain;
     }

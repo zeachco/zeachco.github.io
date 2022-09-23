@@ -36,7 +36,6 @@
 
 	nav {
 		display: flex;
-
 		justify-content: space-between;
 		/* justify-content: center; */
 		--background: rgba(255, 255, 255, 0.7);
@@ -55,6 +54,8 @@
 		list-style: none;
 		background: var(--background);
 		background-size: contain;
+		border-bottom-right-radius: .5em;
+		margin-right: .25em;
 	}
 
 	li {
