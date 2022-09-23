@@ -2,14 +2,13 @@
 	import {contact} from '../data/contact'
 </script>
 <div>
-	<h2>{contact.name}</h2>
+	<h1>{contact.name}</h1>
 	<h2><a href={`mailto:${contact.email}`}>{contact.email}</a> | <a href={`telto:${contact.phone}`}>{contact.phone}</a></h2>
 </div>
 
 <style>
     div {
-        text-align: right;
-        float: right;
+		text-align: center;
 		position: relative;
 		padding: 0 1em 0 1em;
 		margin: 0;

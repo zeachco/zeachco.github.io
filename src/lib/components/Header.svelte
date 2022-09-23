@@ -23,7 +23,6 @@
 				</li>
 			{/each}
 		</ul>
-		<Contact />
 	</nav>
 </header>
 

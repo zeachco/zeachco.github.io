@@ -9,7 +9,8 @@ function animateAll() {
 export function startAnimation(name: string, cb: Function) {
 	updates.set(name, cb);
 	if (!currentAnimation) {
-		animateAll();
+		currentAnimation = 1;
+		setTimeout(animateAll, 1);
 	}
 }
 

@@ -26,12 +26,16 @@
 	}
 
 	const labels = skill.labels || [];
-	let { name } = skill;
+	let {name} = skill
+
+	$: innerWidth = 0
 </script>
 
+<svelte:window bind:innerWidth  />
+
 <div class="card">
-	{#if percent}
-		<Meter {...{ percent, name }} />
+	{#if percent && innerWidth>768}
+		<Meter {...{percent, name}} />
 	{/if}
 	<h3>{name} <small>{experienceTime}</small></h3>
 	<div class="labels no-print">

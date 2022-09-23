@@ -12,7 +12,7 @@
 		context = ctx
 		if (value.toFixed(2) === step.toFixed(2)) stopAnimation(name);
 		const diff = value - step;
-		step += diff / 50;
+		step += diff / 20;
 
 		ctx.setLineDash([]);
 		ctx.beginPath();
