@@ -1,5 +1,7 @@
 <script lang="ts">
-	import {contact} from '../data/contact'
+	import { contact } from "$lib/data/contact";
+
+
 </script>
 <section>
 	<h1>{contact.name}</h1>

@@ -1,11 +1,10 @@
 <script lang="ts">
-	import type { PersonalSkill } from '$lib/types';
-	import Companies from './Containers/Companies.svelte';
-	import Label from './Label.svelte';
+	import type { SkillData } from '$lib/types';
+	import Label from '../micro/Label.svelte';
 	import Meter from './Meter.svelte';
 
 	export let small = false;
-	export let skill: PersonalSkill;
+	export let skill: SkillData;
 
 	$: percent = skill.percent || 0;
 

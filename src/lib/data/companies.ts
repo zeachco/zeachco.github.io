@@ -1,6 +1,6 @@
-import type { Company } from '$lib/types';
+import type { CompanyData } from '$lib/types';
 
-export const companies: Company[] = [
+export const companies: CompanyData[] = [
 	{
 		name: 'Independent game development',
 		start: '2004-09',

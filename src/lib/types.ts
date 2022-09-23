@@ -12,33 +12,32 @@ export const labels = [
 	'onsite'
 ] as const;
 
+interface BaseData {
+	name: string;
+	note?: string;
+	start: Date;
+	end?: Date;
+	span?: string;
+	labels?: string[];
+}
+
 export type Label = keyof typeof labels;
 
-export interface Company {
-	name: string;
-	note?: string;
-	start: Date;
-	end?: Date;
-	labels?: string[];
+export interface CompanyData extends BaseData {
+	role?: string;
 }
 
-export interface Project {
-	name: string;
-	note?: string;
-	company?: Company;
-	start: Date;
-	end?: Date;
-	labels?: string[];
+export interface ProjectData extends BaseData {
+	company?: CompanyData;
 }
 
-export interface PersonalSkill {
-	name: string;
-	note?: string;
+export interface SkillData extends BaseData {
 	percent: number;
-	projects?: Project;
-	start: Date;
-	end?: Date;
-	labels?: string[];
+	projects?: ProjectData;
+}
+
+export interface TrainingData extends BaseData {
+	language?: string;
 }
 
 export interface Contact {

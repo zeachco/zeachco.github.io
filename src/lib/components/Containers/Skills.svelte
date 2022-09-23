@@ -1,12 +1,12 @@
 <script lang="ts">
-	import SkillComponent from '$lib/components/Skill.svelte';
+	import SkillComponent from '$lib/components/Items/Skill.svelte';
 	import { flip } from 'svelte/animate';
 	import { skills } from '$lib/data/skills';
-	import type { PersonalSkill } from '$lib/types';
 	import { sortByKey } from '$lib/utilities/date';
+	import type { SkillData } from '$lib/types';
 
 	const keys = ['start', 'end', 'percent'] as const;
-	$: sortKey = 'percent' as keyof PersonalSkill;
+	$: sortKey = 'percent' as keyof SkillData;
 	$: sorted = sortByKey(sortKey, skills);
 	$: handleChange = (val: any) => (sortKey = val.target?.value);
 

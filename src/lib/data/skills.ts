@@ -1,6 +1,6 @@
-import type { PersonalSkill } from '$lib/types';
+import type { SkillData } from '$lib/types';
 
-export const skills: PersonalSkill[] = [
+export const skills: SkillData[] = [
 	{
 		name: 'Javascript',
 		start: '2006-05-15',

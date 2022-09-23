@@ -1,10 +1,10 @@
 <script lang="ts">
-	import type { Company } from '../types';
-	import Label from './Label.svelte';
+	import type { CompanyData } from '$lib/types';
+	import Label from '../micro/Label.svelte';
 
 	export let small = false;
 
-	export let company: Company;
+	export let company: CompanyData;
 
 	let experienceTime = '';
 

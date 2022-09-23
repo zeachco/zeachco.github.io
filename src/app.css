@@ -16,6 +16,11 @@
 	--column-margin-top: 4rem;
 }
 
+html, body {
+	padding: 0;
+	margin: 0;
+}
+
 body {
 	min-height: 100vh;
 	margin: 0;

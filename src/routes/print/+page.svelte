@@ -1,7 +1,8 @@
 <script lang="ts">
-	import Contact from '$lib/components/Contact.svelte';
+	import Contact from '$lib/components/Items/Contact.svelte';
 	import Companies from '$lib/components/Containers/Companies.svelte';
 	import Skills from '$lib/components/Containers/Skills.svelte';
+	import Trainings from '$lib/components/Containers/Trainings.svelte';
 	import { onMount } from 'svelte';
 
 	// let the canvases render
@@ -16,3 +17,4 @@
 <Contact />
 <Companies />
 <Skills />
+<Trainings />

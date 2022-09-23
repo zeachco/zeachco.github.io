@@ -4,7 +4,7 @@
 	const labels = {
 		'/': 'About',
 		'/companies': 'Companies',
-		'/projects': 'Projects',
+		'/trainings': 'trainings',
 		'/skills': 'Skills',
 		'/print': '🖨️',
 	} as const;
@@ -46,7 +46,6 @@
 		justify-content: space-between;
 		position: relative;
 		padding: 0;
-		margin: 0;
 		height: 3em;
 		align-items: center;
 		list-style: none;
