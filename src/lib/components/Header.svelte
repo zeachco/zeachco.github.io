@@ -2,12 +2,11 @@
 	import { page } from '$app/stores';
 
 	const labels = {
+		'/': 'About',
 		'/companies': 'Companies',
-		// '/projects': 'Projects',
+		'/projects': 'Projects',
 		'/skills': 'Skills',
-		// '/projects': 'Projects',
-		// '/hobbies': 'Hobbies'
-		'/print': 'Printable version',
+		'/print': '🖨️',
 	} as const;
 
 	type Label = keyof typeof labels;
@@ -31,30 +30,26 @@
 		display: flex;
 		justify-content: space-between;
 		margin: auto;
+		--background: rgba(255, 255, 255, 0.7);
+		background: var(--background);
+		background-size: contain;
 	}
 
 	nav {
-		display: flex;
-		justify-content: space-between;
-		/* justify-content: center; */
-		--background: rgba(255, 255, 255, 0.7);
-		width: 100%;
-		/* background: blue; */
+		margin: auto;
 	}
 
 	ul {
+		margin: auto;
+		display: flex;
+		justify-content: center;
+		justify-content: space-between;
 		position: relative;
 		padding: 0;
 		margin: 0;
 		height: 3em;
-		display: flex;
-		justify-content: center;
 		align-items: center;
 		list-style: none;
-		background: var(--background);
-		background-size: contain;
-		border-bottom-right-radius: .5em;
-		margin-right: .25em;
 	}
 
 	li {

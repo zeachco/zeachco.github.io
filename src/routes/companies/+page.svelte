@@ -4,7 +4,7 @@
 
 <svelte:head>
 	<title>Compagnies</title>
-	<meta name="description" content="Svelte demo app" />
+	<meta name="description" content="Compagnies" />
 </svelte:head>
 
 <Companies />

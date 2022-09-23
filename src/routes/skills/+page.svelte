@@ -4,7 +4,7 @@
 
 <svelte:head>
 	<title>Skills</title>
-	<meta name="description" content="Svelte demo app" />
+	<meta name="description" content="Skills" />
 </svelte:head>
 
 <Skills />
