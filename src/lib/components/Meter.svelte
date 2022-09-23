@@ -1,11 +1,16 @@
 <script lang="ts">
+	import { startAnimation, stopAnimation } from '$lib/utilities/canvas';
+
 	export let percent = 0;
+	export let name = 'unknown';
+
+	let context: CanvasRenderingContext2D
 
 	$: value = percent / 100;
 	$: step = 0;
-	$: lastReq = 0;
 	$: draw = (ctx: CanvasRenderingContext2D) => {
-		if (value.toFixed(2) !== step.toFixed(2)) lastReq = requestAnimationFrame(() => draw(ctx));
+		context = ctx
+		if (value.toFixed(2) === step.toFixed(2)) stopAnimation(name);
 		const diff = value - step;
 		step += diff / 50;
 
@@ -39,11 +44,12 @@
 		el.width = 64;
 		el.height = 64;
 
+		startAnimation(name, () => draw(ctx));
+
 		draw(ctx);
 		return {
 			update() {
-				cancelAnimationFrame(lastReq);
-				draw(ctx);
+				startAnimation(name, () => draw(ctx));
 			},
 		};
 	}
@@ -51,6 +57,7 @@
 	const reset = () => {
 		value = percent / 100;
 		step = 0;
+		startAnimation(name, () => draw(context));
 	};
 </script>
 

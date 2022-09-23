@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { PersonalSkill } from '$lib/types';
+	import Companies from './Containers/Companies.svelte';
 	import Label from './Label.svelte';
 	import Meter from './Meter.svelte';
 
@@ -25,17 +26,14 @@
 	}
 
 	const labels = skill.labels || [];
-
-	$: innerWidth = 0
+	let { name } = skill;
 </script>
 
-<svelte:window bind:innerWidth  />
-
 <div class="card">
-	{#if percent && innerWidth>768}
-		<Meter {percent} />
+	{#if percent}
+		<Meter {...{ percent, name }} />
 	{/if}
-	<h3>{skill.name} <small>{experienceTime}</small></h3>
+	<h3>{name} <small>{experienceTime}</small></h3>
 	<div class="labels no-print">
 		{#each labels as label}
 			<Label name={label} />
