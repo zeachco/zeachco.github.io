@@ -37,7 +37,7 @@
 	{#if percent && innerWidth>768}
 		<Meter {...{percent, name}} />
 	{/if}
-	<h3>{name} <small>{experienceTime}</small></h3>
+	<h2>{name} <small>{experienceTime}</small></h2>
 	<div class="labels no-print">
 		{#each labels as label}
 			<Label name={label} />

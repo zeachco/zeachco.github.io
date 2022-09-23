@@ -26,7 +26,7 @@
 </script>
 
 <div class="card">
-	<h3>{company.name} <small>{experienceTime}</small></h3>
+	<h2>{company.name} <small>{experienceTime}</small></h2>
 	<span class="labels no-print">
 		{#each labels as label}
 			<Label name={label} />
