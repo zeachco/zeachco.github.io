@@ -1,15 +1,6 @@
-<script lang="ts">
-	import Contact from '$lib/components/Contact.svelte';
-	import Companies from '$lib/components/Containers/Companies.svelte';
-	import Skills from '$lib/components/Containers/Skills.svelte';
-</script>
-
 <svelte:head>
-	<title>Printable CV</title>
-	<meta name="description" content="Printable CV" />
+	<title>About</title>
+	<meta name="description" content="About" />
 </svelte:head>
 
-<Contact />
-<Companies />
-<Skills />
-
+This is still a work in progress...

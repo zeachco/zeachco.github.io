@@ -1,13 +1,13 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import Contact from './Contact.svelte';
 
 	const labels = {
-		'/': 'All',
+		'/companies': 'Companies',
+		// '/projects': 'Projects',
 		'/skills': 'Skills',
 		// '/projects': 'Projects',
-		'/companies': 'Companies',
 		// '/hobbies': 'Hobbies'
+		'/print': 'Printable version',
 	} as const;
 
 	type Label = keyof typeof labels;
