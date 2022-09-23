@@ -1,15 +1,13 @@
 <script lang="ts">
 	export let percent = 0;
 
-    $: value = percent/100;
-    let step = 0;
-
-    let lastReq: number
-
+	$: value = percent / 100;
+	$: step = 0;
+	$: lastReq = 0;
 	$: draw = (ctx: CanvasRenderingContext2D) => {
 		if (value.toFixed(2) !== step.toFixed(2)) lastReq = requestAnimationFrame(() => draw(ctx));
-        const diff = value-step
-		step += diff/100;
+		const diff = value - step;
+		step += diff / 50;
 
 		ctx.setLineDash([]);
 		ctx.beginPath();
@@ -31,11 +29,11 @@
 		ctx.textAlign = 'center';
 		ctx.textBaseline = 'middle';
 		ctx.fillText(`${(Math.min(step, value) * 100).toFixed(0)}%`, 32, 32, 64);
-	}
+	};
 
-	function setup(el: HTMLCanvasElement, percent:number) {
-        value = percent / 100;
-        step = 0;
+	function setup(el: HTMLCanvasElement, percent: number) {
+		value = percent / 100;
+		step = 0;
 		const ctx = el.getContext('2d')!;
 		if (!ctx) return;
 		el.width = 64;
@@ -44,25 +42,26 @@
 		draw(ctx);
 		return {
 			update() {
-                cancelAnimationFrame(lastReq)
-                draw(ctx);
-            },
+				cancelAnimationFrame(lastReq);
+				draw(ctx);
+			},
 		};
 	}
 
-    const reset = () => {
-                value = percent / 100;
-                step = 0;
-
-    }
+	const reset = () => {
+		value = percent / 100;
+		step = 0;
+	};
 </script>
 
 <span>
 	<div class="no-print">
-        {value}
-        {percent}
-	    <canvas on:click={reset} use:setup={percent} title={`Confidence and experience level is above ${percent.toFixed(1)}%`} />
-    </div>
+		<canvas
+			on:click={reset}
+			use:setup={percent}
+			title={`Confidence and experience level is above ${percent.toFixed(1)}%`}
+		/>
+	</div>
 </span>
 
 <style>

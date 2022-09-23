@@ -54,7 +54,7 @@ export const skills: PersonalSkill[] = [
 	},
 	{
 		name: 'Svelte',
-		percent: 60,
+		percent: 70,
 		note: 'Even though Svelte is very easy to get started with, I still explore gotchas around unsupported stuff and revert to vanilla javascript',
 		start: '2020',
 	},
@@ -75,6 +75,12 @@ export const skills: PersonalSkill[] = [
 		name: 'Ruby on Rails',
 		percent: 30,
 		start: '2019-08',
+	},
+	{
+		name: 'CSS & SASS',
+		percent: 85,
+		start: '2005-02',
+		note: 'I was never much of a photoshop nor powerpoint type of guy. I always relied on CSS directly to beautify my documents. Today is more about composing foundational liraries, adjusting to responsive needs and devices or creating unique animations',
 	},
 ].map((s) => {
 	return {

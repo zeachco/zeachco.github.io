@@ -4,8 +4,9 @@
 	import Meter from './Meter.svelte';
 
 	export let small = false;
-
 	export let skill: PersonalSkill;
+
+	$: percent = skill.percent || 0;
 
 	let experienceTime = '';
 
@@ -22,8 +23,6 @@
 	if (!small && skill.note) {
 		notes = skill.note;
 	}
-
-	$: percent = skill.percent || 0;
 
 	const labels = skill.labels || [];
 </script>
