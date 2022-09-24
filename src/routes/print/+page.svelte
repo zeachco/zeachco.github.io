@@ -6,7 +6,7 @@
 	import { onMount } from 'svelte';
 
 	// let the canvases render
-	onMount(async () => setTimeout(print, 100));
+	onMount(async () => setTimeout(print, 1500));
 </script>
 
 <svelte:head>
@@ -14,6 +14,7 @@
 	<meta name="description" content="Printable CV" />
 </svelte:head>
 
+<div class="no-print">Waiting for the page to render correctly...</div>
 <Contact />
 <Companies />
 <Skills />
