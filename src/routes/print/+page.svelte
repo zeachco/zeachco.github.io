@@ -5,13 +5,15 @@
 	import Trainings from '$lib/components/Containers/Trainings.svelte';
 	import { onMount } from 'svelte';
 
-	let printDisclaimer: HTMLDivElement
+	let printDisclaimer: HTMLDivElement;
 
 	// let the canvases render
-	onMount(async () => setTimeout(() => {
-		printDisclaimer.style.display = 'none'
-		print()
-	}, 1500));
+	onMount(async () =>
+		setTimeout(() => {
+			printDisclaimer.style.display = 'none';
+			print();
+		}, 1500),
+	);
 </script>
 
 <svelte:head>
@@ -20,7 +22,22 @@
 </svelte:head>
 
 <div class="no-print" bind:this={printDisclaimer}>Waiting for the page to render correctly...</div>
+
 <Contact />
-<Companies />
-<Skills />
-<Trainings />
+<div class="pagebreak">
+	<Companies />
+</div>
+<div class="pagebreak">
+	<Skills />
+</div>
+<div class="pagebreak">
+	<Trainings />
+</div>
+
+<style>
+	@media print {
+		.pagebreak {
+			page-break-before: always;
+		}
+	}
+</style>
