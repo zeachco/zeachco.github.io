@@ -48,6 +48,12 @@
 		learning, and innovation. I am also an early adopter when it comes to technologic gadgets and
 		lifestyle.
 	</p>
+	<h2>Little small fun projects I've made</h2>
+	<p>
+		<a href="https://zeachco.github.io/phantom-game-ai-training/?game=highway"
+			>highway</a
+		> an in-browser machine learning trainer that trains 2D cars to drive on a highway. Be ware, first iterrations a CPU intensive but the AI should learn to drive in less than 15 minutes.
+	</p>
 	<!--
 
 
