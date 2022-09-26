@@ -114,6 +114,11 @@ button:focus:not(:focus-visible) {
 	}
 }
 
+section {
+	max-width: 1280px;
+	margin: auto;
+}
+
 @media print {
 	.no-print,
 	.no-print * {

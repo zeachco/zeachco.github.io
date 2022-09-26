@@ -23,7 +23,9 @@
 
 <div class="no-print" bind:this={printDisclaimer}>Waiting for the page to render correctly...</div>
 
-<Contact />
+<div class="pagebreak">
+	<Contact />
+</div>
 <div class="pagebreak">
 	<Companies />
 </div>
