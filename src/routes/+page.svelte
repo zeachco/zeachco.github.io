@@ -1,11 +1,14 @@
 <script>
 	import Trainings from "$lib/components/Containers/Trainings.svelte";
+	import Contact from "$lib/components/Items/Contact.svelte";
 
 </script>
 <svelte:head>
 	<title>About</title>
 	<meta name="description" content="About" />
 </svelte:head>
+
+<Contact />
 
 <section>
 	<h2>Hallo 👋</h2>

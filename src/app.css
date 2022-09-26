@@ -16,7 +16,8 @@
 	--column-margin-top: 4rem;
 }
 
-html, body {
+html,
+body {
 	padding: 0;
 	margin: 0;
 }
@@ -117,6 +118,12 @@ button:focus:not(:focus-visible) {
 	.no-print,
 	.no-print * {
 		display: none !important;
+	}
+
+	a {
+		color: #000;
+		font-weight: 400;
+		text-decoration: none;
 	}
 }
 
