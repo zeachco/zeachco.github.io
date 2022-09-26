@@ -5,8 +5,13 @@
 	import Trainings from '$lib/components/Containers/Trainings.svelte';
 	import { onMount } from 'svelte';
 
+	let printDisclaimer: HTMLDivElement
+
 	// let the canvases render
-	onMount(async () => setTimeout(print, 1500));
+	onMount(async () => setTimeout(() => {
+		printDisclaimer.style.display = 'none'
+		print()
+	}, 1500));
 </script>
 
 <svelte:head>
@@ -14,7 +19,7 @@
 	<meta name="description" content="Printable CV" />
 </svelte:head>
 
-<div class="no-print">Waiting for the page to render correctly...</div>
+<div class="no-print" bind:this={printDisclaimer}>Waiting for the page to render correctly...</div>
 <Contact />
 <Companies />
 <Skills />
