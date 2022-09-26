@@ -107,7 +107,7 @@ export const skills: SkillData[] = [
 		percent: 99,
 		labels: ['language'],
 		start: '1988',
-		note: 'Native language',
+		note: 'Natively Canadian-French, I am a big fan of variations of the language from Acadia to France, I speak a normalized version of French for optimized results when going to Europe 🇪🇺',
 	},
 	{
 		name: '🇺🇸 English',
@@ -117,10 +117,11 @@ export const skills: SkillData[] = [
 	},
 	{
 		name: '🇯🇵 Japanese',
-		percent: 15,
+		percent: 20,
 		labels: ['language'],
 		start: '2012',
 		end: '2017',
+		note: 'Lived a few months in Tokyo, I know just enough to make my way around into local stores where english is not spoken',
 	},
 	{
 		name: '🇲🇽 Spanish',
@@ -138,7 +139,16 @@ export const skills: SkillData[] = [
 		name: '🇩🇪 German',
 		percent: 30,
 		labels: ['language'],
-		start: '2020',
+		start: '2019',
+		note: 'Started as a personal challenge, ended up spending some time in Berlin practicing my accent and I can say that my understanding skills surpass by far by pronunciation ones.',
+	},
+	{
+		name: '🇮🇳 Hindi',
+		percent: 20,
+		labels: ['language'],
+		start: '2016',
+		end: '2018',
+		note: 'In the context of IT recruitement as an interviewer. I spent months in the region of Pune and Mumbai. Picking up some social skills and getting to know the political language of the country. Tried to pickup a little on Marathi as well but non-verbal expression combined with UK-english is far more effective for a foreigner to communicate with clarity and respect',
 	},
 ].map((s) => {
 	return {
