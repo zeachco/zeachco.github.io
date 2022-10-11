@@ -1,13 +1,15 @@
 <script lang="ts">
 	import Header from '$lib/components/Containers/Header.svelte';
+	import PageTransition from '$lib/components/PageTransition.svelte';
 	import '../app.css';
 </script>
 
-	<Header />
-
+<Header />
 
 <main>
-	<slot />
+	<PageTransition>
+		<slot />
+	</PageTransition>
 </main>
 
 <footer class="no-print">
