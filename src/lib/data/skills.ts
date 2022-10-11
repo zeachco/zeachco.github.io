@@ -11,9 +11,16 @@ export const skills: SkillData[] = [
 	{
 		name: 'NodeJS',
 		start: '2011-03',
-		percent: 80,
+		percent: 90,
 		labels: ['programing', 'client', 'server'],
 		note: "Although I worked with Rinho engine (Server side javascript) before nodejs existed, I can't say I saw the potential until the javascript had access to system the IO. Since it's part of my dev tools, servers and machine learning tools on a daily basis.",
+	},
+	{
+		name: 'Deno',
+		start: '2018',
+		percent: 60,
+		labels: ['programing', 'client', 'server'],
+		note: 'Being experienced in nodejs sure helps with deno. I like to prototype projects with deno since the bootstrap is usualy faster and it feels more secure to include obscure libraries than with nodejs when trying new things. I am still looking for a large scale project to accomplish with this interpreter to really understand my level of knowledge.',
 	},
 	{
 		name: 'PHP',
