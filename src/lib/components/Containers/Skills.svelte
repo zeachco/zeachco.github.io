@@ -4,6 +4,7 @@
 	import { skills } from '$lib/data/skills';
 	import { sortByKey } from '$lib/utilities/date';
 	import type { SkillData } from '$lib/types';
+	import PageTransition from '../PageTransition.svelte';
 
 	const keys = ['start', 'end', 'percent'] as const;
 	$: sortKey = 'percent' as keyof SkillData;
@@ -19,20 +20,22 @@
 </script>
 
 <section>
-	<h1>Skills</h1>
-	<div class="no-print">
-		Sort by
-		<select value={sortKey} on:change={handleChange}>
-			{#each keys as key, i (key)}
-				<option id={i + ''} animate:flip value={key}>{labels[key]}</option>
+	<PageTransition pathname="skills">
+		<h1>Skills</h1>
+		<div class="no-print">
+			Sort by
+			<select value={sortKey} on:change={handleChange}>
+				{#each keys as key, i (key)}
+					<option id={i + ''} animate:flip value={key}>{labels[key]}</option>
+				{/each}
+			</select>
+		</div>
+		<div class="flex-list">
+			{#each sorted as skill, i (skill)}
+				<div>
+					<SkillComponent {skill} />
+				</div>
 			{/each}
-		</select>
-	</div>
-	<div class="flex-list">
-		{#each sorted as skill, i (skill)}
-			<div>
-				<SkillComponent {skill} />
-			</div>
-		{/each}
-	</div>
+		</div>
+	</PageTransition>
 </section>
