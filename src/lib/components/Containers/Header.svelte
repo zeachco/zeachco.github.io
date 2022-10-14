@@ -30,7 +30,7 @@
 		display: flex;
 		justify-content: space-between;
 		margin: auto;
-		--background: rgba(255, 255, 255, 0.7);
+		--background: rgba(0, 0, 0, 0.7);
 		background: var(--background);
 		background-size: contain;
 	}

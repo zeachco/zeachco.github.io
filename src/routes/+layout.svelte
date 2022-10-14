@@ -1,8 +1,10 @@
 <script lang="ts">
 	import '../app.css';
 	import Header from '$lib/components/Containers/Header.svelte';
+	import Background from '$lib/components/Background/Background.svelte';
 </script>
 
+<Background />
 <Header />
 
 <main>
@@ -20,7 +22,6 @@
 		flex-direction: column;
 		padding: 1rem;
 		width: 100%;
-		/* max-width: 1024px; */
 		margin: 0 auto;
 		box-sizing: border-box;
 	}
