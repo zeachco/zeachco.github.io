@@ -13,19 +13,25 @@
 	const links = Object.keys(labels) as Label[];
 </script>
 
-<header class="no-print">
-	<nav data-sveltekit-prefetch>
-		<ul>
-			{#each links as link}
-				<li class:active={$page.url.pathname === link}>
-					<a href={link}>{labels[link]}</a>
-				</li>
-			{/each}
-		</ul>
-	</nav>
-</header>
+<div class="placeholder">
+	<header class="no-print">
+		<nav data-sveltekit-prefetch>
+			<ul>
+				{#each links as link}
+					<li class:active={$page.url.pathname === link}>
+						<a href={link}>{labels[link]}</a>
+					</li>
+				{/each}
+			</ul>
+		</nav>
+	</header>
+</div>
 
 <style>
+	.placeholder {
+		height: 3em;
+	}
+
 	header {
 		display: flex;
 		justify-content: space-between;
@@ -33,6 +39,9 @@
 		--background: rgba(0, 0, 0, 0.7);
 		background: var(--background);
 		background-size: contain;
+		position: fixed;
+		left: 0;
+		right: 0;
 	}
 
 	nav {
