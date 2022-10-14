@@ -5,11 +5,12 @@
 		Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 	--font-mono: 'Fira Mono', monospace;
 	--pure-white: #ffffff;
-	--primary-color: #b9c6d2;
-	--secondary-color: #d0dde9;
-	--tertiary-color: #edf0f8;
-	--accent-color: #ff3e00;
-	--heading-color: rgba(0, 0, 0, 0.7);
+	--primary-color: #00ffea;
+	--secondary-color: #0088ff;
+	--tertiary-color: #664e9433;
+	--accent-color: rgb(216, 170, 102);
+	--heading-color: hsla(0, 0%, 10%, 0.7);
+	--heading-info: hsla(0, 0%, 10%, 0.5);
 	--text-color: #444444;
 	--background-without-opacity: rgba(255, 255, 255, 0.7);
 	--column-width: 42rem;
@@ -64,10 +65,14 @@ p {
 a {
 	color: var(--accent-color);
 	text-decoration: none;
+	text-shadow: 0 0 1px #0006, 0 0 10px #0008;
+	font-weight: 900;
+	transition: all 0.6s;
 }
 
 a:hover {
 	text-decoration: underline;
+	text-shadow: 0 0 2px #ff86;
 }
 
 h1 {
@@ -146,7 +151,7 @@ section {
 }
 
 small {
-	color: gray;
+	color: var(--heading-info);
 }
 
 @media print {
@@ -154,5 +159,51 @@ small {
 		page-break-inside: avoid;
 		page-break-after: always;
 		page-break-before: always;
+	}
+}
+
+.star1,
+.star2,
+.star3,
+.star4,
+.star5,
+.star6 {
+	z-index: -9997;
+	/* position: fixed; */
+}
+
+.star1 {
+	animation: 3s linear 1s infinite alternate twinkle;
+}
+
+.star2 {
+	animation: 4s linear 0s infinite alternate twinkle;
+}
+
+.star3 {
+	animation: 3.5s linear 0.5s infinite alternate twinkle;
+}
+
+.star4 {
+	animation: 1.25s linear 1.5s infinite alternate twinkle;
+}
+
+.star5 {
+	animation: 4s linear 2s infinite alternate twinkle;
+}
+
+.star6 {
+	animation: 2.5s linear 1s infinite alternate twinkle;
+}
+
+@keyframes twinkle {
+	0% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
 	}
 }

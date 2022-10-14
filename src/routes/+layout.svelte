@@ -1,6 +1,7 @@
 <script lang="ts">
 	import '../app.css';
 	import Header from '$lib/components/Containers/Header.svelte';
+	import Background from '$lib/components/Background/Background.svelte';
 </script>
 
 <Header />
@@ -8,6 +9,8 @@
 <main>
 	<slot />
 </main>
+
+<Background />
 
 <footer class="no-print">
 	<p>This site is auto-generated</p>
