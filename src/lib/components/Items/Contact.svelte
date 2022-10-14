@@ -6,7 +6,7 @@
 	<h1>{contact.name}</h1>
 	<h2>
 		<a href={`mailto:${contact.email}`}>{contact.email}</a> |
-		<a href={`telto:${contact.phone}`}>{contact.phone}</a>
+		<a href={`tel:${contact.phone}`}>{contact.phone}</a>
 	</h2>
 	<p>
 		<a href="https://github.com/zeachco">Github/zeachco</a> |
