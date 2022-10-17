@@ -47,7 +47,7 @@
 	.light {
 		background-image: linear-gradient(#1f202322, #42447222, #00000000);
 		position: fixed;
-		z-index: 998;
+		z-index: -998;
 		top: 0;
 		bottom: 0;
 		left: 0;
