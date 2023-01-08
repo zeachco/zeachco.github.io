@@ -35,11 +35,11 @@
 		text-shadow: none !important;
 	}
 
-	.card {
+	/* .card {
 		page-break-inside: avoid;
 		page-break-after: always;
 		page-break-before: always;
-	}
+	} */
 }
 
 html,

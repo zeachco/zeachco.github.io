@@ -39,7 +39,7 @@
 <style>
 	@media print {
 		.pagebreak {
-			page-break-before: always;
+			page-break-after: auto;
 		}
 	}
 </style>
