@@ -16,7 +16,7 @@
 	<ul>
 		<li>
 			<strong>
-				<a href="/">Olivier Rousseau-Guyot</a>
+				<a href="/">Olivier Rousseau</a>
 			</strong>
 		</li>
 	</ul>
