@@ -19,44 +19,68 @@
 
 <section>
 	<PageTransition pathname="about">
-		<h2>Hallo recruiters👋</h2>
-		<p>Javascript/Nodejs ninja, Code quality evangelist, Technical debt terminator...</p>
+		<h2>Hallo recruiters 👋</h2>
 		<p>
-			I could throw in a few hundred buzz words but instead I invite you you find the skill you need
-			from my skills page <a href="/skills">here</a>. Those help me deal with the constant evolution
-			of technologies
+			I am a JavaScript/Node.js developer with expertise in code quality, and technical debt
+			management. Instead of throwing in a few hundred buzzwords, I invite you to find the specific
+			skills you require from my skill page <a href="/skills">here</a>. These skills help me deal
+			with the constant evolution of technologies.
 		</p>
 
 		<h2>A little bit about me</h2>
 		<p>
-			I wear many hats though identity as a developer. In the past {jsExpYears} years, I have specialized
-			with Javascript over many different projects including, but not limited to, payment platforms,
-			analytics dashboards, video games, 3D showcases, VR, complex servers farms (with nodeJS), middlewares
-			and reverse proxies, command line interface tools, deployment servers, test frameworks, domain
+			I wear many hats but identify primarily as a developer. Over the past {jsExpYears} years, I have
+			specialized in JavaScript, working on a variety of projects including payment platforms, analytics
+			dashboards, video games, 3D showcases, VR, complex server farms (with Node.js), middlewares and
+			reverse proxies, command-line interface tools, deployment servers, test frameworks, and domain
 			registrar systems.
 		</p>
 		<p>
-			I am passionate about technology advancement, Unix environment, Git and web stacks and what I
-			like to call software philosophy. Towards the years, I have slowly drifted on the
-			architectural portion of my work and team management as well but I always come back to writing
-			code.
+			I am passionate about technological advancements, the Unix environment, Git, web stacks, and
+			what I like to call "software philosophy." Over the years, I have slowly drifted towards the
+			architectural portion of my work and team management, but I always come back to writing code.
 		</p>
 		<p>
-			I have spent around {incExpYears} years building and experimenting around with small business and
-			startup structure, building my own company and reinventing my products... sadly I am not a good
-			sale person but the process of learning and bringing to life various complex projects months after
-			months was so exciting I couldn't stop.
+			I have spent around {incExpYears} years building and experimenting with small businesses and startup
+			structures, building my own company, and reinventing my products. Sadly, I am not a good salesperson,
+			but the process of learning and bringing various complex projects to life month after month was
+			so exciting that I couldn't stop.
+		</p>
+
+		<h2>Adaptability</h2>
+		<p>
+			With my fluency in English and French, as well as some proficiency in Spanish, Portuguese, and
+			German, I am confident in my ability to communicate effectively with colleagues and clients
+			from diverse backgrounds.
 		</p>
 		<p>
-			Programming apart, I love to snowboard, electronic music, dancing, computer games, general
-			learning, and innovation. I am also an early adopter when it comes to technologic gadgets and
-			lifestyle.
+			As a passionate and experienced software developer, I have cultivated a strong interest in
+			open source communities and have contributed to various projects on platforms such as GitHub.
+			I am also well-versed in Linux, JavaScript, and Git.
 		</p>
-		<h2>Little small fun projects I've made</h2>
 		<p>
-			<a href="https://zeachco.github.io/phantom-game-ai-training/?game=highway">highway</a> an in-browser
-			machine learning trainer that trains 2D cars to drive on a highway. Be ware, first iterrations
-			a CPU intensive but the AI should learn to drive in less than 15 minutes.
+			Furthermore, I am inspired by companies such as Netflix for their infrastructure, AirBnB,
+			Stripe, and Shopify for their contributions to open source, and Walmart, Netflix, Dominos and
+			Microsoft for being NodeJs pioneers. I am particularly drawn to the way these companies have
+			been able to innovate and push boundaries in the tech industry.
+		</p>
+		<h2>Personality</h2>
+		<p>
+			Personality-wise, I love snowboarding, electronic music, dancing, computer games, general
+			learning, and innovation. I am also an early adopter when it comes to technological gadgets
+			and lifestyle.
+		</p>
+		<h2>Fun projects, all the time!</h2>
+		<p>
+			An example of a fun project I've made is <a
+				href="https://zeachco.github.io/phantom-game-ai-training/?game=highway">Highway</a
+			>, an in-browser machine learning trainer that trains 2D cars to drive on a highway. Be aware
+			that the first iterations are CPU-intensive, but the AI should learn to drive in less than 15
+			minutes.
+		</p>
+		<p>
+			Disclaimer: This project works better on small resolutions since rendering the multiple layers
+			of neural networks takes a tool on retina displays and wide screens.
 		</p>
 		<!--
 
