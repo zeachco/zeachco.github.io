@@ -23,21 +23,24 @@
 		background-color: hsl(${hue}, ${saturation}%, 50%);
 	`;
 
-	$: wordLevel = percent >= 90 ? 'expert' : percent >= 70 ? 'proficient' : 'familiar';
-
 	let notes = '';
 	if (!small && skill.note) {
 		notes = skill.note;
 	}
 
 	let { name } = skill;
+
+	$: wordLevel = percent >= 90 ? 'expert' : percent >= 70 ? 'proficient' : 'familiar';
+	$: wordTooltip = `I consider myself ${wordLevel} in ${name} with a score of ${percent}%`;
 </script>
 
 <details>
 	<summary>
-		<div class="meter no-print" {style} title={wordLevel} />
-		{name} <small>{experienceTime}</small>
-		<small>({wordLevel})</small>
+		<div class="meter no-print" {style} data-tooltip={wordTooltip} data-placement="right" />
+		<span>
+			{name} <small>{experienceTime}</small>
+		</span>
+		<small class="print">({wordLevel})</small>
 	</summary>
 	{#if notes}
 		<p>{notes}</p>
