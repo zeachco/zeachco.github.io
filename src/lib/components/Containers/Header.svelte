@@ -22,8 +22,13 @@
 	</ul>
 	<ul class="no-print">
 		{#each links as link}
-			<li class:active={$page.url.pathname === link}>
-				<a data-placement="left" data-tooltip={labels[link][1]} href={link}>{labels[link][0]}</a>
+			<li>
+				<a
+					class:active={$page.url.pathname === link}
+					data-placement="left"
+					data-tooltip={labels[link][1]}
+					href={link}>{labels[link][0]}</a
+				>
 			</li>
 		{/each}
 	</ul>
