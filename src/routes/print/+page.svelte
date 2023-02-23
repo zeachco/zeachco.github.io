@@ -4,6 +4,7 @@
 	import Skills from '$lib/components/Containers/Skills.svelte';
 	import Trainings from '$lib/components/Containers/Trainings.svelte';
 	import { onMount } from 'svelte';
+	import { PAGE_TRANSITION_TIME } from '$lib/utilities/constants';
 
 	let printDisclaimer: HTMLDivElement;
 
@@ -12,7 +13,7 @@
 		setTimeout(() => {
 			printDisclaimer.style.display = 'none';
 			print();
-		}, 1500),
+		}, PAGE_TRANSITION_TIME + 1),
 	);
 </script>
 
@@ -21,7 +22,10 @@
 	<meta name="description" content="Printable CV" />
 </svelte:head>
 
-<div class="no-print" bind:this={printDisclaimer}>Waiting for the page to render correctly...</div>
+<div class="no-print" bind:this={printDisclaimer}>
+	<progress />
+	Waiting for the page to render correctly...
+</div>
 
 <div class="pagebreak">
 	<Contact />

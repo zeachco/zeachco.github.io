@@ -18,7 +18,7 @@ export const skills: SkillData[] = [
 	{
 		name: 'Deno',
 		start: '2018',
-		percent: 60,
+		percent: 75,
 		labels: ['programing', 'client', 'server'],
 		note: 'Being experienced in nodejs sure helps with deno. I like to prototype projects with deno since the bootstrap is usualy faster and it feels more secure to include obscure libraries than with nodejs when trying new things. I am still looking for a large scale project to accomplish with this interpreter to really understand my level of knowledge.',
 	},

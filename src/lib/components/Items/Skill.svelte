@@ -1,7 +1,5 @@
 <script lang="ts">
 	import type { SkillData } from '$lib/types';
-	import Label from '../micro/Label.svelte';
-	import Meter from './Meter.svelte';
 
 	export let small = false;
 	export let skill: SkillData;
@@ -19,37 +17,45 @@
 		experienceTime = `(${year}-${month}) ${diff} years of experience`;
 	}
 
+	$: hue = Math.round((percent / 100) * 120);
+	$: saturation = skill.percent === 0 ? 0 : 50;
+	$: style = `
+		background-color: hsl(${hue}, ${saturation}%, 50%);
+	`;
+
+	$: wordLevel = percent >= 90 ? 'expert' : percent >= 70 ? 'proficient' : 'familiar';
+
 	let notes = '';
 	if (!small && skill.note) {
 		notes = skill.note;
 	}
 
-	const labels = skill.labels || [];
 	let { name } = skill;
 </script>
 
-<div class="card">
-	<div class="notes">
-		{#if percent}
-			<Meter {...{ percent, name }} />
-		{/if}
-		<h2>{name} <small>{experienceTime}</small></h2>
+<details>
+	<summary>
+		<div class="meter no-print" {style} title={wordLevel} />
+		{name} <small>{experienceTime}</small>
+		<small>({wordLevel})</small>
+	</summary>
+	{#if notes}
 		<p>{notes}</p>
-	</div>
-	<div class="labels no-print">
-		{#each labels as label}
-			<Label name={label} />
-		{/each}
-	</div>
-</div>
+	{/if}
+</details>
 
 <style>
-	.card {
-		display: flex;
-		align-items: flex-start;
-		justify-content: space-between;
-	}
-	.labels {
-		margin: auto;
+	.meter {
+		display: inline-block;
+		width: 1.5rem;
+		height: 1.5rem;
+		border-radius: 50%;
+		margin-right: 0.5rem;
+		background-color: #8884;
+		box-shadow: inset -3px 0 8px -3px #fff8, -1px 1px 3px -1px #000;
+		text-align: center;
+		font-size: 0.6em;
+		vertical-align: middle;
+		white-space: nowrap;
 	}
 </style>

@@ -13,7 +13,7 @@
 		const end = company.end ? new Date(company.end) : new Date();
 		const [year, month] = start.toISOString().split('-');
 		const [yearEnd, monthEnd] = end.toISOString().split('-');
-		const diff = ((+yearEnd+ +monthEnd/12) - (+year + +month/12)).toFixed(1);
+		const diff = (+yearEnd + +monthEnd / 12 - (+year + +month / 12)).toFixed(1);
 		experienceTime = `${year}-${month} to ${yearEnd}-${monthEnd} (${diff} years)`;
 	}
 
@@ -25,12 +25,14 @@
 	const labels = company.labels || [];
 </script>
 
-<div class="card">
-	<h2>{company.name} <small>{experienceTime}</small></h2>
+<details open>
+	<summary>{company.name} <small>{experienceTime}</small></summary>
 	<span class="labels no-print">
 		{#each labels as label}
 			<Label name={label} />
 		{/each}
 	</span>
-	<p>{notes}</p>
-</div>
+	{#if notes}
+		<p>{notes}</p>
+	{/if}
+</details>

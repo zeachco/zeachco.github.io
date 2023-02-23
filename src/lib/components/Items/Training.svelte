@@ -13,11 +13,10 @@
 		const [year, month] = start.toISOString().split('-');
 		try {
 			const [yearEnd, monthEnd] = until.toISOString().split('-');
-			const diff = ((+yearEnd+ +monthEnd/12) - (+year + +month/12)).toFixed(1);
+			const diff = (+yearEnd + +monthEnd / 12 - (+year + +month / 12)).toFixed(1);
 			experienceTime = `${year}-${month} to ${yearEnd}-${monthEnd} (${diff} years)`;
 		} catch (err) {
-
-			console.error(err, {training});
+			console.error(err, { training });
 		}
 	}
 
@@ -27,7 +26,10 @@
 	}
 </script>
 
-<div class="card">
-	<h2>{training.name} <small>{experienceTime}</small></h2>
-	<p>{notes}</p>
-</div>
+<details>
+	<summary>{training.name}</summary>
+	{experienceTime}
+	{#if notes}
+		<p>{notes}</p>
+	{/if}
+</details>

@@ -22,14 +22,15 @@
 <section>
 	<PageTransition pathname="skills">
 		<h1>Skills</h1>
-		<div class="no-print">
-			Sort by
+
+		<label class="no-print">
+			Sorted by
 			<select value={sortKey} on:change={handleChange}>
 				{#each keys as key, i (key)}
 					<option id={i + ''} animate:flip value={key}>{labels[key]}</option>
 				{/each}
 			</select>
-		</div>
+		</label>
 		<div class="flex-list">
 			{#each sorted as skill, i (skill)}
 				<div>
