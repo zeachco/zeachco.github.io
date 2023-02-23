@@ -16,6 +16,27 @@ export const skills: SkillData[] = [
 		note: "Although I worked with Rinho engine (Server side javascript) before nodejs existed, I can't say I saw the potential until the javascript had access to system the IO. Since it's part of my dev tools, servers and machine learning tools on a daily basis.",
 	},
 	{
+		name: 'Neural Networks',
+		start: '2020-08',
+		percent: 65,
+		labels: ['programing', 'client', 'server'],
+		note: "I'm not a machine learning expert but I've been working with neural networks for a while now. I've been using tensorflow.js and ml5.js for my projects. I'm currently working on multiple projects using zero libraries that allows creating an AI in low performance environement such as from a web browser of a low-end mobile phone or early generations of Raspberry Pi. Fun fact, I was able to train a 2D sim with 7000 cars driving throught traffic from the browser of a Tesla which just for the irony of it",
+	},
+	{
+		name: 'Deep Learning',
+		start: '2021-10',
+		percent: 55,
+		labels: ['programing', 'client', 'server'],
+		note: 'I ~deeply~ explored the concepts but currently lack time, computer ressources and data to really dive into this field.',
+	},
+	{
+		name: 'Crypto',
+		start: '2021-04',
+		percent: 35,
+		labels: ['programing', 'client', 'server'],
+		note: "I've been working on developping my own ETH miner with Rust and CUDA but my hype followed the crash of the crypto market. I'm still interested in the concept of decentralization and the potential of blockchain technology.",
+	},
+	{
 		name: 'Deno',
 		start: '2018',
 		percent: 75,
