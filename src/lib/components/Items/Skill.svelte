@@ -56,9 +56,5 @@
 		margin-right: 0.5rem;
 		background-color: #8884;
 		box-shadow: inset -3px 0 8px -3px #fff8, -1px 1px 3px -1px #000;
-		text-align: center;
-		font-size: 0.6em;
-		vertical-align: middle;
-		white-space: nowrap;
 	}
 </style>
