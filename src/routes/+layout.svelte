@@ -1,6 +1,5 @@
 <script lang="ts">
-	import '@picocss/pico';
-	import '../app.css';
+	import '../app.scss';
 	import Header from '$lib/components/Containers/Header.svelte';
 </script>
 

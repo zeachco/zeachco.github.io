@@ -1,3 +1,17 @@
+/* Custom Pink version */
+
+// hover dark
+$primary-500: hsl(45, 100%, 80%);
+
+// primary
+$primary-600: hsl(0, 100%, 75%);
+
+// hover light
+$primary-700: hsl(-45, 100%, 25%);
+
+// Import Pico
+@import '@picocss/pico/scss/pico';
+
 .print {
 	display: none;
 }
