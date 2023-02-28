@@ -16,6 +16,10 @@ $primary-700: hsl(-45, 100%, 25%);
 	display: none;
 }
 
+nav a.active {
+	background-color: var(--primary-focus) !important;
+}
+
 @media print {
 	* {
 		color: #000 !important;
