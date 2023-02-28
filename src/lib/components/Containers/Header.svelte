@@ -12,7 +12,7 @@
 	const links = Object.keys(labels) as Label[];
 </script>
 
-<nav class="container-fluid">
+<nav class="container">
 	<ul>
 		<li>
 			<strong>
