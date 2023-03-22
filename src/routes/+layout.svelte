@@ -10,7 +10,9 @@
 </main>
 
 <footer class="no-print">
-	<p>This site is auto-generated</p>
+	<note>
+		<small>This site and it's cv is automatically kept up-to-date</small>
+	</note>
 </footer>
 
 <style>

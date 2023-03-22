@@ -52,7 +52,7 @@
 			so exciting that I couldn't stop.
 		</p>
 
-		<h2>Adaptability</h2>
+		<h3>Adaptability</h3>
 		<p>
 			With my fluency in English and French, as well as some proficiency in Spanish, Portuguese, and
 			German, I am confident in my ability to communicate effectively with colleagues and clients
@@ -69,7 +69,7 @@
 			Microsoft for being NodeJs pioneers. I am particularly drawn to the way these companies have
 			been able to innovate and push boundaries in the tech industry.
 		</p>
-		<h2>Personality</h2>
+		<h3>Personality</h3>
 		<p>
 			Personality-wise, I love snowboarding, electronic music, dancing, computer games, general
 			learning, and innovation. I am also an early adopter when it comes to technological gadgets
