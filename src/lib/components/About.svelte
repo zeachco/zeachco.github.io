@@ -19,7 +19,12 @@
 
 <section>
 	<PageTransition pathname="about">
-		<h2>Hallo recruiters 👋</h2>
+		<h2>Recruiters 👋</h2>
+		<p>
+			You can find a printable document of this site by clicking
+			<a data-tooltip="Printable CV" href="/print">🖨️ here</a> or at the top navigation.
+		</p>
+		<h2>What kind of engineer am I</h2>
 		<p>
 			I am a JavaScript/Node.js developer with expertise in code quality, and technical debt
 			management. Instead of throwing in a few hundred buzzwords, I invite you to find the specific
@@ -27,7 +32,7 @@
 			with the constant evolution of technologies.
 		</p>
 
-		<h2>A little bit about me</h2>
+		<h3>A little bit about me</h3>
 		<p>
 			I wear many hats but identify primarily as a developer. Over the past {jsExpYears} years, I have
 			specialized in JavaScript, working on a variety of projects including payment platforms, analytics
