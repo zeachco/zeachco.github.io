@@ -123,7 +123,14 @@ export const skills: SkillData[] = [
 		percent: 85,
 		labels: ['programming', 'client'],
 		start: '2005-02',
-		note: 'I was never much of a photoshop nor powerpoint type of guy. I always relied on CSS directly to beautify my documents. Today is more about composing foundational libraries, adjusting to responsive needs and devices or creating unique animations',
+		note: 'I was never much of a PhotoShop nor PowerPoint type of guy. I always relied on CSS directly to beautify my documents. Today is more about composing foundational libraries, adjusting to responsive needs and devices or creating unique animations',
+	},
+	{
+		name: 'CSS Frameworks and design systems',
+		percent: 85,
+		labels: ['programming', 'client'],
+		start: '2019-12',
+		note: 'Tailwindcss, Bootstrap, Foundation, Material, Pico, Bulma, etc. I have a good understanding of the pros and cons of each and how to use them to my advantage. I also have a good understanding of how to create my own design system and how to integrate it with a CSS framework.',
 	},
 	{
 		name: 'Canvas 2D',
