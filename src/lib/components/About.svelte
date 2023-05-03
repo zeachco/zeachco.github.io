@@ -87,23 +87,16 @@
 			Disclaimer: This project works better on small resolutions since rendering the multiple layers
 			of neural networks takes a tool on retina displays and wide screens.
 		</p>
-		<!--
-
-
-Langages
-French as native language, Fluent English communicator, some Spanish, Portuguese, German.
-Passions and hobbies
-Linux, javascript, git, open source community, music, snowboard, flyboard, social dance (mostly salsa and jive), mountain biking, skating and cycling
-Companies that inspire me
-Netflix for their infrastructure
-AirBnB, Stripe, Shopify for their contributions to open source
-Walmart and Microsoft for being NodeJs pioneers in their architecture
-screeps.com for gamifying a true essence of complex programing scenarios
-What I like to work with
-Atom, VSCode, Vi/Nano
-Linux, Open Source Products, Google products
-NodeJS, NPM, Mongo
-Webpack, Gulp, ThreeJS, D3, React
-Browsers and the F12 key (The full keyboard is even better) -->
+		<h3><a href="https://yenom.up.railway.app/">Yenom</a></h3>
+		<p>
+			A small financial tool that helps individuals seeing their finances on from a different angle
+		</p>
+		<h3>Much more projects</h3>
+		<h2>More things</h2>
+		<p>
+			If you're curious check out my <a href="https://github.com/zeachco">Github profile</a>. I also
+			produce music and games on the side. I am also a big fan of Open Source and have contributed
+			to many projects over the years.
+		</p>
 	</PageTransition>
 </section>
