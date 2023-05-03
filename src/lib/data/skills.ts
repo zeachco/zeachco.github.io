@@ -44,6 +44,13 @@ export const skills: SkillData[] = [
 		note: 'Being experienced in nodejs sure helps with deno. I like to prototype projects with deno since the bootstrap is usually faster and it feels more secure to include obscure libraries than with nodejs when trying new things. I am still looking for a large scale project to accomplish with this interpreter to really understand my level of knowledge.',
 	},
 	{
+		name: 'Rust',
+		start: '2022',
+		percent: 40,
+		labels: ['programming', 'client', 'server'],
+		note: 'Mostly used for crypto mining and web assembly. I am still looking for a large scale project to accomplish with this language to really understand my level of knowledge.',
+	},
+	{
 		name: 'PHP',
 		percent: 30,
 		start: '2004-03',
