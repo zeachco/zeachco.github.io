@@ -72,6 +72,8 @@ export const skills: SkillData[] = [
 		start: '2018',
 		end: '2020',
 	},
+	// // Removed because it's not relevant anymore, Angular 2+ is a completely different framework
+	// // and I haven't worked with it since. Giving me false leads with job offers.
 	// {
 	// 	name: 'AngularJS',
 	// 	percent: 99,
@@ -80,14 +82,14 @@ export const skills: SkillData[] = [
 	// 	end: '2016',
 	// 	note: 'Worked on the original Angular library before it refactored into Angular 2. Quick app developments and refactoring existing ones with technical debts accumulated because it was the next jQuery back then',
 	// },
-	// {
-	// 	name: 'JQuery',
-	// 	percent: 99,
-	// 	labels: ['library', 'programming', 'client'],
-	// 	start: '2008',
-	// 	end: '2018',
-	// 	note: 'Maintaining old apps built with jQuery and converting them into more scalable frameworks or libraries',
-	// },
+	{
+		name: 'JQuery',
+		percent: 99,
+		labels: ['library', 'programming', 'client'],
+		start: '2008',
+		end: '2018',
+		note: 'Used at a time were IE5 was still a supported browser. Most of my experience comes with bridging jQuery with other framework like Backbone, React, Angular or just vanilla JS. This library might seems irrelevant to mention today but the experience from transitioning out of it is still quite relevant today.',
+	},
 	{
 		name: 'Svelte',
 		percent: 70,
