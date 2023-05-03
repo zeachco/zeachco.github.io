@@ -2,7 +2,7 @@
 	import { sortByKey } from '$lib/utilities/date';
 	import { trainings } from '$lib/data/trainings';
 	import type { SkillData } from '$lib/types';
-	import Training from '../Items/Training.svelte';
+	import Training from '../items/Training.svelte';
 	import PageTransition from '../PageTransition.svelte';
 	$: sorted = sortByKey('start', trainings) as SkillData[];
 </script>

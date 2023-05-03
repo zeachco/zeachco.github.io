@@ -2,7 +2,7 @@
 	import { companies } from '$lib/data/companies';
 	import type { CompanyData } from '$lib/types';
 	import { sortByKey } from '$lib/utilities/date';
-	import Company from '../Items/Company.svelte';
+	import Company from '../items/Company.svelte';
 	import PageTransition from '../PageTransition.svelte';
 
 	const comps: CompanyData[] = sortByKey('start', companies);

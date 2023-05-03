@@ -1,5 +1,5 @@
 <script lang="ts">
-	import SkillComponent from '$lib/components/Items/Skill.svelte';
+	import SkillComponent from '$lib/components/items/Skill.svelte';
 	import { flip } from 'svelte/animate';
 	import { skills } from '$lib/data/skills';
 	import { sortByKey } from '$lib/utilities/date';

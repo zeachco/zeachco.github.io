@@ -1,8 +1,8 @@
 <script lang="ts">
-	import Contact from '$lib/components/Items/Contact.svelte';
-	import Companies from '$lib/components/Containers/Companies.svelte';
-	import Skills from '$lib/components/Containers/Skills.svelte';
-	import Trainings from '$lib/components/Containers/Trainings.svelte';
+	import Contact from '$lib/components/items/Contact.svelte';
+	import Companies from '$lib/components/containers/Companies.svelte';
+	import Skills from '$lib/components/containers/Skills.svelte';
+	import Trainings from '$lib/components/containers/Trainings.svelte';
 	import { onMount } from 'svelte';
 	import { PAGE_TRANSITION_TIME } from '$lib/utilities/constants';
 
