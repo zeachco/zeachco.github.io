@@ -10,7 +10,7 @@ export const companies: CompanyData[] = [
 	{
 		name: 'Yenom ',
 		start: '2023-02',
-		note: `Started this project as a hobby to work more with Deno, Svelte and Typescript. I built a Financial tracker that I use daily to track my expenses and income. I did everything from project management, dev ops, databases, client and server work. While scaling to 200+ users I switched back to node and react to reduce the amount od side-quests and actually develop the features and monetization plan. I managed to reduce the total cost of running all the services to less than 1$ per month and that includes calls to openai.com for the AI features that act as financial counselor.`,
+		note: `Started this project as a hobby to work more with Deno, Svelte and Typescript. I built a Financial tracker that I use daily to track my expenses and income. I did everything from project management, dev ops, databases, client and server work. While testing a scale to 200+ users I switched back to node and react to reduce the amount of side-quests and actually develop the features and monetization plan. I managed to reduce the total cost of running all the services to less than 1$ per month and that includes calls to openai.com for the AI features that act as financial counselor.`,
 	},
 	{
 		name: 'Tyco fire & security + ADT',
