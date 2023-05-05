@@ -1,5 +1,4 @@
 <script lang="ts">
-
 </script>
 
 <svelte:head>
@@ -8,4 +7,3 @@
 </svelte:head>
 
 I haven't completed that list yet...
-

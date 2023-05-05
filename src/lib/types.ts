@@ -9,7 +9,7 @@ export const labels = [
 	'concept',
 	'library',
 	'remote',
-	'onsite'
+	'onsite',
 ] as const;
 
 interface BaseData {
