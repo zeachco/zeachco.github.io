@@ -1,5 +1,5 @@
 <script>
-	import Companies from '$lib/components/containers/Companies.svelte';
+	import Companies from '$lib/components-case-fix/containers/Companies.svelte';
 </script>
 
 <svelte:head>

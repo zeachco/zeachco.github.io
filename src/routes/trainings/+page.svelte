@@ -1,5 +1,5 @@
 <script>
-	import Trainings from '$lib/components/containers/Trainings.svelte';
+	import Trainings from '$lib/components-case-fix/containers/Trainings.svelte';
 </script>
 
 <svelte:head>

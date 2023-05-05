@@ -1,6 +1,6 @@
 <script>
-	import About from '$lib/components/About.svelte';
-	import Contact from '$lib/components/items/Contact.svelte';
+	import About from '$lib/components-case-fix/About.svelte';
+	import Contact from '$lib/components-case-fix/items/Contact.svelte';
 </script>
 
 <svelte:head>
