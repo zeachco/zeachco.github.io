@@ -41,7 +41,7 @@ export const skills: SkillData[] = [
 		start: '2018',
 		percent: 75,
 		labels: ['programming', 'client', 'server'],
-		note: 'Being experienced in nodejs sure helps with deno. I like to prototype projects with deno since the bootstrap is usually faster and it feels more secure to include obscure libraries than with nodejs when trying new things. I am still looking for a large scale project to accomplish with this interpreter to really understand my level of knowledge.',
+		note: 'Being experienced in nodejs sure helps with deno. I have tried it for 2 different larger projects but I feel there is too much friction when we want to consumer nodejs libs and the pure Deno packages are not mature enough yet.',
 	},
 	{
 		name: 'Rust',
@@ -92,9 +92,9 @@ export const skills: SkillData[] = [
 	},
 	{
 		name: 'Svelte',
-		percent: 70,
+		percent: 80,
 		labels: ['programming', 'framework', 'client'],
-		note: 'Even though Svelte is very easy to get started with, I still explore gotchas around unsupported stuff and revert to vanilla javascript',
+		note: "This site and CV is built with Svelte. I like the simplicity of the framework and the fact that it doesn't require a virtual DOM. I've been using it for a while now and I'm still looking for a large scale project to accomplish with this framework to really understand my level of knowledge.",
 		start: '2020',
 	},
 	{
@@ -144,7 +144,7 @@ export const skills: SkillData[] = [
 		percent: 75,
 		labels: ['programming', 'client'],
 		start: '2005-02',
-		note: 'Mainly through THREE.js and other math libraries because writing custom shader by hand is too niche for my projects',
+		note: "Mainly through THREE.js and other math libraries because writing custom shader by hand is too niche for my projects. I've build some 3D games and editors with it. Built my own stencil shadow engine back in the days for a web DOOM 3's model viewer.",
 	},
 	{
 		name: '🇨🇦 French',
