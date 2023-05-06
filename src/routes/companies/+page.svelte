@@ -1,10 +1,10 @@
 <script>
-	import Companies from '$lib/components-case-fix/containers/Companies.svelte';
+	import Companies from '$lib/components/containers/Companies.svelte';
 </script>
 
 <svelte:head>
-	<title>Compagnies</title>
-	<meta name="description" content="Compagnies" />
+	<title>Companies</title>
+	<meta name="description" content="Companies" />
 </svelte:head>
 
 <Companies />
