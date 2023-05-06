@@ -6,8 +6,9 @@
 	const javascript = skills.find(({ name }) => /javascript/i.test(name));
 	const gameDev = companies.find(({ note }) => /dark basic pro/i.test(note!));
 	const playtika = companies.find(({ name }) => /playtika/i.test(name));
+	const yenom = companies.find(({ name }) => /yenom/i.test(name));
 
-	if (!javascript?.start || !gameDev?.start || !playtika?.start)
+	if (!javascript?.start || !gameDev?.start || !playtika?.start || !yenom?.note)
 		throw new Error(`Missing references`);
 
 	const now = new Date();
@@ -87,9 +88,9 @@
 			Disclaimer: This project works better on small resolutions since rendering the multiple layers
 			of neural networks takes a tool on retina displays and wide screens.
 		</p>
-		<h3><a href="https://yenom.up.railway.app/">Yenom</a></h3>
 		<p>
-			A small financial tool that helps individuals seeing their finances on from a different angle
+			There's also <a href="https://yenom.up.railway.app/">Yenom</a>!<br />
+			{yenom.note}
 		</p>
 		<h3>Much more projects</h3>
 		<h2>More things</h2>
