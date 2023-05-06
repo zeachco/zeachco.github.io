@@ -3,8 +3,8 @@
 </script>
 
 <svelte:head>
-	<title>Compagnies</title>
-	<meta name="description" content="Compagnies" />
+	<title>Companies</title>
+	<meta name="description" content="Companies" />
 </svelte:head>
 
 <Companies />
