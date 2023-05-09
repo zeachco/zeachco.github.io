@@ -70,12 +70,6 @@
 			Microsoft for being NodeJs pioneers. I am particularly drawn to the way these companies have
 			been able to innovate and push boundaries in the tech industry.
 		</p>
-		<h3>Personality</h3>
-		<p>
-			Personality-wise, I love snowboarding, electronic music, dancing, computer games, general
-			learning, and innovation. I am also an early adopter when it comes to technological gadgets
-			and lifestyle.
-		</p>
 		<h2>Fun projects, all the time!</h2>
 		<p>
 			An example of a fun project I've made is <a
@@ -92,8 +86,13 @@
 			There's also <a href="https://yenom.up.railway.app/">Yenom</a>!<br />
 			{yenom.note}
 		</p>
-		<h3>Much more projects</h3>
-		<h2>More things</h2>
+		<p>Also, when I see a gap on the internet and a matching need, I usually take a few minutes to extract that need into a package for my use-case and try to make it accessible with minimal effort. <a href="https://github.com/zeachco/real-mime-type">real-mime-type</a> is an example. When I manage to do it in a way that is abstracted from the business case but still applies 100%, that drives me into pushing that concept further and improving on it on my personal time afterward, profiting the company, myself and open-source consumers.</p>
+		<h3>Personality</h3>
+		<p>
+			Personality-wise, I love snowboarding, electronic music, dancing, computer games, general
+			learning, and innovation. I am also an early adopter when it comes to technological gadgets
+			and lifestyle.
+		</p>
 		<p>
 			If you're curious check out my <a href="https://github.com/zeachco">Github profile</a>. I also
 			produce music and games on the side. I am also a big fan of Open Source and have contributed
