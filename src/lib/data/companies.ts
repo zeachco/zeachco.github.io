@@ -1,6 +1,11 @@
 import type { CompanyData } from '$lib/types';
 
 export const companies: CompanyData[] = [
+  {
+    name:'Pod',
+    start: '2024-03-09',
+    note: `Full stack dev on a react, note, python stack with custom AI implementation and 3rd party integrations.`
+  },
 	{
 		name: 'Yenom',
 		start: '2023-02',
