@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Doe - Fullstack Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="print.css" media="print">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                    }
+                }
+            }
+        }
+
+    </script>
+</head>
+
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 font-sans transition-colors duration-300">
+    <header class="bg-primary text-white py-6 sticky top-0 z-10 shadow-md">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <div>
+                <h1 class="text-4xl font-bold">John Doe</h1>
+                <p class="text-xl">Fullstack Developer</p>
+            </div>
+            <button id="darkModeToggle" class="p-2 rounded-full bg-gray-200 dark:bg-gray-700">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-800 dark:text-gray-200" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="md:col-span-2">
+                <section class="mb-8 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                    <h2 class="text-2xl font-bold mb-4 text-primary">About Me</h2>
+                    <p class="text-gray-700 dark:text-gray-300">Experienced fullstack developer with a passion for
+                        creating efficient, scalable, and user-friendly web applications. Proficient in both front-end
+                        and back-end technologies, with a keen eye for design and a strong focus on performance
+                        optimization.</p>
+                </section>
+
+                <section class="mb-8 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                    <h2 class="text-2xl font-bold mb-4 text-primary">Experience</h2>
+                    <div class="mb-6">
+                        <h3 class="text-xl font-semibold">Senior Fullstack Developer - Tech Innovators Inc.</h3>
+                        <p class="text-gray-600 dark:text-gray-400">January 2020 - Present</p>
+                        <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 mt-2">
+                            <li>Lead development of multiple web applications using React, Node.js, and PostgreSQL</li>
+                            <li>Implemented microservices architecture to improve scalability and maintainability</li>
+                            <li>Mentored junior developers and conducted code reviews to ensure best practices</li>
+                            <li>Optimized application performance, resulting in a 40% reduction in load times</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold">Fullstack Developer - Web Solutions Co.</h3>
+                        <p class="text-gray-600 dark:text-gray-400">June 2017 - December 2019</p>
+                        <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 mt-2">
+                            <li>Developed and maintained client websites using Vue.js, Laravel, and MySQL</li>
+                            <li>Implemented responsive designs, ensuring cross-browser compatibility</li>
+                            <li>Optimized database queries, improving overall application performance by 25%</li>
+                            <li>Collaborated with UX designers to implement intuitive user interfaces</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="mb-8 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                    <h2 class="text-2xl font-bold mb-4 text-primary">Projects</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="border border-gray-200 dark:border-gray-700 p-4 rounded">
+                            <h3 class="text-lg font-semibold">E-commerce Platform</h3>
+                            <p class="text-gray-700 dark:text-gray-300">Built a scalable e-commerce platform using
+                                React, Node.js, and MongoDB, featuring real-time inventory updates and integrated
+                                payment gateways.</p>
+                        </div>
+                        <div class="border border-gray-200 dark:border-gray-700 p-4 rounded">
+                            <h3 class="text-lg font-semibold">Task Management App</h3>
+                            <p class="text-gray-700 dark:text-gray-300">Developed a collaborative task management
+                                application using Vue.js and Firebase, with real-time updates and user authentication.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div>
+                <section class="mb-8 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md sticky top-24">
+                    <h2 class="text-2xl font-bold mb-4 text-primary">Skills</h2>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <span class="w-32 font-semibold">Frontend:</span>
+                            <span class="text-gray-700 dark:text-gray-300">React, Vue.js, Angular</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-32 font-semibold">Backend:</span>
+                            <span class="text-gray-700 dark:text-gray-300">Node.js, Python, Ruby</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-32 font-semibold">Databases:</span>
+                            <span class="text-gray-700 dark:text-gray-300">PostgreSQL, MongoDB, Redis</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-32 font-semibold">DevOps:</span>
+                            <span class="text-gray-700 dark:text-gray-300">Docker, Kubernetes, AWS</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-32 font-semibold">Other:</span>
+                            <span class="text-gray-700 dark:text-gray-300">GraphQL, REST APIs, WebSockets</span>
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="mb-8 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                    <h2 class="text-2xl font-bold mb-4 text-primary">Education</h2>
+                    <div>
+                        <h3 class="text-lg font-semibold">BSc in Computer Science</h3>
+                        <p class="text-gray-600 dark:text-gray-400">University of Technology</p>
+                        <p class="text-gray-700 dark:text-gray-300">Graduated: May 2017</p>
+                    </div>
+                </section>
+
+                <section class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                    <h2 class="text-2xl font-bold mb-4 text-primary">Contact</h2>
+                    <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+                        <li>Email: john.doe@example.com</li>
+                        <li>LinkedIn: linkedin.com/in/johndoe</li>
+                        <li>GitHub: github.com/johndoe</li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-200 dark:bg-gray-800 py-4 mt-8">
+        <div class="container mx-auto px-4 text-center text-gray-600 dark:text-gray-400">
+            &copy; 2024 John Doe. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const html = document.documentElement;
+
+        // Function to set the theme
+        function setTheme(isDark) {
+            if (isDark) {
+                html.classList.add('dark');
+            } else {
+                html.classList.remove('dark');
+            }
+        }
+
+        // Function to toggle the theme
+        function toggleTheme() {
+            html.classList.toggle('dark');
+            localStorage.setItem('darkMode', html.classList.contains('dark'));
+        }
+
+        // Check for saved user preference, if any, on load
+        const userPreference = localStorage.getItem('darkMode');
+
+        if (userPreference === 'true') {
+            setTheme(true);
+        } else if (userPreference === 'false') {
+            setTheme(false);
+        } else {
+            // If no preference is saved, check the OS preference
+            const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            setTheme(prefersDarkMode);
+        }
+
+        // Listen for changes in the OS theme
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+            if (localStorage.getItem('darkMode') === null) {
+                setTheme(e.matches);
+            }
+        });
+
+        // Event listener for the toggle button
+        darkModeToggle.addEventListener('click', toggleTheme);
+    </script>
+
+    <style>
+        @media print {
+            :root {
+                --text-primary: #000;
+                --text-secondary: #333;
+                --background-primary: #fff;
+                --background-secondary: #f3f4f6;
+                --border-color: #e5e7eb;
+            }
+
+            * {
+                -webkit-print-color-adjust: exact !important;
+                color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            body {
+                font-family: Arial, sans-serif;
+                line-height: 1.6;
+                color: var(--text-primary);
+                background-color: transparent !important;
+            }
+
+            header {
+                background-color: var(--background-primary) !important;
+                color: var(--text-primary) !important;
+                padding: 1rem 0;
+                border-bottom: 1px solid var(--border-color);
+            }
+
+            h1,
+            h2,
+            h3 {
+                color: var(--text-primary);
+            }
+
+            h1 {
+                font-size: 24pt;
+                margin-bottom: 0.5rem;
+            }
+
+            h2 {
+                font-size: 18pt;
+                margin-top: 1rem;
+                margin-bottom: 0.5rem;
+            }
+
+            h3 {
+                font-size: 14pt;
+                margin-top: 0.5rem;
+                margin-bottom: 0.25rem;
+            }
+
+            p,
+            ul {
+                font-size: 12pt;
+                color: var(--text-secondary);
+            }
+
+            ul {
+                margin-left: 1rem;
+            }
+
+            section {
+                background-color: var(--background-primary) !important;
+                border: 1px solid var(--border-color);
+                padding: 1rem;
+                margin-bottom: 1rem;
+            }
+
+            .bg-white {
+                background-color: var(--background-primary) !important;
+            }
+
+            .text-gray-700 {
+                color: var(--text-secondary) !important;
+            }
+
+            .border-gray-200{
+                border-color: var(--border-color) !important;
+            }
+
+            footer {
+                margin-top: 1rem;
+                text-align: center;
+                font-size: 10pt;
+                color: var(--text-secondary);
+                border-top: 1px solid var(--border-color);
+                padding-top: 1rem;
+                background: transparent !important;
+            }
+
+            a {
+                text-decoration: none;
+                color: var(--text-primary);
+            }
+
+            /* Hide elements not needed in print */
+            #darkModeToggle {
+                display: none !important;
+            }
+
+            /* Force page breaks where needed */
+            .page-break-before {
+                page-break-before: always;
+            }
+
+            .page-break-after {
+                page-break-after: always;
+            }
+
+            /* Ensure background colors and images are printed */
+            * {
+                -webkit-print-color-adjust: exact !important;
+                color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+        }
+    </style>
+</body>
+
+</html>
