@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { skills } from '$lib/data/skills';
-	import type { Role, SkillData } from '$lib/types';
+	import { roles, type Role, type SkillData } from '$lib/types';
 	import { onMount } from 'svelte';
 	import { browser } from '$app/environment';
 
@@ -19,9 +19,15 @@
 		}
 	};
 
-	let selectedRoles = browser
-		? (JSON.parse(localStorage.getItem('selectedRoles') || '[]') as Role[])
-		: ([] as Role[]); // Default selected role
+	let selectedRoles = [...roles];
+
+	if (browser) {
+		const localStorageData = localStorage.getItem('selectedRoles');
+		if (localStorageData) {
+			selectedRoles = JSON.parse(localStorageData) as Role[];
+		}
+	}
+
 	let sortedSkills = [...skills];
 
 	function sortSkills() {

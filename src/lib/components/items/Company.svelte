@@ -3,6 +3,7 @@
 	import Label from '../micro/Label.svelte';
 
 	export let small = false;
+	export let open = false;
 
 	export let company: CompanyData;
 
@@ -25,7 +26,7 @@
 	const labels = company.labels || [];
 </script>
 
-<details open>
+<details {open}>
 	<summary>{company.name} <small>{experienceTime}</small></summary>
 	<span class="labels no-print">
 		{#each labels as label}
