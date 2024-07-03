@@ -26,7 +26,7 @@
 
 	function sortSkills() {
 		sortedSkills = [...skills]
-			.filter((skill) => calculateCombinedScore(skill) > 0.2)
+			.filter((skill) => calculateCombinedScore(skill) > 0.4)
 			.sort((a, b) => {
 				const scoreA = calculateCombinedScore(a);
 				const scoreB = calculateCombinedScore(b);

@@ -2,13 +2,12 @@ import type { CompanyData } from '$lib/types';
 
 export const companies: CompanyData[] = [
 	{
-		name: 'Pod',
+		name: 'Pod (workwithpod.com)',
 		start: '2024-03-09',
-		note: `Full-stack development on a React, Node.js, and Python stack with custom AI implementation and third-party integrations. Leveraged cutting-edge technologies to build scalable and efficient solutions.`,
+		note: `Full-stack development on a React, Node.js, and Python stack with custom AI implementation and third-party integrations. Leveraged cutting-edge technologies to build scalable and efficient solutions. High customisation of MantineUI design system, participation to UX design, and implementation of a custom design system. Implemented authentification and drove security best practices. Implemented security layers over firebase, mysql and postgress databases. Implemented automatic release and deployment processes using AI to analyse and generate changelogs. Implemented TRPC across our nodejs layer and our React frontend to ensure maintainability and scalability of our app.`,
 		score: {
 			frontend: 0.8,
 			backend: 0.8,
-			fullstack: 0.9,
 			techlead: 0.7,
 			management: 0.3,
 		},
@@ -20,7 +19,6 @@ export const companies: CompanyData[] = [
 		score: {
 			frontend: 0.9,
 			backend: 0.9,
-			fullstack: 1.0,
 			techlead: 0.8,
 			management: 0.7,
 		},
@@ -33,7 +31,6 @@ export const companies: CompanyData[] = [
 		score: {
 			frontend: 0.7,
 			backend: 0.6,
-			fullstack: 0.7,
 			techlead: 0.4,
 			management: 0.2,
 		},
@@ -46,7 +43,6 @@ export const companies: CompanyData[] = [
 		score: {
 			frontend: 0.1,
 			backend: 0.2,
-			fullstack: 0.1,
 			techlead: 0.3,
 			management: 0.4,
 		},
@@ -59,7 +55,6 @@ export const companies: CompanyData[] = [
 		score: {
 			frontend: 0.2,
 			backend: 0.4,
-			fullstack: 0.3,
 			techlead: 0.4,
 			management: 0.5,
 		},
@@ -72,7 +67,6 @@ export const companies: CompanyData[] = [
 		score: {
 			frontend: 0.6,
 			backend: 0.7,
-			fullstack: 0.7,
 			techlead: 0.5,
 			management: 0.3,
 		},
@@ -85,7 +79,6 @@ export const companies: CompanyData[] = [
 		score: {
 			frontend: 0.5,
 			backend: 0.6,
-			fullstack: 0.6,
 			techlead: 0.7,
 			management: 0.6,
 		},
@@ -98,7 +91,6 @@ export const companies: CompanyData[] = [
 		score: {
 			frontend: 0.5,
 			backend: 0.8,
-			fullstack: 0.7,
 			techlead: 0.8,
 			management: 0.7,
 		},
@@ -111,7 +103,6 @@ export const companies: CompanyData[] = [
 		score: {
 			frontend: 0.2,
 			backend: 0.3,
-			fullstack: 0.2,
 			techlead: 0.3,
 			management: 0.2,
 		},
@@ -124,7 +115,6 @@ export const companies: CompanyData[] = [
 		score: {
 			frontend: 0.7,
 			backend: 0.7,
-			fullstack: 0.7,
 			techlead: 0.6,
 			management: 0.5,
 		},
@@ -137,7 +127,6 @@ export const companies: CompanyData[] = [
 		score: {
 			frontend: 0.8,
 			backend: 0.8,
-			fullstack: 0.8,
 			techlead: 0.7,
 			management: 0.5,
 		},
@@ -150,7 +139,6 @@ export const companies: CompanyData[] = [
 		score: {
 			frontend: 0.9,
 			backend: 0.5,
-			fullstack: 0.7,
 			techlead: 0.8,
 			management: 0.6,
 		},
@@ -163,7 +151,6 @@ export const companies: CompanyData[] = [
 		score: {
 			frontend: 0.8,
 			backend: 0.8,
-			fullstack: 0.9,
 			techlead: 0.7,
 			management: 0.5,
 		},
@@ -176,7 +163,6 @@ export const companies: CompanyData[] = [
 		score: {
 			frontend: 0.9,
 			backend: 0.7,
-			fullstack: 0.8,
 			techlead: 0.9,
 			management: 0.7,
 		},
@@ -188,7 +174,6 @@ export const companies: CompanyData[] = [
 		score: {
 			frontend: 0.9,
 			backend: 0.9,
-			fullstack: 0.9,
 			techlead: 0.9,
 			management: 0.7,
 		},
