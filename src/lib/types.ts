@@ -12,6 +12,10 @@ export const labels = [
 	'onsite',
 ] as const;
 
+export const roles = ['frontend', 'backend', 'techlead', 'management'] as const;
+
+export type Role = typeof roles[number];
+
 interface BaseData {
 	name: string;
 	note?: string;
@@ -19,6 +23,7 @@ interface BaseData {
 	end?: Date;
 	span?: string;
 	labels?: string[];
+	score: Record<Role, number>;
 }
 
 export type Label = keyof typeof labels;

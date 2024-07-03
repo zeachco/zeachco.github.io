@@ -1,119 +1,197 @@
 import type { CompanyData } from '$lib/types';
 
 export const companies: CompanyData[] = [
-  {
-    name:'Pod',
-    start: '2024-03-09',
-    note: `Full stack dev on a react, note, python stack with custom AI implementation and 3rd party integrations.`
-  },
+	{
+		name: 'Pod',
+		start: '2024-03-09',
+		note: `Full-stack development on a React, Node.js, and Python stack with custom AI implementation and third-party integrations. Leveraged cutting-edge technologies to build scalable and efficient solutions.`,
+		score: {
+			frontend: 0.8,
+			backend: 0.8,
+			fullstack: 0.9,
+			techlead: 0.7,
+			management: 0.3,
+		},
+	},
 	{
 		name: 'Yenom',
 		start: '2023-02',
-		note: `I started this side project as a hobby to work more with Deno, Svelte and Typescript. I built a Financial tracker that I use daily to track my expenses and income. I did everything from project management, dev ops, databases, client and server work. While testing a scale to 200+ users I switched back to node and react to reduce the amount of side-quests and actually develop the features and monetization plan. I managed to reduce the total cost of running all the services to less than 1$ per month and that includes calls to openai.com for the AI features that act as financial counselor. Considering Yew from Rust for the next iteration if I decide to build my own AI models locally to safe on costs. I love having to test all roles in this project as if I was part of a larger team but I'm really just a one man company that switches hat depending on what needs to be done today`,
+		note: `Initiated and developed a comprehensive financial tracking application as a side project, showcasing proficiency in Deno, Svelte, and TypeScript. Demonstrated versatility by managing all aspects of the project, including DevOps, database design, and full-stack development. Optimized performance and reduced operational costs to less than $1 per month while scaling to 200+ users. Integrated AI features using OpenAI for financial counseling. Exploring Rust and Yew for potential future iterations to further optimize performance and reduce costs.`,
+		score: {
+			frontend: 0.9,
+			backend: 0.9,
+			fullstack: 1.0,
+			techlead: 0.8,
+			management: 0.7,
+		},
 	},
 	{
-		name: 'Independent game development',
+		name: 'Independent Game Development',
 		start: '2004-09',
 		end: '2008-06',
-		note: `Blitz basic, blitz max, dark basic pro, dark physics for 3d games. JavaScript MySQL and PHP for web games and game web portals.`,
+		note: `Developed games using Blitz Basic, BlitzMax, and Dark Basic Pro with Dark Physics for 3D games. Created web games and game portals using JavaScript, MySQL, and PHP, demonstrating early full-stack capabilities.`,
+		score: {
+			frontend: 0.7,
+			backend: 0.6,
+			fullstack: 0.7,
+			techlead: 0.4,
+			management: 0.2,
+		},
 	},
 	{
-		name: 'Tyco fire & security + ADT',
+		name: 'Tyco Fire & Security + ADT',
 		start: '2006-05',
 		end: '2007-08',
-		note: `Alarm system support and service dispatch, Alarm monitoring and 911 dispatch. Phone troubleshooting alarm systems and installations.`,
+		note: `Provided comprehensive alarm system support, including service dispatch, monitoring, and 911 dispatch. Conducted phone troubleshooting for alarm systems and installations, developing strong problem-solving skills.`,
+		score: {
+			frontend: 0.1,
+			backend: 0.2,
+			fullstack: 0.1,
+			techlead: 0.3,
+			management: 0.4,
+		},
 	},
 	{
 		name: 'Decision One',
 		start: '2007-03',
 		end: '2008-05',
-		note: 'Computer help-desk support and technician dispatch. Support for Solaris servers, Sun Microsystems, Oracle, UAPNapa, American Airlines Saber systems (printers)',
+		note: `Delivered computer help-desk support and managed technician dispatch. Provided support for Solaris servers, Sun Microsystems, Oracle, UAPNapa, and American Airlines Saber systems, gaining exposure to enterprise-level technologies.`,
+		score: {
+			frontend: 0.2,
+			backend: 0.4,
+			fullstack: 0.3,
+			techlead: 0.4,
+			management: 0.5,
+		},
 	},
 	{
 		name: 'Apiken',
 		start: '2008-06',
 		end: '2011-10',
-		note: `Open source technologies and home hosting over linux servers. PHP4, 5, MySQL, Oracle, Python, JQuery, HTML5, Gimp`,
+		note: `Specialized in open-source technologies and home hosting on Linux servers. Utilized PHP 4 & 5, MySQL, Oracle, Python, jQuery, and HTML5. Developed strong skills in GIMP for graphic design, enhancing full-stack capabilities.`,
+		score: {
+			frontend: 0.6,
+			backend: 0.7,
+			fullstack: 0.7,
+			techlead: 0.5,
+			management: 0.3,
+		},
 	},
 	{
 		name: 'Videotron',
 		start: '2009-05',
 		end: '2011-08',
-		note: `Technical support & electronic communications for videotron.com.
-    Window and Mac technical support for residential customers
-    Phone, cable, digital TV, Internet troubleshooting over phone, mail , and chat
-    I managed to analyze the web applications for chat communication
-    with customer and optimize it in order to increase operation effectiveness by 20% over more than 200 employees
-    `,
+		note: `Provided technical support and electronic communications for videotron.com. Offered Windows and Mac support for residential customers, troubleshooting phone, cable, digital TV, and Internet issues. Analyzed and optimized web applications for chat communication, improving operational effectiveness by 20% across 200+ employees.`,
+		score: {
+			frontend: 0.5,
+			backend: 0.6,
+			fullstack: 0.6,
+			techlead: 0.7,
+			management: 0.6,
+		},
 	},
 	{
 		name: 'Vidéotron & Québecor',
 		start: '2011-08',
 		end: '2013-08',
-		note: `
-        Enterprise solutions with software AG products (Trading Network, MyWebmethods, Integration Server 6.1 to 8.2)
-Environment Support and management (Dev, Test, Acc, Pre-prod, Prod)
-Java / C technology integration, with SQL Oracle, Broker, ESB and EAI
-Business process design and support
-I would like to highlight a tool that I created on my free time at first to administrate and centralize all operations and produce reports on operation activities for TI departments
-
-    `,
+		note: `Managed enterprise solutions using Software AG products (Trading Network, MyWebMethods, Integration Server 6.1 to 8.2). Supported and managed multiple environments (Dev, Test, Acc, Pre-prod, Prod). Integrated Java/C technologies with SQL Oracle, Broker, ESB, and EAI. Designed and supported business processes. Developed a tool to centralize operations and produce reports on IT department activities, showcasing initiative and problem-solving skills.`,
+		score: {
+			frontend: 0.5,
+			backend: 0.8,
+			fullstack: 0.7,
+			techlead: 0.8,
+			management: 0.7,
+		},
 	},
 	{
 		name: 'Staples',
 		start: '2009-05',
 		end: '2009-09',
-		note: 'Computer repair center, troubleshooting with window and Linux personal computers',
+		note: `Operated in the computer repair center, troubleshooting Windows and Linux personal computers, further developing hardware and software diagnostic skills.`,
+		score: {
+			frontend: 0.2,
+			backend: 0.3,
+			fullstack: 0.2,
+			techlead: 0.3,
+			management: 0.2,
+		},
 	},
 	{
-		name: 'Rock Plus inc.',
+		name: 'Rock Plus Inc.',
 		start: '2008-07',
 		end: '2010-03',
-		note: `Website development and support. Order management and websites conception PHP development and architect of 2 external websites and internal advanced administrative tool as an independent contractor
-    `,
+		note: `Led website development and support as an independent contractor. Managed order systems and conceptualized websites. Developed PHP-based solutions, architecting two external websites and an advanced internal administrative tool.`,
+		score: {
+			frontend: 0.7,
+			backend: 0.7,
+			fullstack: 0.7,
+			techlead: 0.6,
+			management: 0.5,
+		},
 	},
 	{
 		name: 'Premières Loges & White Label Tickets',
 		start: '2013-10',
 		end: '2014-09',
-		note: `Software development (Java 6-7-8, SWT, Vaadin, GWT) with Spring and Tomcat 5-6-7
-        Ticketpro website maintenance (PHP and Java)
-        SWT software for ticket selling
-        Eclipse, Atom, Sublime Text, NetBeans, KomodoEdit, PyCharm, Git
-
-        Front end development of Festival International d'été de Québec 2013	`,
+		note: `Engaged in software development using Java 6-7-8, SWT, Vaadin, and GWT with Spring and Tomcat 5-6-7. Maintained the Ticketpro website (PHP and Java) and developed SWT software for ticket selling. Utilized various IDEs and tools including Eclipse, Atom, Sublime Text, NetBeans, KomodoEdit, PyCharm, and Git. Led front-end development for the Festival International d'été de Québec 2013.`,
+		score: {
+			frontend: 0.8,
+			backend: 0.8,
+			fullstack: 0.8,
+			techlead: 0.7,
+			management: 0.5,
+		},
 	},
 	{
 		name: 'Morgan Stanley',
 		start: '2014-10',
 		end: '2015-03',
-		note: `
-        Software development in vanilla javascript compatible with internet explorer 7 and edge browsers.
-        Splunk front-end reverse engineering and R&D
-        Team support and UX design
-        Javascript formation / review of other employee and projects
-        Trading certification, Business Process certification, Anti-Corruption certification`,
+		note: `Developed vanilla JavaScript solutions compatible with Internet Explorer 7 and Edge browsers. Conducted Splunk front-end reverse engineering and R&D. Provided team support and UX design. Led JavaScript training and code reviews for other employees and projects. Obtained certifications in Trading, Business Process, and Anti-Corruption.`,
+		score: {
+			frontend: 0.9,
+			backend: 0.5,
+			fullstack: 0.7,
+			techlead: 0.8,
+			management: 0.6,
+		},
 	},
 	{
 		name: 'AppDirect',
 		start: '2015-03',
 		end: '2016-12',
-		note: `Whitelabel software marketplace and flexible CMS with Backbone & Marionnette
-Served under the Tomcat, Wicket, Spring, Hibernate and MySQL stack
-Builded a node.js proxy server and a node.js command line interface to help automation of most tasks in the company. Also worked on a parallel project using angularJS that provides an interface to manage LDAP users, permissions and roles. `,
+		note: `Developed white-label software marketplace and flexible CMS using Backbone & Marionette. Worked with Tomcat, Wicket, Spring, Hibernate, and MySQL stack. Built a Node.js proxy server and CLI to automate company tasks. Contributed to a parallel project using AngularJS for managing LDAP users, permissions, and roles.`,
+		score: {
+			frontend: 0.8,
+			backend: 0.8,
+			fullstack: 0.9,
+			techlead: 0.7,
+			management: 0.5,
+		},
 	},
 	{
 		name: 'Playtika',
 		start: '2017-01',
 		end: '2019-11',
-		note: `Development of the World Series of Poker game. JavaScript engineering with nodejs, webpack, threejs, React-Redux, pixi.js for canvas rendering, less, sass,three.js, immutable.js. Scrum master, release management, software architecture, build and deployments processes (team city). Enforce code quality and good practices through hand made tailored eslint, typescript and vscode extensions configuration.`,
+		note: `Led development of the World Series of Poker game. Utilized advanced JavaScript engineering with Node.js, webpack, three.js, React-Redux, and Pixi.js for canvas rendering. Implemented LESS, SASS, and Immutable.js. Served as Scrum Master, managing releases, software architecture, and build/deployment processes (TeamCity). Enforced code quality and best practices through custom ESLint, TypeScript, and VS Code extensions configurations.`,
+		score: {
+			frontend: 0.9,
+			backend: 0.7,
+			fullstack: 0.8,
+			techlead: 0.9,
+			management: 0.7,
+		},
 	},
 	{
 		name: 'Shopify',
 		start: '2019-11',
-		note: `
-Senior developer (current employment) Since 2019/11
-Development of internal libraries to handle Shopify Payments infinite forms variation including legal, banking, product information, business details and additional owners' information. Wrote, maintained and deployed many tested solutions and participated in training other devs and enforcing good coding practices. Enforcing security and good practice methods around React and NodeJS envs.`,
+		note: `Senior developer role focusing on developing internal libraries to handle Shopify Payments' complex form variations, including legal, banking, product information, business details, and additional owners' information. Write, maintain, and deploy extensively tested solutions while training other developers and enforcing best coding practices. Specialize in implementing security measures and best practices for React and Node.js environments.`,
+		score: {
+			frontend: 0.9,
+			backend: 0.9,
+			fullstack: 0.9,
+			techlead: 0.9,
+			management: 0.7,
+		},
 	},
 ].map((s) => {
 	return {
