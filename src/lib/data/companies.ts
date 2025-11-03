@@ -4,11 +4,11 @@ export const companies: CompanyData[] = [
 	{
 		name: 'Stay22',
 		start: '2024-10-01',
-		note: `Full-stack development on a React, Node.js, and Python stack with custom AI implementation and third-party integrations. Leverage AI to extract video monetizable content, integrated large retail programs, help with architectural shifts and DX. MongoDB, MySQL, Snowflake, Node, Deno, Python, Google Cloud, AWS, Terraform, Vue, React, jQuery, Tailwind, web-components, and more.`,
+		note: `Full-stack development on a React, Node.js, and Python stack with extensive work on automation and modernization across multiple services. Led Developer Experience (DX) initiatives including CI/CD pipeline maintenance with GitHub Actions, build optimization, test infrastructure improvements, and comprehensive training programs covering security, feature flags, and testing practices (unit/integration/e2e). Developed MCP servers and established architecture guidelines and onboarding processes. Integrated a major retail ecommerce system into Stay22's affiliation platform, implementing report digestion and ML pipeline solutions. Leveraged AI to extract video monetizable content and enhance third-party integrations. Tech stack: MongoDB, MySQL, Snowflake, Node.js, Deno, Python, Google Cloud, AWS, Terraform, Vue, React, jQuery, Tailwind, web-components.`,
 		score: {
 			frontend: 0.9,
-			backend: 0.8,
-			techlead: 0.6,
+			backend: 0.85,
+			techlead: 0.75,
 			management: 0.4,
 		},
 	},
