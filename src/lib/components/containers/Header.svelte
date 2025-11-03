@@ -33,3 +33,9 @@
 		{/each}
 	</ul>
 </nav>
+
+<style>
+	nav ul {
+		gap: 0.5rem;
+	}
+</style>
