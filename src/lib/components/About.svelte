@@ -22,15 +22,15 @@
 	<PageTransition pathname="about">
 		<h2>Recruiters 👋</h2>
 		<p>
-			You can find a printable document of this site by clicking
-			<a data-tooltip="Printable CV" href="/print">🖨️ here</a> or at the top navigation.
+			You can find a printable version of this site by clicking
+			<a data-tooltip="Printable CV" href="/print">🖨️ here</a> or using the link in the top navigation.
 		</p>
 		<h2>What kind of engineer am I</h2>
 		<p>
-			I am a JavaScript/Node.js developer with expertise in code quality, and technical debt
-			management. Instead of throwing in a few hundred buzzwords, I invite you to find the specific
-			skills you require from my skill page <a href="/skills">here</a>. These skills help me deal
-			with the constant evolution of technologies.
+			I am a JavaScript/Node.js developer with expertise in code quality and technical debt
+			management. Instead of listing buzzwords, I invite you to explore the specific
+			skills you require on my skills page <a href="/skills">here</a>. These skills enable me to adapt
+			to the constant evolution of technologies.
 		</p>
 
 		<h3>A little bit about me</h3>
@@ -43,32 +43,51 @@
 		</p>
 		<p>
 			I am passionate about technological advancements, the Unix environment, Git, web stacks, and
-			what I like to call "software philosophy." Over the years, I have slowly drifted towards the
-			architectural portion of my work and team management, but I always come back to writing code.
+			what I like to call "software philosophy." Over the years, I have gradually shifted focus toward the
+			architectural aspects of my work and team management, but I always return to writing code.
 		</p>
 		<p>
 			I have spent around {incExpYears} years building and experimenting with small businesses and startup
-			structures, building my own company, and reinventing my products. Sadly, I am not a good salesperson,
-			but the process of learning and bringing various complex projects to life month after month was
+			structures, founding my own company, and reinventing products. While I may not be a natural salesperson,
+			the process of learning and bringing various complex projects to life month after month was
 			so exciting that I couldn't stop.
+		</p>
+
+		<h3>Leadership Approach</h3>
+		<p>
+			I believe effective leadership means having the courage to challenge past decisions when they no longer
+			serve the current situation. I'm not afraid to question the status quo if it leads to better outcomes
+			for the team and the product. This approach has earned me respect among colleagues who appreciate
+			someone willing to tackle difficult technical and organizational challenges head-on.
+		</p>
+		<p>
+			My leadership philosophy centers on trust and pragmatism. I understand that excessive red tape can
+			stifle innovation and productivity, so I prefer to trust people's experience and expertise rather
+			than imposing unnecessary bureaucracy. This balance between structure and autonomy has consistently
+			led to teams that are both productive and empowered to make decisions.
+		</p>
+		<p>
+			Whether navigating complex technical architectures or resolving organizational challenges, I take on
+			the difficult problems that others might avoid. My colleagues often turn to me when situations require
+			both technical depth and diplomatic finesse—solving issues that span code and politics alike.
 		</p>
 
 		<h3>Adaptability</h3>
 		<p>
-			With my fluency in English and French, as well as some proficiency in Spanish, Portuguese, and
-			German, I am confident in my ability to communicate effectively with colleagues and clients
+			With fluency in English and French, as well as proficiency in Spanish, Portuguese, and
+			German, I communicate effectively with colleagues and clients
 			from diverse backgrounds.
 		</p>
 		<p>
-			As a passionate and experienced software developer, I have cultivated a strong interest in
+			As a passionate software developer, I actively participate in
 			open source communities and have contributed to various projects on platforms such as GitHub.
-			I am also well-versed in Linux, JavaScript, and Git.
+			I am well-versed in Linux, JavaScript, and Git.
 		</p>
 		<p>
-			Furthermore, I am inspired by companies such as Netflix for their infrastructure, AirBnB,
-			Stripe, and Shopify for their contributions to open source, and Walmart, Netflix, Dominos and
-			Microsoft for being NodeJs pioneers. I am particularly drawn to the way these companies have
-			been able to innovate and push boundaries in the tech industry.
+			I am inspired by companies such as Netflix for their infrastructure, Airbnb,
+			Stripe, and Shopify for their contributions to open source, and Walmart, Netflix, Domino's, and
+			Microsoft for being Node.js pioneers. I am particularly drawn to how these companies
+			innovate and push boundaries in the tech industry.
 		</p>
 		<h2>Fun projects, all the time!</h2>
 		<p>
@@ -80,22 +99,22 @@
 		</p>
 		<p>
 			Disclaimer: This project works better on small resolutions since rendering the multiple layers
-			of neural networks takes a tool on retina displays and wide screens.
+			of neural networks takes a toll on retina displays and wide screens.
 		</p>
 		<p>
 			There's also <a href="https://yenom.up.railway.app/">Yenom</a>!<br />
 			{yenom.note}
 		</p>
-		<p>Also, when I see a gap on the internet and a matching need, I usually take a few minutes to extract that need into a package for my use-case and try to make it accessible with minimal effort. <a href="https://github.com/zeachco/real-mime-type">real-mime-type</a> is an example. When I manage to do it in a way that is abstracted from the business case but still applies 100%, that drives me into pushing that concept further and improving on it on my personal time afterward, profiting the company, myself and open-source consumers.</p>
+		<p>When I identify a gap on the internet that matches a need, I often create a package to address it and make it accessible with minimal effort. <a href="https://github.com/zeachco/real-mime-type">real-mime-type</a> is an example of this approach. When I manage to abstract it from the specific business case while maintaining full applicability, it motivates me to refine and improve the concept in my personal time, benefiting the company, myself, and the open-source community.</p>
 		<h3>Personality</h3>
 		<p>
-			Personality-wise, I love snowboarding, electronic music, dancing, computer games, general
-			learning, and innovation. I am also an early adopter when it comes to technological gadgets
-			and lifestyle.
+			Personality-wise, I love snowboarding, electronic music, dancing, computer games, continuous
+			learning, and innovation. I am an early adopter of technological gadgets
+			and lifestyle trends.
 		</p>
 		<p>
-			If you're curious check out my <a href="https://github.com/zeachco">Github profile</a>. I also
-			produce music and games on the side. I am also a big fan of Open Source and have contributed
+			If you're curious, check out my <a href="https://github.com/zeachco">GitHub profile</a>. I
+			produce music and games on the side and am a big fan of open source, having contributed
 			to many projects over the years.
 		</p>
 	</PageTransition>
