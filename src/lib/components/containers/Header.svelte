@@ -16,7 +16,7 @@
 	<ul>
 		<li>
 			<strong>
-				<a href="/" class:active={$page.url.pathname === '/'}>Olivier Rousseau</a>
+				<a href="/" class:active={$page.url.pathname === '/'}>Olivier R</a>
 			</strong>
 		</li>
 	</ul>
