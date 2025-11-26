@@ -64,6 +64,8 @@
 		width: 100%;
 		margin: 0 auto;
 		box-sizing: border-box;
+		background: #3238;
+		box-shadow: 0 0 20px 50px #3238;
 	}
 
 	footer {
