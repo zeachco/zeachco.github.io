@@ -124,4 +124,7 @@
 		grid-gap: 1rem;
 		margin-bottom: 2rem;
 	}
+	.bg-gray-200 {
+		text-shadow: none !important;
+	}
 </style>

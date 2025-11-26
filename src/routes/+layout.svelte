@@ -32,7 +32,12 @@
 	});
 </script>
 
-<div class="animated-background"></div>
+<iframe
+	class="animated-background"
+	src="https://zeachco.github.io/cells-ai?demo=true"
+	title="Cells AI Background"
+	loading="lazy"
+/>
 
 <Header />
 
@@ -47,6 +52,10 @@
 </footer>
 
 <style>
+	* {
+		text-shadow: 0 0px 3px black, 0 0 1px black;
+	}
+
 	main {
 		flex: 1;
 		display: flex;
