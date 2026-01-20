@@ -2,6 +2,7 @@
 	import { page } from '$app/stores';
 
 	const labels = {
+		'/about': ['About'],
 		'/companies': ['Companies'],
 		'/skills': ['Skills'],
 		'/trainings': ['Trainings'],
@@ -16,7 +17,7 @@
 	<ul>
 		<li>
 			<strong>
-				<a href="/" class:active={$page.url.pathname === '/'}>Olivier R</a>
+				<a href="/" class:active={$page.url.pathname === '/'}>Olivier Rousseau</a>
 			</strong>
 		</li>
 	</ul>

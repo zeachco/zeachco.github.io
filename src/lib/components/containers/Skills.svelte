@@ -66,7 +66,7 @@
 <div class="container mx-auto px-4">
 	<div class="print" />
 	<div class="no-print">
-		<h3>What are you looking for?</h3>
+		<h3>Select role specific skills</h3>
 		<div class="selectors">
 			{#each Object.keys(skills[0].score) as role}
 				<label class="inline-flex items-center cursor-pointer" style="max-width:200px">
@@ -78,6 +78,8 @@
 	</div>
 	{#if selectedRoles.length > 0}
 		<h4>Relevant skills for {enumarate(selectedRoles)}:</h4>
+	{:else}
+		<div class="empty">Select at lease one role</div>
 	{/if}
 
 	<div class="space-y-4">
@@ -126,5 +128,10 @@
 	}
 	.bg-gray-200 {
 		text-shadow: none !important;
+	}
+	.empty {
+		margin-bottom: 2em;
+		color: brown;
+		font-weight: 600;
 	}
 </style>

@@ -1,12 +1,10 @@
 <script>
-	import About from '$lib/components/About.svelte';
-	import Contact from '$lib/components/items/Contact.svelte';
+	import Home from '$lib/components/Home.svelte';
 </script>
 
 <svelte:head>
 	<title>About</title>
-	<meta name="description" content="About" />
+	<meta name="description" content="Home" />
 </svelte:head>
 
-<Contact />
-<About />
+<Home />

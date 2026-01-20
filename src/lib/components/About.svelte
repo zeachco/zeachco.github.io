@@ -20,11 +20,6 @@
 
 <section>
 	<PageTransition pathname="about">
-		<h2>Recruiters 👋</h2>
-		<p>
-			You can find a printable version of this site by clicking
-			<a data-tooltip="Printable CV" href="/print">🖨️ here</a> or using the link in the top navigation.
-		</p>
 		<h2>What kind of engineer am I</h2>
 		<p>
 			I am a JavaScript/Node.js developer with expertise in code quality and technical debt

@@ -42,8 +42,7 @@ body::before {
 	z-index: -1;
 	border: none;
 	pointer-events: none;
-	opacity: 0.9;
-	filter: blur(3px);
+	opacity: 0.1;
 	transform: rotate(var(--mouse-rotate)) scale(calc(var(--mouse-scale) * 1.2));
 	transition: transform 0.3s ease-out;
 }
@@ -79,6 +78,9 @@ nav a.active {
 		color: #888 !important;
 		font-weight: 400 !important;
 		text-decoration: none !important;
+	}
+
+	* {
 		text-shadow: none !important;
 	}
 }

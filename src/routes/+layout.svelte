@@ -2,6 +2,7 @@
 	import { onMount } from 'svelte';
 	import Header from '$lib/components/containers/Header.svelte';
 	import '../app.scss';
+	import Contact from '$lib/components/items/Contact.svelte';
 
 	onMount(() => {
 		const handleMouseMove = (e: MouseEvent) => {
@@ -43,11 +44,13 @@
 
 <main class="container">
 	<slot />
+	<Contact />
 </main>
 
 <footer class="no-print">
 	<note>
-		<small>This site and it's cv is automatically kept up-to-date</small>
+
+		<!-- <small>This site and it's cv is automatically kept up-to-date</small> -->
 	</note>
 </footer>
 
@@ -66,6 +69,15 @@
 		box-sizing: border-box;
 		background: #3238;
 		box-shadow: 0 0 20px 50px #3238;
+	}
+
+	@media print {
+		main {
+			box-shadow: none;
+			padding: 0;
+			width: fit-content;
+			background: none;
+		}
 	}
 
 	footer {
