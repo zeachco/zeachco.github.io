@@ -30,20 +30,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set up Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 18
+      - name: Set up Bun
+        uses: oven-sh/setup-bun@v2
 
       - name: Install dependencies
-        uses: borales/actions-yarn@v4
-        with:
-          cmd: install
+        run: bun install
 
       - name: Build production bundle
-        uses: borales/actions-yarn@v4
-        with:
-          cmd: build # will run `yarn build:prod` command
+        run: bun run build
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
