@@ -57,11 +57,10 @@
 			It's a live simulation of 5000 cells, each with a custom self-learning neural network of a few
 			million parameters. It's currently learning to navigate, reproduce and manage energy to
 			survive, all training directly into a web browser. Yes you read that correctly, single
-			threaded neural network live learning written in rust / web assembly as a prof of concept.
+			threaded neural network live learning written in rust / web assembly as a proof of concept.
 		</p>
 		<p>
-			This is the kind of things I do just because I can and I love pushing the limits of what's
-			possible in environments it shouldn't be.
+			This is the kind of things I do just because I can.
 		</p>
 	</PageTransition>
 </section>
