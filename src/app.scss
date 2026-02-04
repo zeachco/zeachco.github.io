@@ -1,10 +1,10 @@
-/* Custom Pink Theme for Pico v2 */
+/* Custom Brown/Pumpkin Theme for Pico v2 */
 
-// Configure Pico with pink theme
+// Configure Pico with pumpkin theme (brown/orange tones)
 // Available themes: amber, azure, blue, cyan, fuchsia, green, grey, indigo,
 // jade, lime, orange, pink, pumpkin, purple, red, sand, slate, violet, yellow, zinc
 @use '@picocss/pico/scss/pico' with (
-	$theme-color: 'pink'
+	$theme-color: 'pumpkin'
 );
 
 // CSS variables for mouse-driven animation (with defaults)
