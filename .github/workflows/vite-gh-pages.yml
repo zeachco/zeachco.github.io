@@ -20,12 +20,10 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  # Single deploy job since we're just deploying
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  build:
     runs-on: ubuntu-latest
+    outputs:
+      variants: ${{ steps.list-variants.outputs.variants }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -39,8 +37,75 @@ jobs:
       - name: Build production bundle
         run: bun run build
 
-      - name: Generate CV variants (PDF + Markdown)
-        run: bun run generate-cv-variants
+      - name: List CV variants
+        id: list-variants
+        run: |
+          VARIANTS=$(bun run scripts/list-variants.ts)
+          echo "variants=$VARIANTS" >> $GITHUB_OUTPUT
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-base
+          path: ./build
+          retention-days: 1
+
+  generate-variants:
+    needs: build
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        variant: ${{ fromJson(needs.build.outputs.variants) }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Bun
+        uses: oven-sh/setup-bun@v2
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: build-base
+          path: ./build
+
+      - name: Start preview server
+        run: |
+          bun run preview &
+          sleep 3
+
+      - name: Generate variant ${{ matrix.variant.filename }}
+        run: bun run scripts/generate-single-variant.ts "${{ matrix.variant.roles }}" "${{ matrix.variant.filename }}"
+
+      - name: Upload variant artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: variant-${{ matrix.variant.filename }}
+          path: ./build/skills/
+          retention-days: 1
+
+  deploy:
+    needs: [build, generate-variants]
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: build-base
+          path: ./build
+
+      - name: Download all variant artifacts
+        uses: actions/download-artifact@v4
+        with:
+          pattern: variant-*
+          path: ./build/skills
+          merge-multiple: true
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
