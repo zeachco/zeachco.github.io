@@ -19,12 +19,17 @@
 		}
 	};
 
-	let selectedRoles = [...roles];
+	// Add prop for external control (used by print route)
+	export let selectedRoles: string[] | undefined = undefined;
 
-	if (browser) {
-		const localStorageData = localStorage.getItem('selectedRoles');
-		if (localStorageData) {
-			selectedRoles = JSON.parse(localStorageData) as Role[];
+	// If not provided externally, use localStorage or default to all
+	if (!selectedRoles) {
+		selectedRoles = [...roles];
+		if (browser) {
+			const localStorageData = localStorage.getItem('selectedRoles');
+			if (localStorageData) {
+				selectedRoles = JSON.parse(localStorageData) as Role[];
+			}
 		}
 	}
 

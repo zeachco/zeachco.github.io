@@ -53,6 +53,14 @@ nav a.active {
 @media print {
 	* {
 		color: #000 !important;
+		background-color: transparent !important;
+		background-image: none !important;
+		box-shadow: none !important;
+		text-shadow: none !important;
+	}
+
+	body {
+		background: #fff !important;
 	}
 
 	.print {
@@ -70,12 +78,22 @@ nav a.active {
 	}
 
 	a {
-		color: #888 !important;
+		color: #555 !important;
 		font-weight: 400 !important;
 		text-decoration: none !important;
 	}
 
-	* {
-		text-shadow: none !important;
+	h1, h2, h3, h4, h5, h6 {
+		color: #000 !important;
+	}
+
+	// Remove all badge/tag backgrounds
+	span, div, article, section {
+		background-color: transparent !important;
+	}
+
+	// Ensure borders are minimal
+	*:not(table):not(td):not(th) {
+		border-color: #ddd !important;
 	}
 }

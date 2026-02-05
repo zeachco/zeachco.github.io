@@ -4,9 +4,19 @@
 	import Skills from '$lib/components/containers/Skills.svelte';
 	import Trainings from '$lib/components/containers/Trainings.svelte';
 	import { onMount } from 'svelte';
+	import { page } from '$app/stores';
+	import { browser } from '$app/environment';
 	import { PAGE_TRANSITION_TIME } from '$lib/utilities/constants';
 
 	let printDisclaimer: HTMLDivElement;
+	let selectedRoles: string[] = [];
+
+	// Parse roles from URL: ?roles=frontend,backend
+	// Only access searchParams in the browser to avoid prerender issues
+	$: if (browser) {
+		const rolesParam = $page.url.searchParams.get('roles');
+		selectedRoles = rolesParam ? rolesParam.split(',') : [];
+	}
 
 	// let the canvases render
 	onMount(async () =>
@@ -34,7 +44,7 @@
 	<Companies />
 </div>
 <div class="pagebreak">
-	<Skills />
+	<Skills selectedRoles={selectedRoles} />
 </div>
 <div class="pagebreak">
 	<Trainings />

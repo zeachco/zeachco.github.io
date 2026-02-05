@@ -39,6 +39,9 @@ jobs:
       - name: Build production bundle
         run: bun run build
 
+      - name: Generate CV variants (PDF + Markdown)
+        run: bun run generate-cv-variants
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
