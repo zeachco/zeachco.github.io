@@ -46,8 +46,27 @@ body::before {
 	display: none;
 }
 
-nav a.active {
-	background-color: var(--primary-focus) !important;
+nav a {
+	color: var(--pico-primary-background);
+
+	&:hover {
+		color: var(--pico-primary-hover-background) !important;
+	}
+
+	&.active {
+		background-color: var(--pico-primary-focus) !important;
+	}
+}
+
+// Content links in bright orange
+main a,
+article a,
+section a {
+	color: var(--pico-primary-background);
+
+	&:hover {
+		color: var(--pico-primary-hover-background);
+	}
 }
 
 @media print {

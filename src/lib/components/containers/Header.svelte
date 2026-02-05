@@ -166,7 +166,7 @@
 		text-align: center;
 		padding: 0.5rem;
 		background: var(--pico-primary);
-		color: var(--pico-primary-inverse);
+		color: #fff;
 		border-radius: var(--pico-border-radius);
 		text-decoration: none;
 		font-weight: 600;
