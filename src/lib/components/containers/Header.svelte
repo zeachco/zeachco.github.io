@@ -2,6 +2,8 @@
 	import { page } from '$app/stores';
 	import { browser } from '$app/environment';
 	import { onMount } from 'svelte';
+	import { roles } from '$lib/types';
+	import { selectedRoles } from '$lib/stores/selectedRoles';
 
 	const staticLabels = {
 		'/about': ['About'],
@@ -10,27 +12,37 @@
 		'/trainings': ['Trainings'],
 	} as const;
 
-	let downloadVariant = 'all';
+	let showDropdown = false;
+	let useMarkdown = false;
 
-	// Update variant when localStorage changes
-	function updateVariant() {
-		if (!browser) return;
-		const stored = localStorage.getItem('selectedRoles');
-		const roles: string[] = stored ? JSON.parse(stored) : [];
-		downloadVariant = roles.length > 0 ? roles.sort().join('-') : 'all';
+	// Calculate download variant based on selected roles
+	$: downloadVariant =
+		$selectedRoles.length > 0 && $selectedRoles.length < roles.length
+			? [...$selectedRoles].sort().join('-')
+			: 'all';
+
+	$: downloadUrl = useMarkdown
+		? `/skills/olivier-rousseau_${downloadVariant}.md`
+		: `/skills/olivier-rousseau_${downloadVariant}.pdf`;
+
+	function toggleDropdown(e: MouseEvent) {
+		e.preventDefault();
+		showDropdown = !showDropdown;
+	}
+
+	function handleClickOutside(e: MouseEvent) {
+		const target = e.target as HTMLElement;
+		if (!target.closest('.cv-dropdown-container')) {
+			showDropdown = false;
+		}
 	}
 
 	onMount(() => {
-		updateVariant();
-		// Listen for storage changes
-		window.addEventListener('storage', updateVariant);
-		return () => window.removeEventListener('storage', updateVariant);
+		document.addEventListener('click', handleClickOutside);
+		return () => {
+			document.removeEventListener('click', handleClickOutside);
+		};
 	});
-
-	$: if (browser) updateVariant(); // Reactive update
-
-	$: pdfUrl = `/skills/olivier-rousseau_${downloadVariant}.pdf`;
-	$: mdUrl = `/skills/olivier-rousseau_${downloadVariant}.md`;
 </script>
 
 <nav class="container">
@@ -42,23 +54,50 @@
 		</li>
 	</ul>
 	<ul class="no-print">
-		{#each Object.keys(staticLabels) as link}
+		{#each Object.entries(staticLabels) as [link, labels]}
 			<li>
 				<a class:active={$page.url.pathname === link} href={link}>
-					{staticLabels[link][0]}
+					{labels[0]}
 				</a>
 			</li>
 		{/each}
 		{#if browser}
-			<li>
+			<li class="cv-dropdown-container">
 				<a
-					href={pdfUrl}
-					data-as-markdown={mdUrl}
-					data-tooltip="Download CV as PDF"
+					href={downloadUrl}
+					on:click={toggleDropdown}
+					data-tooltip="Download CV"
 					data-placement="left"
 				>
-					📥 PDF
+					📥 CV
 				</a>
+				{#if showDropdown}
+					<div class="cv-dropdown">
+						<div class="dropdown-section">
+							<strong>Format:</strong>
+							<label>
+								<input type="radio" name="format" bind:group={useMarkdown} value={false} />
+								PDF
+							</label>
+							<label>
+								<input type="radio" name="format" bind:group={useMarkdown} value={true} />
+								Markdown
+							</label>
+						</div>
+						<div class="dropdown-section">
+							<strong>Roles:</strong>
+							{#each roles as role}
+								<label>
+									<input type="checkbox" name="roles" value={role} bind:group={$selectedRoles} />
+									{role}
+								</label>
+							{/each}
+						</div>
+						<div class="dropdown-actions">
+							<a href={downloadUrl} class="download-btn">Download</a>
+						</div>
+					</div>
+				{/if}
 			</li>
 		{/if}
 	</ul>
@@ -67,5 +106,73 @@
 <style>
 	nav ul {
 		gap: 0.5rem;
+	}
+
+	.cv-dropdown-container {
+		position: relative;
+	}
+
+	.cv-dropdown {
+		position: absolute;
+		top: 100%;
+		right: 0;
+		margin-top: 0.5rem;
+		background: var(--pico-background-color);
+		border: 1px solid var(--pico-border-color);
+		border-radius: var(--pico-border-radius);
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+		padding: 1rem;
+		min-width: 200px;
+		z-index: 1000;
+	}
+
+	.dropdown-section {
+		margin-bottom: 1rem;
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+
+	.dropdown-section strong {
+		display: block;
+		margin-bottom: 0.25rem;
+		font-size: 0.875rem;
+	}
+
+	.dropdown-section label {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		cursor: pointer;
+		font-size: 0.875rem;
+		margin: 0;
+	}
+
+	.dropdown-section input[type='checkbox'],
+	.dropdown-section input[type='radio'] {
+		margin: 0;
+		/* width: auto; */
+	}
+
+	.dropdown-actions {
+		margin-top: 1rem;
+		padding-top: 1rem;
+		border-top: 1px solid var(--pico-border-color);
+	}
+
+	.download-btn {
+		display: block;
+		width: 100%;
+		text-align: center;
+		padding: 0.5rem;
+		background: var(--pico-primary);
+		color: var(--pico-primary-inverse);
+		border-radius: var(--pico-border-radius);
+		text-decoration: none;
+		font-weight: 600;
+	}
+
+	.download-btn:hover {
+		background: var(--pico-primary-hover);
 	}
 </style>

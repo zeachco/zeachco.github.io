@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { skills } from '$lib/data/skills';
-	import { roles, type Role, type SkillData } from '$lib/types';
+	import { type Role, type SkillData } from '$lib/types';
 	import { onMount } from 'svelte';
-	import { browser } from '$app/environment';
+	import { selectedRoles as selectedRolesStore } from '$lib/stores/selectedRoles';
 
 	const howMuchTimeElapsed = (date: string | Date, endDate?: string | Date) => {
 		const currentDate = new Date();
@@ -20,18 +20,12 @@
 	};
 
 	// Add prop for external control (used by print route)
-	export let selectedRoles: string[] | undefined = undefined;
+	// If provided, use it instead of the store
+	export let selectedRoles: Role[] | undefined = undefined;
 
-	// If not provided externally, use localStorage or default to all
-	if (!selectedRoles) {
-		selectedRoles = [...roles];
-		if (browser) {
-			const localStorageData = localStorage.getItem('selectedRoles');
-			if (localStorageData) {
-				selectedRoles = JSON.parse(localStorageData) as Role[];
-			}
-		}
-	}
+	// Use store if no external value provided
+	let currentSelectedRoles: Role[];
+	$: currentSelectedRoles = selectedRoles ?? $selectedRolesStore;
 
 	let sortedSkills = [...skills];
 
@@ -49,16 +43,11 @@
 		sortSkills();
 	});
 
-	$: {
-		if (browser) {
-			localStorage.setItem('selectedRoles', JSON.stringify(selectedRoles));
-		}
-		sortSkills();
-	}
+	$: currentSelectedRoles, sortSkills();
 
 	function calculateCombinedScore(skill: SkillData) {
-		if (!selectedRoles.length) return 0;
-		return selectedRoles.reduce((sum, role) => sum + skill.score[role], 0) / selectedRoles.length;
+		if (!currentSelectedRoles.length) return 0;
+		return currentSelectedRoles.reduce((sum, role) => sum + skill.score[role], 0) / currentSelectedRoles.length;
 	}
 
 	function enumarate(items: string[]) {
@@ -75,14 +64,14 @@
 		<div class="selectors">
 			{#each Object.keys(skills[0].score) as role}
 				<label class="inline-flex items-center cursor-pointer" style="max-width:200px">
-					<input type="checkbox" name="sortCriteria" value={role} bind:group={selectedRoles} />
+					<input type="checkbox" name="sortCriteria" value={role} bind:group={$selectedRolesStore} disabled={selectedRoles !== undefined} />
 					<span class="ml-2">{role}</span>
 				</label>
 			{/each}
 		</div>
 	</div>
-	{#if selectedRoles.length > 0}
-		<h4>Relevant skills for {enumarate(selectedRoles)}:</h4>
+	{#if currentSelectedRoles.length > 0}
+		<h4>Relevant skills for {enumarate(currentSelectedRoles)}:</h4>
 	{:else}
 		<div class="empty">Select at lease one role</div>
 	{/if}
