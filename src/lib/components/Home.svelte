@@ -46,12 +46,6 @@
 			{/each}
 		</div>
 
-		<h4>Need more?</h4>
-		<p>
-			You can find a printable version of this site by clicking
-			<a data-tooltip="Printable CV" href="/print">🖨️ here</a> or using the link in the top navigation.
-		</p>
-
 		<h4>Hey what's that moving background I see behind this site?</h4>
 		<p>
 			It's a live simulation of 5000 cells, each with a custom self-learning neural network of a few

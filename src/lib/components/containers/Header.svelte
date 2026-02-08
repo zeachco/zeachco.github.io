@@ -6,7 +6,6 @@
 	import { selectedRoles } from '$lib/stores/selectedRoles';
 
 	const staticLabels = {
-		'/about': ['About'],
 		'/companies': ['Companies'],
 		'/skills': ['Skills'],
 		'/trainings': ['Trainings'],
@@ -49,7 +48,7 @@
 	<ul>
 		<li>
 			<strong>
-				<a href="/" class:active={$page.url.pathname === '/'}>Olivier Rousseau</a>
+				<a href="/" class:active={$page.url.pathname === '/'}>Olivier</a>
 			</strong>
 		</li>
 	</ul>
