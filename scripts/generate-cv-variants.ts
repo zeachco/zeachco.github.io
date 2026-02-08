@@ -10,8 +10,20 @@ async function main() {
 
   // Start preview server
   console.log('Starting preview server...');
-  const server = spawn('bun', ['run', 'preview'], { detached: true });
-  await new Promise(resolve => setTimeout(resolve, 3000)); // Wait for server
+  const server = spawn('bun', ['run', 'preview'], { detached: true, stdio: 'ignore' });
+
+  // Wait for server to be ready (up to 30 seconds)
+  const serverUrl = 'http://localhost:4173';
+  for (let i = 0; i < 30; i++) {
+    try {
+      await fetch(serverUrl);
+      console.log('Server is ready');
+      break;
+    } catch {
+      if (i === 29) throw new Error('Server failed to start within 30 seconds');
+      await new Promise(resolve => setTimeout(resolve, 1000));
+    }
+  }
 
   const combinations = generateCombinations();
   console.log(`Generating ${combinations.length} variants...`);

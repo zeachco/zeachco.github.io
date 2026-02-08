@@ -20,16 +20,22 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build:
+  build-and-generate:
     runs-on: ubuntu-latest
-    outputs:
-      variants: ${{ steps.list-variants.outputs.variants }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
       - name: Set up Bun
         uses: oven-sh/setup-bun@v2
+
+      - name: Cache Bun dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.bun/install/cache
+          key: ${{ runner.os }}-bun-${{ hashFiles('**/bun.lockb') }}
+          restore-keys: |
+            ${{ runner.os }}-bun-
 
       - name: Install dependencies
         run: bun install
@@ -37,58 +43,18 @@ jobs:
       - name: Build production bundle
         run: bun run build
 
-      - name: List CV variants
-        id: list-variants
-        run: |
-          VARIANTS=$(bun run scripts/list-variants.ts)
-          echo "variants=$VARIANTS" >> $GITHUB_OUTPUT
+      - name: Generate all CV variants
+        run: bun run generate-cv-variants
 
       - name: Upload build artifact
         uses: actions/upload-artifact@v4
         with:
-          name: build-base
+          name: build
           path: ./build
-          retention-days: 1
-
-  generate-variants:
-    needs: build
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        variant: ${{ fromJson(needs.build.outputs.variants) }}
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Set up Bun
-        uses: oven-sh/setup-bun@v2
-
-      - name: Install dependencies
-        run: bun install
-
-      - name: Download build artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: build-base
-          path: ./build
-
-      - name: Start preview server
-        run: |
-          bun run preview &
-          sleep 3
-
-      - name: Generate variant ${{ matrix.variant.filename }}
-        run: bun run scripts/generate-single-variant.ts "${{ matrix.variant.roles }}" "${{ matrix.variant.filename }}"
-
-      - name: Upload variant artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: variant-${{ matrix.variant.filename }}
-          path: ./build/skills/
           retention-days: 1
 
   deploy:
-    needs: [build, generate-variants]
+    needs: build-and-generate
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -97,15 +63,8 @@ jobs:
       - name: Download build artifact
         uses: actions/download-artifact@v4
         with:
-          name: build-base
+          name: build
           path: ./build
-
-      - name: Download all variant artifacts
-        uses: actions/download-artifact@v4
-        with:
-          pattern: variant-*
-          path: ./build/skills
-          merge-multiple: true
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
