@@ -10,6 +10,7 @@
 <!-- Use the BbAmbientRibbon web component -->
 <bb-ambient-ribbon class="animated-background-2" />
 
+<!-- /> -->
 <style>
 	.animated-background-2 {
 		position: fixed;
