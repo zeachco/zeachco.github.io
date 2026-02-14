@@ -35,7 +35,8 @@
 		<p>I make the impossible, possible.</p>
 		<p>
 			Check out my <a href="https://github.com/zeachco">GitHub</a>, my
-			<a href="https://www.linkedin.com/in/zeachco/">LinkedIn</a>
+			<a href="https://www.linkedin.com/in/zeachco/">LinkedIn</a>, my
+			<a title="[Ctrl/Cmd + k]" href="/skills">Skills</a>
 			or just read <a href="/about">About me</a>
 		</p>
 
@@ -53,9 +54,7 @@
 			survive, all training directly into a web browser. Yes you read that correctly, single
 			threaded neural network live learning written in rust / web assembly as a proof of concept.
 		</p>
-		<p>
-			This is the kind of things I do just because I can.
-		</p>
+		<p>This is the kind of things I do just because I can.</p>
 	</PageTransition>
 </section>
 

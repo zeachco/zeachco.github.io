@@ -37,10 +37,15 @@
 
 	let searchTerm = '';
 	let sortedSkills = [...skills];
+	let searchInput: HTMLInputElement;
+	let totalWithoutSearch = 0;
 
 	function sortSkills() {
-		sortedSkills = [...skills]
-			.filter((skill) => calculateCombinedScore(skill) > 0.4)
+		const filteredByRole = [...skills].filter((skill) => calculateCombinedScore(skill) > 0.4);
+
+		totalWithoutSearch = filteredByRole.length;
+
+		sortedSkills = filteredByRole
 			.filter((skill) => {
 				if (!searchTerm) return true;
 
@@ -69,6 +74,23 @@
 
 	onMount(() => {
 		sortSkills();
+		setTimeout(() => {
+			searchInput?.focus();
+		}, 100);
+
+		// Listen for global keyboard shortcut
+		const handleFocusSearch = () => {
+			searchTerm = '';
+			setTimeout(() => {
+				searchInput?.focus();
+			}, 100);
+		};
+
+		window.addEventListener('focus-skills-search', handleFocusSearch);
+
+		return () => {
+			window.removeEventListener('focus-skills-search', handleFocusSearch);
+		};
 	});
 
 	$: currentSelectedRoles, searchTerm, sortSkills();
@@ -91,11 +113,16 @@
 <div class="container mx-auto px-4">
 	<div class="print" />
 	<div class="no-print">
-		<h3>Filter role specific skills</h3>
+		<h3>
+			Filter role specific skills
+			{#if searchTerm.length > 0}
+				<small class="filter-count">{sortedSkills.length}/{totalWithoutSearch}</small>
+			{/if}
+		</h3>
 		<div class="search-box">
 			<input
 				type="text"
-				autofocus
+				bind:this={searchInput}
 				placeholder="Search skills (try: frontend, backend, fullstack, or any term)..."
 				bind:value={searchTerm}
 				class="search-input"
@@ -161,6 +188,11 @@
 	h3 {
 		margin-top: 2rem;
 		margin-bottom: 1rem;
+	}
+	.filter-count {
+		margin-left: 0.5rem;
+		font-weight: normal;
+		opacity: 0.7;
 	}
 	.selectors {
 		display: grid;

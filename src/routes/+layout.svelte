@@ -1,5 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { goto } from '$app/navigation';
+	import { page } from '$app/stores';
 	import Header from '$lib/components/containers/Header.svelte';
 	import '../app.scss';
 	import Contact from '$lib/components/items/Contact.svelte';
@@ -25,10 +27,28 @@
 			document.documentElement.style.setProperty('--mouse-scale', `${scale}`);
 		};
 
+		const handleKeyDown = (e: KeyboardEvent) => {
+			// Check for Ctrl+K (Windows/Linux) or Cmd+K (Mac)
+			if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+				e.preventDefault();
+
+				// Check if we're already on the skills page
+				if ($page.url.pathname === '/skills') {
+					// Dispatch custom event to focus and clear the search field
+					window.dispatchEvent(new CustomEvent('focus-skills-search'));
+				} else {
+					// Navigate to skills page
+					goto('/skills');
+				}
+			}
+		};
+
 		window.addEventListener('mousemove', handleMouseMove);
+		window.addEventListener('keydown', handleKeyDown);
 
 		return () => {
 			window.removeEventListener('mousemove', handleMouseMove);
+			window.removeEventListener('keydown', handleKeyDown);
 		};
 	});
 </script>
