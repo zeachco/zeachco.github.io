@@ -6,7 +6,7 @@ export const skills: SkillData[] = [
     start: '2006-05',
     percent: 99,
     labels: ['programming', 'client', 'server', 'hobbies', 'game'],
-    note: 'Passionate about the intricacies of JavaScript since ECMAScript 2. Have closely followed and adapted to its evolution, embracing both its strengths and challenges over the years.',
+    note: 'Deeply experienced with JavaScript since the ECMAScript 2 era. I have consistently adapted to its evolution, mastering modern standards and leveraging its full ecosystem for both client and server-side development.',
     score: {
       frontend: 1.0,
       backend: 0.9,
@@ -19,7 +19,7 @@ export const skills: SkillData[] = [
     start: '2025-08',
     percent: 55,
     labels: ['programming', 'platform', 'server'],
-    note: "Autogeneration of kubernetes manifests and helm charts for NodeJS applications. Currently exploring advanced features such as operators and custom resources to enhance deployment strategies and application management.",
+    note: 'Automating the generation of Kubernetes manifests and Helm charts for Node.js applications. Investigating advanced features, including Operators and Custom Resources, to optimize deployment strategies and application lifecycle management.',
     score: {
       frontend: 0.1,
       backend: 0.8,
@@ -32,7 +32,7 @@ export const skills: SkillData[] = [
     start: '2011-03',
     percent: 90,
     labels: ['programming', 'client', 'server'],
-    note: "While I worked with Rhino engine (server-side JavaScript) before Node.js existed, it wasn't until JavaScript gained access to system I/O that I truly saw its potential. Now, it's an integral part of my development tools, servers, and machine learning projects on a daily basis.",
+    note: "My server-side JavaScript experience pre-dates Node.js, beginning with the Rhino engine. With the advent of Node.js and direct system I/O access, I adopted it as a core technology. It now underpins my development toolchain, server infrastructure, and machine learning workflows.",
     score: {
       frontend: 0.8,
       backend: 1.0,
@@ -45,7 +45,7 @@ export const skills: SkillData[] = [
     start: '2025-08',
     percent: 60,
     labels: ['programming', 'client', 'server'],
-    note: "Cloudrun, Kubernetes, VertexAI, Bucket storage, Security and IAM",
+    note: 'Proficient with Google Cloud Platform services including Cloud Run, Kubernetes Engine (GKE), Vertex AI, Cloud Storage, and IAM/Security configurations.',
     score: {
       frontend: 0.2,
       backend: 0.5,
@@ -58,7 +58,7 @@ export const skills: SkillData[] = [
     start: '2020-08',
     percent: 65,
     labels: ['programming', 'client', 'server'],
-    note: "While not a machine learning expert, I've been working extensively with neural networks. I've utilized TensorFlow.js and ml5.js for various projects. Currently, I'm developing multiple projects using zero libraries, enabling AI creation in low-performance environments such as web browsers on low-end mobile phones or early-generation Raspberry Pis. As an interesting anecdote, I successfully trained a 2D simulation with 7000 cars navigating through traffic from a Tesla's browser, adding a touch of irony to the project.",
+    note: "Extensive experience applying neural networks using TensorFlow.js and ml5.js. Currently focused on developing zero-dependency implementations to enable AI execution in resource-constrained environments (e.g., mobile browsers, embedded devices). Notable achievement: Efficiently trained a 7,000-agent traffic simulation directly within a low-end mobile browser.",
     score: {
       frontend: 0.7,
       backend: 0.8,
@@ -71,7 +71,7 @@ export const skills: SkillData[] = [
     start: '2021-10',
     percent: 55,
     labels: ['programming', 'client', 'server'],
-    note: "I've thoroughly explored deep learning concepts but currently lack the time, computational resources, and data to fully immerse myself in this field.",
+    note: 'Strong conceptual foundation in deep learning architectures. My current focus is on implementing lightweight, deployable models suitable for web and edge computing environments.',
     score: {
       frontend: 0.6,
       backend: 0.7,
@@ -84,7 +84,7 @@ export const skills: SkillData[] = [
     start: '2023-12',
     percent: 40,
     labels: ['programming', 'ai', 'server'],
-    note: "I've been working with large language models (LLMs) for a while, primarily using GPT-3 and GPT-4. I've developed a few projects using these models, including a chatbot, a code generator, and a text summarizer. I've also integrated local model with ollama and cloud solution with vector based DBs.",
+    note: 'Active development experience with Large Language Models (LLMs), including GPT-3 and GPT-4 integration. Projects include custom chatbots, code generation tools, and summarization engines. Proficient in deploying local models via Ollama and architecting Retrieval-Augmented Generation (RAG) solutions using vector databases.',
     score: {
       frontend: 0.2,
       backend: 0.8,
@@ -97,7 +97,7 @@ export const skills: SkillData[] = [
     start: '2021-04',
     percent: 35,
     labels: ['programming', 'client', 'server'],
-    note: 'I developed my own ETH miner using Rust and CUDA, though my enthusiasm waned with the crypto market crash. I maintain a strong interest in decentralization concepts and the potential of blockchain technology.',
+    note: 'Engineered a custom Ethereum miner utilizing Rust and CUDA, demonstrating low-level optimization skills. While my focus has shifted from cryptocurrency speculation, I maintain a strong technical interest in decentralized systems and blockchain architecture.',
     score: {
       frontend: 0.4,
       backend: 0.6,
@@ -110,7 +110,7 @@ export const skills: SkillData[] = [
     start: '2018',
     percent: 75,
     labels: ['programming', 'client', 'server'],
-    note: "My extensive Node.js experience has been beneficial in working with Deno. I've implemented it in two substantial projects but found some friction when attempting to use Node.js libraries, and purely Deno packages aren't yet sufficiently mature.",
+    note: "Leveraging broad Node.js background to adopt Deno for modern TypeScript runtimes. Successfully delivered substantial projects while navigating the ecosystem's early evolution and effectively bridging compatibility between Node.js and Deno environments.",
     score: {
       frontend: 0.7,
       backend: 0.8,
@@ -123,7 +123,7 @@ export const skills: SkillData[] = [
     start: '2022',
     percent: 40,
     labels: ['programming', 'client', 'server'],
-    note: "Primarily used for crypto mining and WebAssembly projects. I'm actively seeking a large-scale project to fully leverage and assess my proficiency in this language.",
+    note: "Utilized for high-performance tasks including cryptocurrency mining and WebAssembly modules. Actively seeking opportunities to apply Rust's safety and concurrency features to large-scale system architecture.",
     score: {
       frontend: 0.4,
       backend: 0.6,
@@ -137,7 +137,7 @@ export const skills: SkillData[] = [
     start: '2004-03',
     end: '2013-07',
     labels: ['programming', 'server'],
-    note: "PHP was my introduction to web development, alongside cPanel, MySQL, and Linux (LAMP stack). I primarily worked with versions 4.x through 5.3. While I now prefer Node.js for server-side development, this experience provides valuable perspective on web technologies' evolution.",
+    note: "Foundational experience with the LAMP stack (Linux, Apache, MySQL, PHP), specifically versions 4.x through 5.3. This background provides a deep perspective on backend evolution, informing modern server-side architecture decisions in Node.js.",
     score: {
       frontend: 0.3,
       backend: 0.6,
@@ -150,7 +150,7 @@ export const skills: SkillData[] = [
     percent: 75,
     start: '2004-03',
     labels: ['programming', 'server'],
-    note: "I've worked with MySQL, PostgreSQL, SQLite, and Oracle SQL. My experience includes database design, optimization, and administration, as well as complex queries and stored procedures. Also worked with a few ORM in PHP, Rust, Ruby, Java and NodeJS",
+    note: "Comprehensive experience with MySQL, PostgreSQL, SQLite, and Oracle SQL. Skills encompass database schema design, query optimization, administration, and stored procedures. Proficient with various ORMs across PHP, Rust, Ruby, Java, and Node.js ecosystems.",
     score: {
       frontend: 0.4,
       backend: 0.9,
@@ -162,7 +162,7 @@ export const skills: SkillData[] = [
     name: 'React',
     percent: 90,
     labels: ['library', 'programming', 'client'],
-    note: "My early React projects involved transforming jQuery sites into React applications. I've since worked on numerous hybrid React apps integrated with Angular, Backbone, or vanilla JS. My most significant projects include HTML games, 3D editors (using WebGL), and complex WYSIWYG editors.",
+    note: "Extensive experience migrating legacy jQuery applications to modern React architectures. Appart from building standard CRUD applications, I am also proficient in building hybrid applications integrating React with Angular, Backbone, or Vanilla JS. Key achievements include developing complex HTML5 games, WebGL-based 3D editors, and sophisticated WYSIWYG interfaces.",
     start: '2013-08',
     score: {
       frontend: 1.0,
@@ -190,7 +190,7 @@ export const skills: SkillData[] = [
     labels: ['library', 'programming', 'client'],
     start: '2008',
     end: '2018',
-    note: "Utilized during an era when IE5 was still a supported browser. Much of my experience involves integrating jQuery with other frameworks like Backbone, React, Angular, or vanilla JS. While mentioning jQuery might seem outdated, the experience gained from transitioning away from it remains highly relevant in today's rapidly evolving front-end landscape.",
+    note: "Extensive historical experience, dating back to IE5 support. Specialized in integrating jQuery with modern frameworks (Backbone, React, Angular) and managing legacy code migrations. This background provides critical insight into the evolution of the DOM and browser compatibility standards. Giving me experience in developing code that works on all browsers, all the time.",
     score: {
       frontend: 0.7,
       backend: 0.3,
@@ -202,7 +202,7 @@ export const skills: SkillData[] = [
     name: 'Svelte',
     percent: 80,
     labels: ['programming', 'framework', 'client'],
-    note: "This site and CV are built with Svelte. I appreciate its simplicity and the fact that it doesn't require a virtual DOM. While I've been using it for some time, I'm eager to apply it to a large-scale project to fully gauge my expertise.",
+    note: "Utilized Svelte for this portfolio and CV, leveraging its compiler-based approach and lack of Virtual DOM for superior performance. Enthusiastic about scaling Svelte applications and exploring its benefits in complex, data-intensive projects.",
     start: '2020',
     score: {
       frontend: 0.9,
@@ -215,7 +215,7 @@ export const skills: SkillData[] = [
     name: 'Basic',
     percent: 80,
     labels: ['programming', 'server', 'client', 'game'],
-    note: 'Started on TI-83 devices, creating video games for fellow students at school. Quickly transitioned to PC equivalents, laying the foundation for my programming journey.',
+    note: 'Began programming on TI-83 hardware, developing games and utilities. This early constraint-driven environment laid the foundation for algorithmic thinking before transitioning to PC-based development.',
     start: '2003-05',
     end: '2007-03',
     score: {
@@ -229,7 +229,7 @@ export const skills: SkillData[] = [
     name: 'Debian systems',
     percent: 90,
     labels: ['programming', 'server', 'client'],
-    note: 'My primary OS at home for work, gaming, servers, DevOps, media, and personal use. First adopted when Windows Vista was announced. Now highly functional with WSL, demonstrating adaptability across different operating environments.',
+    note: 'Primary operating system for development, server administration, and DevOps workflows since 2007. Expert in maintaining Debian environments and seamless integration with Windows via WSL for versatile cross-platform development.',
     start: '2007-05',
     score: {
       frontend: 0.6,
@@ -255,7 +255,7 @@ export const skills: SkillData[] = [
     percent: 85,
     labels: ['programming', 'client'],
     start: '2005-02',
-    note: "Rather than relying on design software, I've always preferred using CSS directly to enhance document aesthetics. Today, my focus is on creating foundational libraries, adapting to responsive design needs and devices, and crafting unique animations.",
+    note: "Expertise in direct CSS/SASS authoring to implement precise visual designs without over-reliance on abstraction layers. Focused on architecting scalable style libraries, robust responsive systems, and high-performance animations.",
     score: {
       frontend: 0.9,
       backend: 0.3,
@@ -268,7 +268,7 @@ export const skills: SkillData[] = [
     percent: 85,
     labels: ['programming', 'client'],
     start: '2019-12',
-    note: "Proficient in Tailwind CSS, Bootstrap, Foundation, Material, Pico, Bulma, and others. I have a comprehensive understanding of each framework's strengths and limitations, and how to leverage them effectively. Additionally, I'm skilled in creating custom design systems and integrating them with existing CSS frameworks.",
+    note: "Proficient with major frameworks including Tailwind CSS, Bootstrap, Foundation, Material Design, Pico, and Bulma. Deep understanding of their architectural trade-offs allows for effective selection and implementation. Skilled in engineering custom design systems and hybridizing them with established frameworks.",
     score: {
       frontend: 0.9,
       backend: 0.3,
@@ -281,7 +281,7 @@ export const skills: SkillData[] = [
     percent: 95,
     labels: ['programming', 'client'],
     start: '2005-02',
-    note: 'While familiar with engines like Phaser and Pixi.js, I prefer using the native Canvas API for prototyping and game development, valuing lightweight solutions.',
+    note: 'Experienced with high-level engines (Phaser, Pixi.js) but specialized in raw Canvas API implementation. This approach enables the development of highly optimized, lightweight rendering solutions for prototyping and custom game engines.',
     score: {
       frontend: 0.9,
       backend: 0.3,
@@ -294,7 +294,7 @@ export const skills: SkillData[] = [
     percent: 75,
     labels: ['programming', 'client'],
     start: '2005-02',
-    note: "Primarily work with THREE.js and other math libraries, as custom shader writing is too specialized for my projects. I've developed 3D games and editors, and even built a custom stencil shadow engine for a web-based DOOM 3 model viewer.",
+    note: "Specialized in THREE.js and 3D math libraries for web-based rendering. Achievements include developing 3D games, editors, and a custom stencil shadow engine for a DOOM 3 model viewer, demonstrating capabilities in complex scene management and rendering techniques.",
     score: {
       frontend: 0.8,
       backend: 0.4,
@@ -307,7 +307,7 @@ export const skills: SkillData[] = [
     percent: 99,
     labels: ['language'],
     start: '1988',
-    note: 'Native Canadian-French speaker with an appreciation for regional variations from Acadia to France. I speak a standardized version of French for optimal communication when traveling in Europe 🇪🇺.',
+    note: 'Native Canadian-French speaker. Proficient in Standard French, ensuring clear professional communication across all Francophone regions.',
     score: {
       frontend: 0.1,
       backend: 0.5,
@@ -333,7 +333,7 @@ export const skills: SkillData[] = [
     labels: ['language'],
     start: '2012',
     end: '2017',
-    note: 'Lived in Tokyo for several months. Proficient enough to navigate local stores where English is not spoken.',
+    note: 'Resided in Tokyo, acquiring functional proficiency for daily navigation and basic social interaction.',
     score: {
       frontend: 0.3,
       backend: 0.1,
@@ -370,7 +370,7 @@ export const skills: SkillData[] = [
     percent: 30,
     labels: ['language'],
     start: '2019',
-    note: 'Initiated as a personal challenge. Spent time in Berlin refining my accent. My comprehension skills significantly outpace my speaking abilities.',
+    note: 'Conversational proficiency acquired during time in Berlin. Strong reading and listening comprehension skills.',
     score: {
       frontend: 0.2,
       backend: 0.2,
@@ -384,7 +384,7 @@ export const skills: SkillData[] = [
     labels: ['language'],
     start: '2016',
     end: '2018',
-    note: "Acquired in the context of IT recruitment as an interviewer. Spent months in Pune and Mumbai, developing social skills and understanding of the country's political language. Also attempted to learn some Marathi, but found that non-verbal communication combined with UK English is more effective for clear and respectful communication as a foreigner.",
+    note: "Acquired cultural and basic linguistic context during IT recruitment tenures in Pune and Mumbai. Strong understanding of local business etiquette and cross-cultural communication dynamics.",
     score: {
       frontend: 0.2,
       backend: 0.4,
