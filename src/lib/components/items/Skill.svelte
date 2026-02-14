@@ -36,7 +36,7 @@
 
 <details>
 	<summary>
-		<div class="meter no-print" {style} data-tooltip={wordTooltip} data-placement="right" />
+		<div class="meter no-print" {style} data-glass-tooltip={wordTooltip} data-placement="right" />
 		<span>
 			{name} <small>{experienceTime}</small>
 		</span>

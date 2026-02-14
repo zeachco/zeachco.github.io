@@ -65,7 +65,7 @@
 				<a
 					href={downloadUrl}
 					on:click={toggleDropdown}
-					data-tooltip="Download CV"
+					data-glass-tooltip="Download CV"
 					data-placement="left"
 				>
 					📥 CV
