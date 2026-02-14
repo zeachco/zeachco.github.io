@@ -116,10 +116,18 @@
 		top: 100%;
 		right: 0;
 		margin-top: 0.5rem;
-		background: var(--pico-background-color);
-		border: 1px solid var(--pico-border-color);
-		border-radius: var(--pico-border-radius);
-		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+		/* Apply glass blur effect */
+		background: var(--glass-bg);
+		backdrop-filter: blur(var(--glass-blur-amount)) saturate(var(--glass-saturate));
+		-webkit-backdrop-filter: blur(var(--glass-blur-amount)) saturate(var(--glass-saturate));
+		border: 2px solid var(--glass-border);
+		border-radius: 1rem;
+		box-shadow:
+			0 8px 32px rgba(0, 0, 0, 0.3),
+			inset 0 1px 0 rgba(255, 255, 255, 0.1),
+			inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+
 		padding: 1rem;
 		min-width: 200px;
 		z-index: 1000;

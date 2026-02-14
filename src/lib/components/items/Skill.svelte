@@ -52,13 +52,16 @@
 		position: relative;
 		padding: 1.5rem;
 		margin-bottom: 1.5rem;
-		background: rgba(255, 149, 0, 0.05);
-		backdrop-filter: blur(6px) saturate(150%);
-		-webkit-backdrop-filter: blur(6px) saturate(150%);
-		border: 2px solid rgba(255, 149, 0, 0.3);
+
+		/* Apply glass blur effect using CSS variables */
+		background: var(--glass-bg);
+		backdrop-filter: blur(var(--glass-blur-amount)) saturate(var(--glass-saturate));
+		-webkit-backdrop-filter: blur(var(--glass-blur-amount)) saturate(var(--glass-saturate));
+		border: 2px solid var(--glass-border);
 		border-radius: 1rem;
 		box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1),
 			inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+
 		transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 		filter: url(#liquid-glass-filter);
 	}
