@@ -32,11 +32,6 @@
 	<meta name="description" content="Printable CV" />
 </svelte:head>
 
-<div class="no-print" bind:this={printDisclaimer}>
-	<progress />
-	Waiting for the page to render correctly...
-</div>
-
 <div class="pagebreak">
 	<Contact />
 </div>
