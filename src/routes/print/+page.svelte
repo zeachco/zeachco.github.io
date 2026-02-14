@@ -12,19 +12,24 @@
 
 	let printDisclaimer: HTMLDivElement;
 	let selectedRoles: Role[] = [];
+	let isHeadless = false;
 
-	// Parse roles from URL: ?roles=frontend,backend
+	// Parse roles from URL: ?roles=frontend,backend&headless=true
 	// Only access searchParams in the browser to avoid prerender issues
 	$: if (browser) {
 		const rolesParam = $page.url.searchParams.get('roles');
 		selectedRoles = rolesParam ? (rolesParam.split(',') as Role[]) : [];
+		isHeadless = $page.url.searchParams.get('headless') === 'true';
 	}
 
 	// let the canvases render
 	onMount(async () =>
 		setTimeout(() => {
 			printDisclaimer.style.display = 'none';
-			print();
+			// Don't call print() in headless mode (Puppeteer will handle PDF generation)
+			if (!isHeadless) {
+				print();
+			}
 		}, PAGE_TRANSITION_TIME + 1),
 	);
 </script>

@@ -28,7 +28,7 @@
 
 <section>
 	<PageTransition pathname="home">
-		<h3>Software engineer</h3>
+		<h3>Software Engineer</h3>
 		<p><b>20+ years</b> shipping systems at scale.</p>
 		<i>Gaming, web, security, neural networks, telecoms or banking...</i>
 		<p>I speed up development flows through platform, management or automated tooling work.</p>
