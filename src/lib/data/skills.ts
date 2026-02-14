@@ -17,7 +17,7 @@ export const skills: SkillData[] = [
   {
     name: 'Kubernetes',
     start: '2025-08',
-    percent: 60,
+    percent: 55,
     labels: ['programming', 'platform', 'server'],
     note: "Autogeneration of kubernetes manifests and helm charts for NodeJS applications. Currently exploring advanced features such as operators and custom resources to enhance deployment strategies and application management.",
     score: {
@@ -38,6 +38,19 @@ export const skills: SkillData[] = [
       backend: 1.0,
       techlead: 0.9,
       management: 0.7,
+    },
+  },
+  {
+    name: 'GCP',
+    start: '2025-08',
+    percent: 60,
+    labels: ['programming', 'client', 'server'],
+    note: "Cloudrun, Kubernetes, VertexAI, Bucket storage, Security and IAM",
+    score: {
+      frontend: 0.2,
+      backend: 0.5,
+      techlead: 0.9,
+      management: 0.8,
     },
   },
   {
