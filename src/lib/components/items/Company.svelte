@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { CompanyData } from '$lib/types';
 	import Label from '../micro/Label.svelte';
+	import { formatDuration } from '$lib/utilities/date';
 
 	export let small = false;
 	export let open = false;
@@ -14,8 +15,8 @@
 		const end = company.end ? new Date(company.end) : new Date();
 		const [year, month] = start.toISOString().split('-');
 		const [yearEnd, monthEnd] = end.toISOString().split('-');
-		const diff = (+yearEnd + +monthEnd / 12 - (+year + +month / 12)).toFixed(1);
-		experienceTime = `${year}-${month} to ${yearEnd}-${monthEnd} (${diff} years)`;
+		const duration = formatDuration(start, end);
+		experienceTime = `${year}-${month} to ${yearEnd}-${monthEnd} (${duration})`;
 	}
 
 	let notes = '';

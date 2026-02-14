@@ -53,7 +53,7 @@
 			</div>
 		</div>
 
-		<h4>Hey what's that moving background I see behind this site?</h4>
+		<h4>Have you noticed the AI experiment running in the background of this site?</h4>
 		<p>
 			It's a live simulation of 5000 cells, each with a custom self-learning neural network of a few
 			million parameters. It's currently learning to navigate, reproduce and manage energy to

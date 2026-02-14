@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { SkillData } from '$lib/types';
+	import { formatDuration } from '$lib/utilities/date';
 
 	export let small = false;
 	export let skill: SkillData;
@@ -12,9 +13,8 @@
 		const start = new Date(skill.start);
 		const end = skill.end ? new Date(skill.end) : new Date();
 		const [year, month] = start.toISOString().split('-');
-		const [yearNow] = end.toISOString().split('-');
-		const diff = +yearNow - +year;
-		experienceTime = `(${year}-${month}) ${diff} years of experience`;
+		const duration = formatDuration(start, end);
+		experienceTime = `(${year}-${month}) ${duration} of experience`;
 	}
 
 	$: hue = Math.round((percent / 100) * 120);
