@@ -128,8 +128,18 @@ body::before {
 	border: none;
 	pointer-events: none;
 	opacity: 0.2;
-	transform: rotate(var(--mouse-rotate)) scale(calc(var(--mouse-scale) * 1.2));
-	transition: transform 0.3s ease-out;
+
+	// Only animate on desktop (min-width: 769px)
+	@media (min-width: 769px) {
+		transform: rotate(var(--mouse-rotate)) scale(calc(var(--mouse-scale) * 1.2));
+		transition: transform 0.3s ease-out;
+	}
+
+	// Static on mobile for better performance
+	@media (max-width: 768px) {
+		transform: none;
+		transition: none;
+	}
 }
 
 .print {
