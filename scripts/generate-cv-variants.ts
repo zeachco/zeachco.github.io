@@ -1,4 +1,5 @@
 import { generateCombinations, variantToFilename } from './variant-combinations';
+import puppeteer from 'puppeteer';
 import { generatePDF } from './pdf-generator';
 import { generateMarkdown } from './markdown-generator';
 import { spawn } from 'child_process';
@@ -25,39 +26,54 @@ async function main() {
     }
   }
 
-  const combinations = generateCombinations();
-  console.log(`Generating ${combinations.length} variants...`);
+  // Launch browser once
+  const browser = await puppeteer.launch({
+    headless: true,
+    args: [
+      '--no-sandbox',
+      '--disable-setuid-sandbox',
+      '--disable-dev-shm-usage', // Important for CI
+    ]
+  });
 
-  // Generate variants in parallel (4 at a time to avoid overwhelming CI)
-  const batchSize = 4;
-  for (let i = 0; i < combinations.length; i += batchSize) {
-    const batch = combinations.slice(i, i + batchSize);
+  try {
+    const combinations = generateCombinations();
+    console.log(`Generating ${combinations.length} variants...`);
 
-    await Promise.all(batch.map(async (variant) => {
-      const filename = variantToFilename(variant);
-      const rolesParam = variant.join(',');
-      const url = `http://localhost:4173/print?roles=${rolesParam}`;
+    // Generate variants in parallel (4 at a time to avoid overwhelming CI)
+    const batchSize = 4;
+    for (let i = 0; i < combinations.length; i += batchSize) {
+      const batch = combinations.slice(i, i + batchSize);
 
-      console.log(`Generating ${filename}...`);
+      await Promise.all(batch.map(async (variant) => {
+        const filename = variantToFilename(variant);
+        const rolesParam = variant.join(',');
+        const url = `http://localhost:4173/print?roles=${rolesParam}`;
 
-      // Generate PDF
-      await generatePDF(
-        url,
-        `./build/skills/olivier-rousseau_${filename}.pdf`
-      );
+        console.log(`Generating ${filename}...`);
 
-      // Fetch HTML for Markdown generation
-      const response = await fetch(url);
-      const html = await response.text();
+        // Generate PDF
+        await generatePDF(
+          url,
+          `./build/skills/olivier-rousseau_${filename}.pdf`,
+          browser
+        );
 
-      // Generate Markdown
-      await generateMarkdown(
-        html,
-        `./build/skills/olivier-rousseau_${filename}.md`
-      );
+        // Fetch HTML for Markdown generation
+        const response = await fetch(url);
+        const html = await response.text();
 
-      console.log(`✓ ${filename}`);
-    }));
+        // Generate Markdown
+        await generateMarkdown(
+          html,
+          `./build/skills/olivier-rousseau_${filename}.md`
+        );
+
+        console.log(`✓ ${filename}`);
+      }));
+    }
+  } finally {
+    await browser.close();
   }
 
   // Kill server
