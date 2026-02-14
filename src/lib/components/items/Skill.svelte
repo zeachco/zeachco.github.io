@@ -8,7 +8,7 @@
 
 	let experienceTime = '';
 
-	if (skill.start) {
+	if (skill.start && !skill.softskill) {
 		const start = new Date(skill.start);
 		const end = skill.end ? new Date(skill.end) : new Date();
 		const [year, month] = start.toISOString().split('-');

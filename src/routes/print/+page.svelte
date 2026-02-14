@@ -8,14 +8,16 @@
 	import { browser } from '$app/environment';
 	import { PAGE_TRANSITION_TIME } from '$lib/utilities/constants';
 
+	import type { Role } from '$lib/types';
+
 	let printDisclaimer: HTMLDivElement;
-	let selectedRoles: string[] = [];
+	let selectedRoles: Role[] = [];
 
 	// Parse roles from URL: ?roles=frontend,backend
 	// Only access searchParams in the browser to avoid prerender issues
 	$: if (browser) {
 		const rolesParam = $page.url.searchParams.get('roles');
-		selectedRoles = rolesParam ? rolesParam.split(',') : [];
+		selectedRoles = rolesParam ? (rolesParam.split(',') as Role[]) : [];
 	}
 
 	// let the canvases render
@@ -39,7 +41,7 @@
 	<Companies />
 </div>
 <div class="pagebreak">
-	<Skills selectedRoles={selectedRoles} />
+	<Skills {selectedRoles} />
 </div>
 <div class="pagebreak">
 	<Trainings />

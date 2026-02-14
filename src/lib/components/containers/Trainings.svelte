@@ -11,7 +11,7 @@
 	<PageTransition pathname="training">
 		<h1>Trainings</h1>
 		<div class="flex-list">
-			{#each sorted as training, i (training)}
+			{#each sorted as training (training)}
 				<Training {training} />
 			{/each}
 		</div>

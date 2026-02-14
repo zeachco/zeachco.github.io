@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { skills } from '$lib/data/skills';
-	import { type Role, type SkillData } from '$lib/types';
+	import type { Role, SkillData } from '$lib/types';
 	import { onMount } from 'svelte';
 	import { selectedRoles as selectedRolesStore } from '$lib/stores/selectedRoles';
 
@@ -47,7 +47,10 @@
 
 	function calculateCombinedScore(skill: SkillData) {
 		if (!currentSelectedRoles.length) return 0;
-		return currentSelectedRoles.reduce((sum, role) => sum + skill.score[role], 0) / currentSelectedRoles.length;
+		return (
+			currentSelectedRoles.reduce((sum, role) => sum + skill.score[role], 0) /
+			currentSelectedRoles.length
+		);
 	}
 
 	function enumarate(items: string[]) {
@@ -64,7 +67,13 @@
 		<div class="selectors">
 			{#each Object.keys(skills[0].score) as role}
 				<label class="inline-flex items-center cursor-pointer" style="max-width:200px">
-					<input type="checkbox" name="sortCriteria" value={role} bind:group={$selectedRolesStore} disabled={selectedRoles !== undefined} />
+					<input
+						type="checkbox"
+						name="sortCriteria"
+						value={role}
+						bind:group={$selectedRolesStore}
+						disabled={selectedRoles !== undefined}
+					/>
 					<span class="ml-2">{role}</span>
 				</label>
 			{/each}
@@ -83,9 +92,11 @@
 					<div class="w-full flex gap-4">
 						<h3 class="text-lg font-semibold">
 							{skill.name}
-							<small class="text-sm text-gray-600">
-								{howMuchTimeElapsed(skill.start, skill.end)} of experience
-							</small>
+							{#if !skill.softskill}
+								<small class="text-sm text-gray-600">
+									{howMuchTimeElapsed(skill.start, skill.end)} of experience
+								</small>
+							{/if}
 						</h3>
 					</div>
 

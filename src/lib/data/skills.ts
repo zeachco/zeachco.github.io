@@ -173,7 +173,7 @@ export const skills: SkillData[] = [
   },
   {
     name: 'Vue',
-    percent: 30,
+    percent: 60,
     labels: ['library', 'programming', 'client'],
     start: '2018',
     end: '2020',
@@ -265,7 +265,7 @@ export const skills: SkillData[] = [
   },
   {
     name: 'CSS Frameworks and Design Systems',
-    percent: 85,
+    percent: 88,
     labels: ['programming', 'client'],
     start: '2019-12',
     note: "Proficient with major frameworks including Tailwind CSS, Bootstrap, Foundation, Material Design, Pico, and Bulma. Deep understanding of their architectural trade-offs allows for effective selection and implementation. Skilled in engineering custom design systems and hybridizing them with established frameworks.",
@@ -314,11 +314,13 @@ export const skills: SkillData[] = [
       techlead: 0.7,
       management: 0.8,
     },
+    softskill: true,
   },
   {
     name: '🇺🇸 English',
     percent: 90,
     labels: ['language'],
+    note: "Used English as the primary language for professional communication, technical documentation, and international collaboration since 2005. Proficient in both written and verbal communication, enabling effective cross-cultural interactions and leadership in global teams.",
     start: '2005-02',
     score: {
       frontend: 0.3,
@@ -326,6 +328,7 @@ export const skills: SkillData[] = [
       techlead: 0.8,
       management: 0.9,
     },
+    softskill: true,
   },
   {
     name: '🇯🇵 Japanese',
@@ -340,6 +343,7 @@ export const skills: SkillData[] = [
       techlead: 0.3,
       management: 0.4,
     },
+    softskill: true,
   },
   {
     name: '🇲🇽 Spanish',
@@ -352,6 +356,7 @@ export const skills: SkillData[] = [
       techlead: 0.4,
       management: 0.5,
     },
+    softskill: true,
   },
   {
     name: '🇧🇷 Portuguese',
@@ -364,6 +369,7 @@ export const skills: SkillData[] = [
       techlead: 0.4,
       management: 0.5,
     },
+    softskill: true,
   },
   {
     name: '🇩🇪 German',
@@ -377,6 +383,7 @@ export const skills: SkillData[] = [
       techlead: 0.3,
       management: 0.4,
     },
+    softskill: true,
   },
   {
     name: '🇮🇳 Hindi',
@@ -391,11 +398,13 @@ export const skills: SkillData[] = [
       techlead: 0.4,
       management: 0.6,
     },
+    softskill: true,
   },
-].map((s) => {
+].map((s: any) => {
   return {
     ...s,
     start: new Date(s.start),
     end: s.end ? new Date(s.end) : new Date(),
+    peak_date: s.peak_date ? new Date(s.peak_date) : undefined,
   };
 });

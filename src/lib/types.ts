@@ -38,6 +38,8 @@ export interface ProjectData extends BaseData {
 
 export interface SkillData extends BaseData {
 	percent: number;
+	softskill?: boolean;
+	peak_date?: Date;
 	projects?: ProjectData;
 }
 
