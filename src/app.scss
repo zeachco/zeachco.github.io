@@ -9,11 +9,6 @@
 
 // CSS variables for mouse-driven animation (with defaults)
 :root {
-	--mouse-x: 50%;
-	--mouse-y: 50%;
-	--mouse-rotate: 0deg;
-	--mouse-scale: 1;
-
 	// Glass blur effect variables
 	--glass-blur-amount: 6px;
 	--glass-saturate: 150%;
@@ -128,18 +123,6 @@ body::before {
 	border: none;
 	pointer-events: none;
 	opacity: 0.2;
-
-	// Only animate on desktop (min-width: 769px)
-	@media (min-width: 769px) {
-		transform: rotate(var(--mouse-rotate)) scale(calc(var(--mouse-scale) * 1.2));
-		transition: transform 0.3s ease-out;
-	}
-
-	// Static on mobile for better performance
-	@media (max-width: 768px) {
-		transform: none;
-		transition: none;
-	}
 }
 
 .print {

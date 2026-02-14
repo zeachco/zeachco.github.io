@@ -181,5 +181,6 @@
 
 	.download-btn:hover {
 		background: var(--pico-primary-hover);
+		color: #fff !important;
 	}
 </style>
