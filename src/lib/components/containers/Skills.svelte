@@ -3,6 +3,14 @@
 	import type { Role, SkillData } from '$lib/types';
 	import { onMount } from 'svelte';
 	import { selectedRoles as selectedRolesStore } from '$lib/stores/selectedRoles';
+	import { normalizeText } from '$lib/utilities/text';
+
+	// Search aliases mapping
+	const searchAliases: Record<string, string[]> = {
+		frontend: ['client'],
+		backend: ['server'],
+		fullstack: ['client', 'server'],
+	};
 
 	const howMuchTimeElapsed = (date: string | Date, endDate?: string | Date) => {
 		const currentDate = new Date();
@@ -27,11 +35,31 @@
 	let currentSelectedRoles: Role[];
 	$: currentSelectedRoles = selectedRoles ?? $selectedRolesStore;
 
+	let searchTerm = '';
 	let sortedSkills = [...skills];
 
 	function sortSkills() {
 		sortedSkills = [...skills]
 			.filter((skill) => calculateCombinedScore(skill) > 0.4)
+			.filter((skill) => {
+				if (!searchTerm) return true;
+
+				const normalizedSearch = normalizeText(searchTerm);
+
+				// Check if search term is an alias
+				if (searchAliases[normalizedSearch]) {
+					const targetLabels = searchAliases[normalizedSearch];
+					return targetLabels.some((label) => skill.labels?.includes(label));
+				}
+
+				// Otherwise, search in name and note
+				const normalizedName = normalizeText(skill.name);
+				const normalizedNote = skill.note ? normalizeText(skill.note) : '';
+
+				return (
+					normalizedName.includes(normalizedSearch) || normalizedNote.includes(normalizedSearch)
+				);
+			})
 			.sort((a, b) => {
 				const scoreA = calculateCombinedScore(a);
 				const scoreB = calculateCombinedScore(b);
@@ -43,7 +71,7 @@
 		sortSkills();
 	});
 
-	$: currentSelectedRoles, sortSkills();
+	$: currentSelectedRoles, searchTerm, sortSkills();
 
 	function calculateCombinedScore(skill: SkillData) {
 		if (!currentSelectedRoles.length) return 0;
@@ -63,7 +91,16 @@
 <div class="container mx-auto px-4">
 	<div class="print" />
 	<div class="no-print">
-		<h3>Select role specific skills</h3>
+		<h3>Filter role specific skills</h3>
+		<div class="search-box">
+			<input
+				type="text"
+				autofocus
+				placeholder="Search skills (try: frontend, backend, fullstack, or any term)..."
+				bind:value={searchTerm}
+				class="search-input"
+			/>
+		</div>
 		<div class="selectors">
 			{#each Object.keys(skills[0].score) as role}
 				<label class="inline-flex items-center cursor-pointer" style="max-width:200px">
@@ -130,6 +167,18 @@
 		grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 		grid-gap: 1rem;
 		margin-bottom: 2rem;
+	}
+	.search-input {
+		width: 100%;
+		padding: 0.75rem 1rem;
+		font-size: 1rem;
+		border: 2px solid #e5e7eb;
+		border-radius: 0.5rem;
+		outline: none;
+		transition: border-color 0.2s;
+	}
+	.search-input:focus {
+		border-color: #3b82f6;
 	}
 	.bg-gray-200 {
 		text-shadow: none !important;
