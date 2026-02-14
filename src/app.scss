@@ -101,7 +101,7 @@ body::before {
 	z-index: -1;
 	border: none;
 	pointer-events: none;
-	opacity: 0.1;
+	opacity: 0.2;
 	transform: rotate(var(--mouse-rotate)) scale(calc(var(--mouse-scale) * 1.2));
 	transition: transform 0.3s ease-out;
 }
@@ -156,6 +156,7 @@ section a {
 
 	.no-print,
 	.no-print *,
+	.animated-background-2,
 	.animated-background {
 		display: none !important;
 	}

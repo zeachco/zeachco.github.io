@@ -41,10 +41,16 @@
 		</p>
 
 		<h4>A few companies I worked for</h4>
-		<div class="brands">
-			{#each brands as [icon, label, styles]}
-				<Brand background={styles} svg={icon} name={label} />
-			{/each}
+		<div class="brands-container">
+			<div class="brands">
+				{#each brands as [icon, label, styles]}
+					<Brand background={styles} svg={icon} name={label} />
+				{/each}
+				<!-- Duplicate for seamless loop -->
+				{#each brands as [icon, label, styles]}
+					<Brand background={styles} svg={icon} name={label} />
+				{/each}
+			</div>
 		</div>
 
 		<h4>Hey what's that moving background I see behind this site?</h4>
@@ -59,11 +65,31 @@
 </section>
 
 <style>
+	.brands-container {
+		overflow: hidden;
+		position: relative;
+		width: 100%;
+		padding-bottom: 3em;
+	}
+
 	.brands {
 		display: flex;
 		gap: 2em;
-		justify-content: space-evenly;
-		flex-wrap: wrap;
-		margin-bottom: 1em;
+		flex-wrap: nowrap;
+		animation: scroll-brands 30s linear infinite;
+		width: fit-content;
+	}
+
+	.brands-container:hover .brands {
+		animation-play-state: paused;
+	}
+
+	@keyframes scroll-brands {
+		0% {
+			transform: translateX(0);
+		}
+		100% {
+			transform: translateX(-50%);
+		}
 	}
 </style>

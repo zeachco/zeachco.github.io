@@ -3,6 +3,7 @@
 	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
 	import Header from '$lib/components/containers/Header.svelte';
+	import AnimatedBackground from '$lib/components/AnimatedBackground.svelte';
 	import '../app.scss';
 	import Contact from '$lib/components/items/Contact.svelte';
 
@@ -53,6 +54,8 @@
 	});
 </script>
 
+<AnimatedBackground />
+
 <iframe
 	class="animated-background"
 	src="https://zeachco.github.io/cells-ai?demo=true"
@@ -69,8 +72,7 @@
 
 <footer class="no-print">
 	<note>
-
-		<!-- <small>This site and it's cv is automatically kept up-to-date</small> -->
+		<!-- <small>This site is automatically kept up-to-date</small> -->
 	</note>
 </footer>
 
@@ -89,6 +91,7 @@
 		box-sizing: border-box;
 		background: #3238;
 		box-shadow: 0 0 20px 50px #3238;
+		border-radius: 2em;
 	}
 
 	@media print {
