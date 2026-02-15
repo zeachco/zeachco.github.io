@@ -1,1 +1,1 @@
-export const PAGE_TRANSITION_TIME = 1000;
+export const PAGE_TRANSITION_TIME = 400;

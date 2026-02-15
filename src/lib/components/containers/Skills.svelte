@@ -4,6 +4,7 @@
 	import { onMount } from 'svelte';
 	import { selectedRoles as selectedRolesStore } from '$lib/stores/selectedRoles';
 	import { normalizeText } from '$lib/utilities/text';
+	import { PAGE_TRANSITION_TIME } from '$lib/utilities/constants';
 
 	// Search aliases mapping
 	const searchAliases: Record<string, string[]> = {
@@ -76,14 +77,14 @@
 		sortSkills();
 		setTimeout(() => {
 			searchInput?.focus();
-		}, 100);
+		}, PAGE_TRANSITION_TIME);
 
 		// Listen for global keyboard shortcut
 		const handleFocusSearch = () => {
 			searchTerm = '';
 			setTimeout(() => {
 				searchInput?.focus();
-			}, 100);
+			}, PAGE_TRANSITION_TIME);
 		};
 
 		window.addEventListener('focus-skills-search', handleFocusSearch);
