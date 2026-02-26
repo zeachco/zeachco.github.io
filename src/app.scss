@@ -112,18 +112,6 @@ body::before {
 	z-index: -2;
 }
 
-// Animated cells-ai background
-.animated-background {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	z-index: -1;
-	border: none;
-	pointer-events: none;
-	opacity: 0.2;
-}
 
 .print {
 	display: none;
