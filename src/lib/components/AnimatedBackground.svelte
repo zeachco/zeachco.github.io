@@ -10,15 +10,16 @@
 
 		if (isDesktop) {
 			// Import the web components from beautiful-backgrounds
-			await import('https://esm.sh/beautiful-backgrounds@1.0.0');
+			await import('https://esm.sh/beautiful-backgrounds');
 		}
 	});
 </script>
 
 <!-- Only render on desktop -->
 {#if isDesktop}
-	<bb-ambient-ribbon class="animated-background-2" />
+	<!-- <bb-ambient-ribbon class="animated-background-2" /> -->
 {/if}
+
 <style>
 	.animated-background-2 {
 		position: fixed;
