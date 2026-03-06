@@ -3,6 +3,9 @@ import type { UserConfig } from 'vite';
 
 const config: UserConfig = {
 	plugins: [sveltekit()],
+	build: {
+		minify: 'terser',
+	},
 };
 
 export default config;
