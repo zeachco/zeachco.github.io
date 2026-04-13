@@ -7,7 +7,7 @@
 	import { browser } from '$app/environment';
 
 	const comps: CompanyData[] = sortByKey('start', companies);
-	const showAll = !browser || window.location.pathname.includes('print');
+	const showAll = !browser || window.location.pathname.includes('print') || true;
 </script>
 
 <section>

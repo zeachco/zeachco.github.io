@@ -159,12 +159,12 @@ export const companies: CompanyData[] = [
 		name: 'AppDirect',
 		start: '2015-03',
 		end: '2016-12',
-		note: `Developed white-label software marketplace and flexible CMS using Backbone & Marionette. Worked with Tomcat, Wicket, Spring, Hibernate, and MySQL stack. Built a Node.js proxy server and CLI to automate company tasks. Contributed to a parallel project using AngularJS for managing LDAP users, permissions, and roles.`,
+		note: `Developed white-label software marketplace and flexible CMS using Backbone & Marionette. Frontend Techlead and team builder for the India new office gave advanced engineering formation on QA, git, Java and Javascript through the world to normalize our work methodologies and raise the skill bar of everyone across the company. Worked with Tomcat, Wicket, Spring, Hibernate, and MySQL stack. Built a Node.js proxy server and CLI to automate company tasks. Contributed to a parallel project using AngularJS for managing LDAP users, permissions, and roles.`,
 		score: {
 			frontend: 0.8,
 			backend: 0.8,
-			techlead: 0.7,
-			management: 0.5,
+			techlead: 0.8,
+			management: 0.8,
 		},
 	},
 	{
