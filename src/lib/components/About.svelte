@@ -83,7 +83,7 @@
 		<p>
 			I am inspired by companies such as Netflix for their infrastructure, Airbnb, Stripe, and
 			Shopify for their contributions to open source, and Walmart, Netflix, Domino's, and Microsoft
-			for being Node.js pioneers. I am particularly drawn to how these companies innovate and push
+			for being Node.js pioneers (back in the days). I am particularly drawn to how these companies innovate and push
 			boundaries in the tech industry.
 		</p>
 		<h2>Fun projects, all the time!</h2>
@@ -92,9 +92,11 @@
 				href="https://zeachco.github.io/phantom-game-ai-training/?game=highway">Highway</a
 			>, an in-browser machine learning trainer that trains 2D cars to drive on a highway. Be aware
 			that the first iterations are CPU-intensive, but the AI should learn to drive in less than 15
-			minutes. Another fun project is <a href="https://zeachco.github.io/cells-ai/">Cells AI</a>, a
+			minutes. Note that this repo was created in 2021 and last edit was in 2022, no vibe coding here,
+      just me building my own neural training simulation from scratch without any external libraries.
+      Another fun project is <a href="https://zeachco.github.io/cells-ai/">Cells AI</a>, a
 			cellular automata simulation with AI-powered pattern generation and exploration written in
-			Rust.
+			Rust that can run the the browser as well (but runs faster actively).
 		</p>
 		<p>
 			Disclaimer: This project works better on small resolutions since rendering the multiple layers
@@ -117,6 +119,7 @@
 		<p>
 			Personality-wise, I love snowboarding, electronic music, dancing, computer games, continuous
 			learning, and innovation. I am an early adopter of technological gadgets and lifestyle trends.
+      I also DJ with my trusty Denon SC Live 4 and produce music using open source solutions.
 		</p>
 		<p>
 			If you're curious, check out my <a href="https://github.com/zeachco">GitHub profile</a>. I
