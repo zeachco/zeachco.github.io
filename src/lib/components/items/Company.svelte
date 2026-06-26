@@ -24,6 +24,8 @@
 		notes = company.note;
 	}
 
+	const bullets = !small ? (company.bullets ?? []) : [];
+
 	const labels = company.labels || [];
 </script>
 
@@ -34,7 +36,11 @@
 			<Label name={label} />
 		{/each}
 	</span>
-	{#if notes}
+	{#if bullets.length}
+		<ul>
+			{#each bullets as b}<li>{b}</li>{/each}
+		</ul>
+	{:else if notes}
 		<p>{notes}</p>
 	{/if}
 </details>
