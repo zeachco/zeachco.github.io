@@ -30,7 +30,7 @@ async function main() {
   console.log('Warming up server...');
   try {
     const warmupStart = Date.now();
-    await fetch(`${serverUrl}/print?roles=all&headless=true`);
+    await fetch(`${serverUrl}/cv?roles=frontend,backend,techlead`);
     console.log(`Server warmed up in ${Date.now() - warmupStart}ms`);
     // Give it a moment to settle
     await new Promise(resolve => setTimeout(resolve, 2000));
@@ -63,7 +63,7 @@ async function main() {
       const results = await Promise.allSettled(batch.map(async (variant) => {
         const filename = variantToFilename(variant);
         const rolesParam = variant.join(',');
-        const url = `http://localhost:4173/print?roles=${rolesParam}&headless=true`;
+        const url = `http://localhost:4173/cv?roles=${rolesParam}`;
 
         console.log(`Generating ${filename}...`);
 
@@ -75,7 +75,7 @@ async function main() {
             browser
           );
 
-          // Fetch HTML for Markdown generation (already has headless=true in URL)
+          // Fetch HTML for Markdown generation
           const response = await fetch(url);
           const html = await response.text();
 

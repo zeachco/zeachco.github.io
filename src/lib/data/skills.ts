@@ -57,7 +57,7 @@ export const skills: SkillData[] = [
     name: 'Neural Networks',
     start: '2020-08',
     percent: 65,
-    labels: ['programming', 'client', 'server'],
+    labels: ['programming', 'client', 'server', 'llm'],
     note: "Extensive experience applying neural networks using TensorFlow.js and ml5.js. Currently focused on developing zero-dependency implementations to enable AI execution in resource-constrained environments (e.g., mobile browsers, embedded devices). Notable achievement: Efficiently trained a 7,000-agent traffic simulation directly within a low-end mobile browser.",
     score: {
       frontend: 0.7,
@@ -70,7 +70,7 @@ export const skills: SkillData[] = [
     name: 'Deep Learning',
     start: '2021-10',
     percent: 55,
-    labels: ['programming', 'client', 'server'],
+    labels: ['programming', 'client', 'server', 'llm'],
     note: 'Strong conceptual foundation in deep learning architectures. My current focus is on implementing lightweight, deployable models suitable for web and edge computing environments.',
     score: {
       frontend: 0.6,
@@ -83,7 +83,7 @@ export const skills: SkillData[] = [
     name: 'LLMs',
     start: '2023-12',
     percent: 40,
-    labels: ['programming', 'ai', 'server'],
+    labels: ['programming', 'ai', 'server', 'llm'],
     note: 'Active development experience with Large Language Models (LLMs), including GPT-3 and GPT-4 integration. Projects include custom chatbots, code generation tools, and summarization engines. Proficient in deploying local models via Ollama and architecting Retrieval-Augmented Generation (RAG) solutions using vector databases.',
     score: {
       frontend: 0.2,

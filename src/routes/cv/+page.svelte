@@ -181,7 +181,7 @@
 		overflow-y: auto;
 		color: #111;
 		font-family: 'DM Sans', system-ui, sans-serif;
-		font-size: 8.5pt;
+		font-size: 16px;
 		line-height: 1.55;
 		-webkit-font-smoothing: antialiased;
 		/* Kill Pico CSS dark-theme variables */
@@ -192,7 +192,7 @@
 		--pico-h3-color: #111;
 		--pico-primary: #1e3a5f;
 		--pico-primary-background: #1e3a5f;
-		--pico-font-size: 8.5pt;
+		--pico-font-size: 16px;
 	}
 
 	/* Kill the root layout's universal text-shadow */
@@ -238,10 +238,10 @@
 
 	/* ── Header ─────────────────────────────────────────────────────── */
 	.cv-head {
-		display: flex;
-		justify-content: space-between;
-		align-items: flex-end;
-		gap: 2em;
+		display: grid;
+		grid-template-columns: 1fr auto;
+		align-items: end;
+		gap: 1em;
 		padding-bottom: 5mm;
 		border-bottom: 1.5px solid #111;
 		margin-bottom: 7mm;
@@ -249,7 +249,7 @@
 
 	.cv-name {
 		font-family: 'DM Serif Display', Georgia, 'Times New Roman', serif !important;
-		font-size: 26pt !important;
+		font-size: 2.2em !important;
 		font-weight: 400 !important;
 		letter-spacing: -0.02em !important;
 		line-height: 1 !important;
@@ -261,7 +261,7 @@
 	}
 
 	.cv-role {
-		font-size: 7.5pt;
+		font-size: 0.72em;
 		font-weight: 300;
 		letter-spacing: 0.14em;
 		text-transform: uppercase;
@@ -275,7 +275,7 @@
 		flex-direction: column;
 		align-items: flex-end;
 		gap: 2px;
-		font-size: 7.5pt;
+		font-size: 0.75em;
 		font-weight: 300;
 		flex-shrink: 0;
 	}
@@ -292,7 +292,7 @@
 	/* ── Section heading ────────────────────────────────────────────── */
 	.section-hd {
 		font-family: 'DM Sans', system-ui, sans-serif !important;
-		font-size: 6pt !important;
+		font-size: 0.6em !important;
 		font-weight: 600 !important;
 		letter-spacing: 0.25em !important;
 		text-transform: uppercase !important;
@@ -324,14 +324,14 @@
 	}
 
 	.exp-co {
-		font-size: 9pt;
+		font-size: 0.95em;
 		font-weight: 600;
 		color: #111;
 		letter-spacing: 0.01em;
 	}
 
 	.exp-date {
-		font-size: 7pt;
+		font-size: 0.75em;
 		font-weight: 300;
 		color: #888;
 		white-space: nowrap;
@@ -340,7 +340,7 @@
 
 	.exp-body {
 		margin: 0;
-		font-size: 7.5pt;
+		font-size: 0.85em;
 		font-weight: 300;
 		color: #333;
 		line-height: 1.6;
@@ -361,14 +361,14 @@
 
 	.skill-row {
 		display: grid;
-		grid-template-columns: 115px 1fr;
+		grid-template-columns: 10em 1fr;
 		gap: 3px;
-		margin-bottom: 3px;
+		margin-bottom: 4px;
 		align-items: baseline;
 	}
 
 	.skill-cat {
-		font-size: 7pt;
+		font-size: 0.72em;
 		font-weight: 600;
 		color: #1e3a5f;
 		text-transform: uppercase;
@@ -376,7 +376,7 @@
 	}
 
 	.skill-val {
-		font-size: 7.5pt;
+		font-size: 0.85em;
 		font-weight: 300;
 		color: #333;
 		line-height: 1.5;
@@ -392,7 +392,7 @@
 
 	.edu-name {
 		display: block;
-		font-size: 7pt;
+		font-size: 0.75em;
 		font-weight: 400;
 		color: #222;
 		line-height: 1.4;
@@ -400,7 +400,7 @@
 
 	.edu-yr {
 		display: block;
-		font-size: 6.5pt;
+		font-size: 0.68em;
 		font-weight: 300;
 		color: #aaa;
 		margin-bottom: 5px;
@@ -415,13 +415,13 @@
 	}
 
 	.lang-name {
-		font-size: 7.5pt;
+		font-size: 0.85em;
 		font-weight: 400;
 		color: #222;
 	}
 
 	.lang-lv {
-		font-size: 7pt;
+		font-size: 0.75em;
 		font-weight: 300;
 		color: #aaa;
 		font-style: italic;
