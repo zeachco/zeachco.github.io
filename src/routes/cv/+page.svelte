@@ -51,6 +51,7 @@
 
 	function getGroup(s: SkillData): string {
 		const l = s.labels;
+		if (l.includes('domain')) return 'Domains';
 		if (l.includes('ai')) return 'AI / ML';
 		if (l.includes('platform')) return 'Platform & DevOps';
 		if ((l.includes('library') || l.includes('framework')) && l.includes('client'))
@@ -58,7 +59,7 @@
 		if (l.includes('client') && l.includes('server')) return 'Core';
 		if (l.includes('client')) return 'Frontend';
 		if (l.includes('server')) return 'Backend';
-		return 'Tools';
+		return 'Domains';
 	}
 
 	const GROUP_ORDER = [
@@ -68,7 +69,7 @@
 		'Frontend Libraries',
 		'Platform & DevOps',
 		'AI / ML',
-		'Tools',
+		'Domains',
 	];
 
 	$: skillGroups = GROUP_ORDER.map((g) => ({
