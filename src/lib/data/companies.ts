@@ -3,8 +3,15 @@ import type { CompanyData } from '$lib/types';
 export const companies: CompanyData[] = [
   {
     name: 'Stay22',
+    role: 'Senior Full-Stack Developer',
     start: '2024-10-01',
     note: `Full-stack development on a React, Node.js, and Python stack with extensive work on automation and modernization across multiple services. Led Developer Experience (DX) initiatives including CI/CD pipeline maintenance with GitHub Actions, build optimization, test infrastructure improvements, and comprehensive training programs covering security, feature flags, and testing practices (unit/integration/e2e). Developed MCP servers and established architecture guidelines and onboarding processes. Integrated a major retail ecommerce system into Stay22's affiliation platform, implementing report digestion and ML pipeline solutions. Leveraged AI to extract video monetizable content and enhance third-party integrations. Team support to many engineering teams such as security, platform, it, engineering guild and core products development. Tech stack: MongoDB, MySQL, Snowflake, Node.js, Deno, Python, Google Cloud, AWS, Terraform, Vue, React, jQuery, Tailwind, web-components.`,
+    bullets: [
+      'Led DX initiatives: CI/CD (GitHub Actions), build optimization, test infrastructure, and security/feature-flag training programs',
+      'Integrated a major retail ecommerce system into the affiliation platform with ML pipeline and AI-driven video monetization',
+      'Developed MCP servers, architecture guidelines, and onboarding processes; supported security, platform, and engineering guild teams',
+      'Stack: MongoDB, MySQL, Snowflake, Node.js, Deno, Python, GCP, AWS, Terraform, Vue, React',
+    ],
     score: {
       frontend: 0.9,
       backend: 0.85,
@@ -14,9 +21,15 @@ export const companies: CompanyData[] = [
   },
   {
     name: 'Pod (workwithpod.com)',
+    role: 'Senior Full-Stack Developer',
     start: '2024-03-09',
     end: '2024-10-01',
     note: `Full-stack development on a React, Node.js, and Python stack with custom AI implementation and third-party integrations. Leveraged cutting-edge technologies to build scalable and efficient solutions. High customisation of MantineUI design system, participation to UX design, and implementation of a custom design system. Implemented authentification and drove security best practices. Implemented security layers over firebase, mysql and postgress databases. Implemented automatic release and deployment processes using AI to analyse and generate changelogs. Implemented TRPC across our nodejs layer and our React frontend to ensure maintainability and scalability of our app.`,
+    bullets: [
+      'Full-stack React, Node.js, Python with custom AI features and third-party integrations',
+      'Deep MantineUI customization; led UX design and implementation of a custom design system',
+      'Implemented TRPC, Firebase/MySQL/Postgres security layers, and AI-generated automated changelogs',
+    ],
     score: {
       frontend: 0.8,
       backend: 0.8,
@@ -26,8 +39,13 @@ export const companies: CompanyData[] = [
   },
   {
     name: 'Yenom (self-founded)',
+    role: 'Founder & Full-Stack Developer',
     start: '2023-02',
     note: `Initiated and developed a comprehensive financial tracking application as a side project, showcasing proficiency in Deno, Svelte, and TypeScript. Demonstrated versatility by managing all aspects of the project, including DevOps, database design, and full-stack development. Optimized performance and reduced operational costs to less than $1 per month while scaling to 200+ users. Integrated AI features using OpenAI for financial counseling. Exploring Rust and Yew for potential future iterations to further optimize performance and reduce costs.`,
+    bullets: [
+      'Built a financial tracking app (Deno, Svelte, TypeScript) from scratch, handling DevOps, DB design, and full-stack development',
+      'Scaled to 200+ users at under $1/month; integrated OpenAI for financial counseling features',
+    ],
     score: {
       frontend: 0.9,
       backend: 0.9,
@@ -37,6 +55,7 @@ export const companies: CompanyData[] = [
   },
   {
     name: 'Independent Game Development',
+    role: 'Indie Game Developer',
     start: '2004-09',
     end: '2008-06',
     note: `Developed games using Blitz Basic, BlitzMax, and Dark Basic Pro with Dark Physics for 3D games. Created web games and game portals using JavaScript, MySQL, and PHP, demonstrating early full-stack capabilities.`,
@@ -73,6 +92,7 @@ export const companies: CompanyData[] = [
   },
   {
     name: 'Apiken',
+    role: 'Full-Stack Developer',
     start: '2008-06',
     end: '2011-10',
     note: `Specialized in open-source technologies and home hosting on Linux servers. Utilized PHP 4 & 5, MySQL, Oracle, Python, jQuery, and HTML5. Developed strong skills in GIMP for graphic design, enhancing full-stack capabilities.`,
@@ -97,9 +117,15 @@ export const companies: CompanyData[] = [
   },
   {
     name: 'Vidéotron & Québecor',
+    role: 'Integration & Backend Developer',
     start: '2011-08',
     end: '2013-08',
     note: `Managed enterprise solutions using Software AG products (Trading Network, MyWebMethods, Integration Server 6.1 to 8.2). Supported and managed multiple environments (Dev, Test, Acc, Pre-prod, Prod). Integrated Java/C technologies with SQL Oracle, Broker, ESB, and EAI. Designed and supported business processes. Developed a tool to centralize operations and produce reports on IT department activities, showcasing initiative and problem-solving skills.`,
+    bullets: [
+      'Managed enterprise integration using Software AG (Trading Network, Integration Server 6.1–8.2) across Dev/Test/Prod environments',
+      'Integrated Java/C with SQL Oracle, ESB, EAI, and Broker; designed and supported business processes',
+      'Built an internal tool to centralize IT operations and generate department activity reports',
+    ],
     score: {
       frontend: 0.5,
       backend: 0.8,
@@ -133,9 +159,14 @@ export const companies: CompanyData[] = [
   },
   {
     name: 'Premières Loges & White Label Tickets',
+    role: 'Full-Stack Developer',
     start: '2013-10',
     end: '2014-09',
     note: `Engaged in software development using Java 6-7-8, SWT, Vaadin, and GWT with Spring and Tomcat 5-6-7. Maintained the Ticketpro website (PHP and Java) and developed SWT software for ticket selling. Utilized various IDEs and tools including Eclipse, Atom, Sublime Text, NetBeans, KomodoEdit, PyCharm, and Git. Led front-end development for the Festival International d'été de Québec 2013.`,
+    bullets: [
+      'Developed Java 6–8 software (SWT, Vaadin, GWT, Spring, Tomcat) for ticket-selling platforms',
+      'Maintained the Ticketpro website (PHP/Java) and led frontend for Festival International d\'été de Québec 2013',
+    ],
     score: {
       frontend: 0.8,
       backend: 0.8,
@@ -145,9 +176,14 @@ export const companies: CompanyData[] = [
   },
   {
     name: 'Morgan Stanley',
+    role: 'Frontend Developer',
     start: '2014-10',
     end: '2015-03',
     note: `Developed vanilla JavaScript solutions compatible with Internet Explorer 7 and Edge browsers. Conducted Splunk front-end reverse engineering and R&D. Provided team support and UX design. Led JavaScript training and code reviews for other employees and projects. Obtained certifications in Trading, Business Process, and Anti-Corruption.`,
+    bullets: [
+      'Built IE7/Edge-compatible vanilla JavaScript financial dashboards; Splunk frontend R&D',
+      'Led JavaScript training and code reviews company-wide; UX design and team support',
+    ],
     score: {
       frontend: 0.9,
       backend: 0.5,
@@ -157,9 +193,15 @@ export const companies: CompanyData[] = [
   },
   {
     name: 'AppDirect',
+    role: 'Frontend Tech Lead',
     start: '2015-03',
     end: '2016-12',
     note: `Developed white-label software marketplace and flexible CMS using Backbone & Marionette. Frontend Techlead and team builder for the India new office gave advanced engineering formation on QA, git, Java and Javascript through the world to normalize our work methodologies and raise the skill bar of everyone across the company. Worked with Tomcat, Wicket, Spring, Hibernate, and MySQL stack. Built a Node.js proxy server and CLI to automate company tasks. Contributed to a parallel project using AngularJS for managing LDAP users, permissions, and roles.`,
+    bullets: [
+      'Built white-label software marketplace and CMS (Backbone, Marionette, Tomcat, Spring, MySQL)',
+      'Frontend Tech Lead for India office; trained engineers globally on QA, Git, Java, and JavaScript to raise the skill bar',
+      'Built a Node.js proxy server and CLI for company-wide automation; contributed AngularJS LDAP management module',
+    ],
     score: {
       frontend: 0.8,
       backend: 0.8,
@@ -169,9 +211,15 @@ export const companies: CompanyData[] = [
   },
   {
     name: 'Playtika',
+    role: 'Senior Frontend Tech Lead',
     start: '2017-01',
     end: '2019-11',
     note: `Led development of the World Series of Poker game. Utilized advanced JavaScript engineering with Node.js, webpack, three.js, React-Redux, and Pixi.js for canvas rendering. Implemented LESS, SASS, and Immutable.js. Served as Scrum Master, managing releases, software architecture, and build/deployment processes (TeamCity). Enforced code quality and best practices through custom ESLint, TypeScript, and VS Code extensions configurations.`,
+    bullets: [
+      'Led frontend architecture for World Series of Poker using React-Redux, Pixi.js canvas rendering, and three.js',
+      'Scrum Master: managed releases, software architecture, and CI/CD (TeamCity)',
+      'Enforced quality via custom ESLint, TypeScript, and VS Code configurations across the team',
+    ],
     score: {
       frontend: 0.9,
       backend: 0.7,
@@ -181,8 +229,14 @@ export const companies: CompanyData[] = [
   },
   {
     name: 'Shopify',
+    role: 'Senior Software Engineer',
     start: '2019-11',
     note: `Senior developer role focusing on developing internal libraries to handle Shopify Payments' complex form variations, including legal, banking, product information, business details, and additional owners' information. Write, maintain, and deploy extensively tested solutions while training other developers and enforcing best coding practices. Specialize in implementing security measures and best practices for React and Node.js environments.`,
+    bullets: [
+      'Built internal libraries for Shopify Payments handling complex form flows: legal, banking, business details, and ownership verification',
+      'Maintained extensively tested, production-deployed solutions with a strong focus on React/Node.js security best practices',
+      'Mentored developers and drove code quality standards across the payments team',
+    ],
     score: {
       frontend: 0.9,
       backend: 0.9,

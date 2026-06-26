@@ -76,7 +76,8 @@
 		g,
 		items: skills
 			.filter((s) => !s.softskill && avgScore(s, selectedRoles) >= 0.6 && getGroup(s) === g)
-			.map((s) => s.name),
+			.sort((a, b) => b.percent - a.percent)
+			.map((s) => ({ name: s.name, percent: s.percent })),
 	})).filter((x) => x.items.length);
 
 	$: languages = skills
@@ -114,8 +115,13 @@
 				<span>{contact.phone}</span>
 				<a href="https://github.com/zeachco">github.com/zeachco</a>
 				<a href="https://linkedin.com/in/zeachco">linkedin.com/in/zeachco</a>
+				<a href="/about" class="no-print">about me</a>
 			</address>
 		</header>
+
+		{#if selectedRoles.length}
+			<p class="cv-role-badge no-print">Filtered: {selectedRoles.join(', ')}</p>
+		{/if}
 
 		<!-- Experience -->
 		<section class="cv-section">
@@ -126,7 +132,14 @@
 						<strong class="exp-co">{c.name}</strong>
 						<span class="exp-date">{fmt(c.start)} – {c.end ? fmt(c.end) : 'present'}</span>
 					</div>
-					{#if c.note}<p class="exp-body">{c.note}</p>{/if}
+					{#if c.role}<p class="exp-title">{c.role}</p>{/if}
+					{#if c.bullets}
+						<ul class="exp-bullets">
+							{#each c.bullets as b}<li>{b}</li>{/each}
+						</ul>
+					{:else if c.note}
+						<p class="exp-body">{c.note}</p>
+					{/if}
 				</div>
 			{/each}
 		</section>
@@ -139,7 +152,7 @@
 					{#each skillGroups as { g, items }}
 						<div class="skill-row">
 							<dt class="skill-cat">{g}</dt>
-							<dd class="skill-val">{items.join(', ')}</dd>
+							<dd class="skill-val">{#each items as s, i}{#if s.percent >= 85}<strong>{s.name}</strong>{:else}{s.name}{/if}{i < items.length - 1 ? ', ' : ''}{/each}</dd>
 						</div>
 					{/each}
 				</dl>
@@ -147,7 +160,7 @@
 
 			<div class="cv-right">
 				<section class="cv-section">
-					<h2 class="section-hd">Education</h2>
+					<h2 class="section-hd">Certifications & Training</h2>
 					{#each trainings as t}
 						<div class="edu-item">
 							<span class="edu-name">{t.name}</span>
@@ -207,6 +220,10 @@
 			position: static;
 			overflow: visible;
 			background: #fff;
+		}
+
+		.no-print {
+			display: none !important;
 		}
 
 		/* Hide root layout chrome (nav header, contact footer, animated bg) */
@@ -293,7 +310,7 @@
 	/* ── Section heading ────────────────────────────────────────────── */
 	.section-hd {
 		font-family: 'DM Sans', system-ui, sans-serif !important;
-		font-size: 0.6em !important;
+		font-size: 0.65em !important;
 		font-weight: 600 !important;
 		letter-spacing: 0.25em !important;
 		text-transform: uppercase !important;
@@ -327,8 +344,44 @@
 	.exp-co {
 		font-size: 0.95em;
 		font-weight: 600;
-		color: #111;
+		color: #1e3a5f;
 		letter-spacing: 0.01em;
+	}
+
+	.exp-title {
+		margin: 1px 0 3px;
+		font-size: 0.8em;
+		font-weight: 400;
+		color: #888;
+		font-style: italic;
+	}
+
+	.exp-bullets {
+		margin: 3px 0 0 1.1em;
+		padding: 0;
+		font-size: 0.85em;
+		font-weight: 300;
+		color: #333;
+		line-height: 1.6;
+	}
+
+	.exp-bullets li {
+		margin-bottom: 1px;
+	}
+
+	.cv-role-badge {
+		font-size: 0.72em;
+		color: #1e3a5f;
+		background: #eef2f7;
+		border: 1px solid #c5d3e8;
+		border-radius: 4px;
+		padding: 2px 8px;
+		display: inline-block;
+		margin-bottom: 5mm;
+	}
+
+	.no-print {
+		display: revert;
 	}
 
 	.exp-date {
