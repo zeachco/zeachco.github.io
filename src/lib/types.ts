@@ -30,6 +30,7 @@ export type Label = keyof typeof labels;
 
 export interface CompanyData extends BaseData {
 	role?: string;
+	bullets?: string[];
 }
 
 export interface ProjectData extends BaseData {
@@ -45,6 +46,7 @@ export interface SkillData extends BaseData {
 
 export interface TrainingData extends BaseData {
 	language?: string;
+	notes?: string;
 }
 
 export interface Contact {

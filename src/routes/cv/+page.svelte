@@ -46,7 +46,7 @@
 	const yr = (d: Date) => String(d.getUTCFullYear());
 
 	$: visibleCompanies = companies
-		.filter((c) => c.note && avgScore(c, selectedRoles) >= 0.7)
+		.filter((c) => (c.note || c.bullets?.length) && avgScore(c, selectedRoles) >= 0.7)
 		.sort((a, b) => b.start.getTime() - a.start.getTime());
 
 	function getGroup(s: SkillData): string {
@@ -76,7 +76,7 @@
 		g,
 		items: skills
 			.filter((s) => !s.softskill && avgScore(s, selectedRoles) >= 0.6 && getGroup(s) === g)
-			.map((s) => s.name),
+			.map((s) => ({ name: s.name, percent: s.percent })),
 	})).filter((x) => x.items.length);
 
 	$: languages = skills
@@ -117,6 +117,10 @@
 			</address>
 		</header>
 
+		{#if selectedRoles.length}
+			<div class="cv-role-badge no-print">Viewing: {selectedRoles.join(', ')}</div>
+		{/if}
+
 		<!-- Experience -->
 		<section class="cv-section">
 			<h2 class="section-hd">Experience</h2>
@@ -126,7 +130,14 @@
 						<strong class="exp-co">{c.name}</strong>
 						<span class="exp-date">{fmt(c.start)} – {c.end ? fmt(c.end) : 'present'}</span>
 					</div>
-					{#if c.note}<p class="exp-body">{c.note}</p>{/if}
+					{#if c.role}<p class="exp-role">{c.role}</p>{/if}
+					{#if c.bullets?.length}
+						<ul class="exp-bullets">
+							{#each c.bullets as b}<li>{b}</li>{/each}
+						</ul>
+					{:else if c.note}
+						<p class="exp-body">{c.note}</p>
+					{/if}
 				</div>
 			{/each}
 		</section>
@@ -139,7 +150,11 @@
 					{#each skillGroups as { g, items }}
 						<div class="skill-row">
 							<dt class="skill-cat">{g}</dt>
-							<dd class="skill-val">{items.join(', ')}</dd>
+							<dd class="skill-val">
+								{#each items as s, i}
+									{#if s.percent >= 85}<strong>{s.name}</strong>{:else}{s.name}{/if}{i < items.length - 1 ? ', ' : ''}
+								{/each}
+							</dd>
 						</div>
 					{/each}
 				</dl>
@@ -152,6 +167,7 @@
 						<div class="edu-item">
 							<span class="edu-name">{t.name}</span>
 							<span class="edu-yr">{yr(t.start)}–{yr(t.end)}</span>
+							{#if t.notes}<span class="edu-note">{t.notes}</span>{/if}
 						</div>
 					{/each}
 				</section>
@@ -293,7 +309,7 @@
 	/* ── Section heading ────────────────────────────────────────────── */
 	.section-hd {
 		font-family: 'DM Sans', system-ui, sans-serif !important;
-		font-size: 0.6em !important;
+		font-size: 0.65em !important;
 		font-weight: 600 !important;
 		letter-spacing: 0.25em !important;
 		text-transform: uppercase !important;
@@ -327,8 +343,16 @@
 	.exp-co {
 		font-size: 0.95em;
 		font-weight: 600;
-		color: #111;
+		color: #1e3a5f;
 		letter-spacing: 0.01em;
+	}
+
+	.exp-role {
+		margin: 0 0 2px;
+		font-size: 0.8em;
+		font-weight: 400;
+		color: #888;
+		letter-spacing: 0.03em;
 	}
 
 	.exp-date {
@@ -345,6 +369,19 @@
 		font-weight: 300;
 		color: #333;
 		line-height: 1.6;
+	}
+
+	.exp-bullets {
+		margin: 0;
+		padding-left: 1.2em;
+		font-size: 0.85em;
+		font-weight: 300;
+		color: #333;
+		line-height: 1.6;
+	}
+
+	.exp-bullets li {
+		margin-bottom: 1px;
 	}
 
 	/* ── Lower two-column ───────────────────────────────────────────── */
@@ -385,6 +422,10 @@
 		padding: 0;
 	}
 
+	.skill-val strong {
+		font-weight: 600;
+	}
+
 	/* ── Education ──────────────────────────────────────────────────── */
 	.edu-item {
 		margin-bottom: 4px;
@@ -404,7 +445,30 @@
 		font-size: 0.68em;
 		font-weight: 300;
 		color: #aaa;
+		margin-bottom: 2px;
+	}
+
+	.edu-note {
+		display: block;
+		font-size: 0.65em;
+		font-weight: 300;
+		color: #aaa;
+		line-height: 1.4;
 		margin-bottom: 5px;
+	}
+
+	/* ── Role badge (browser only) ──────────────────────────────────── */
+	.cv-role-badge {
+		font-size: 0.7em;
+		color: #888;
+		margin-bottom: 4mm;
+		font-style: italic;
+	}
+
+	@media print {
+		.no-print {
+			display: none;
+		}
 	}
 
 	/* ── Languages ──────────────────────────────────────────────────── */
