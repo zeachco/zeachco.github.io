@@ -104,24 +104,14 @@ export const companies: CompanyData[] = [
     },
   },
   {
-    name: 'Videotron',
-    start: '2009-05',
-    end: '2011-08',
-    note: `Provided technical support and electronic communications for videotron.com. Offered Windows and Mac support for residential customers, troubleshooting phone, cable, digital TV, and Internet issues. Analyzed and optimized web applications for chat communication, improving operational effectiveness by 20% across 200+ employees.`,
-    score: {
-      frontend: 0.5,
-      backend: 0.6,
-      techlead: 0.7,
-      management: 0.6,
-    },
-  },
-  {
     name: 'Vidéotron & Québecor',
-    role: 'Integration & Backend Developer',
-    start: '2011-08',
+    role: 'Technical Support / Integration & Backend Developer',
+    start: '2009-05',
     end: '2013-08',
-    note: `Managed enterprise solutions using Software AG products (Trading Network, MyWebMethods, Integration Server 6.1 to 8.2). Supported and managed multiple environments (Dev, Test, Acc, Pre-prod, Prod). Integrated Java/C technologies with SQL Oracle, Broker, ESB, and EAI. Designed and supported business processes. Developed a tool to centralize operations and produce reports on IT department activities, showcasing initiative and problem-solving skills.`,
+    note: `Technical support at Vidéotron (May 2009–August 2011), followed by integration and backend development at Vidéotron & Québecor (August 2011–August 2013). Provided technical support and electronic communications for videotron.com. Offered Windows and Mac support for residential customers, troubleshooting phone, cable, digital TV, and Internet issues. Analyzed and optimized web applications for chat communication, improving operational effectiveness by 20% across 200+ employees. Managed enterprise solutions using Software AG products (Trading Network, MyWebMethods, Integration Server 6.1 to 8.2). Supported and managed multiple environments (Dev, Test, Acc, Pre-prod, Prod). Integrated Java/C technologies with SQL Oracle, Broker, ESB, and EAI. Designed and supported business processes. Developed a tool to centralize operations and produce reports on IT department activities, showcasing initiative and problem-solving skills.`,
     bullets: [
+      'Technical support at Vidéotron (2009–2011), followed by integration and backend development at Vidéotron & Québecor (2011–2013)',
+      'Supported residential phone, cable, digital TV, and Internet services; optimized chat applications, improving operational effectiveness by 20% across 200+ employees',
       'Managed enterprise integration using Software AG (Trading Network, Integration Server 6.1–8.2) across Dev/Test/Prod environments',
       'Integrated Java/C with SQL Oracle, ESB, EAI, and Broker; designed and supported business processes',
       'Built an internal tool to centralize IT operations and generate department activity reports',
@@ -131,18 +121,6 @@ export const companies: CompanyData[] = [
       backend: 0.8,
       techlead: 0.8,
       management: 0.7,
-    },
-  },
-  {
-    name: 'Staples',
-    start: '2009-05',
-    end: '2009-09',
-    note: `Operated in the computer repair center, troubleshooting Windows and Linux personal computers, further developing hardware and software diagnostic skills.`,
-    score: {
-      frontend: 0.2,
-      backend: 0.3,
-      techlead: 0.3,
-      management: 0.2,
     },
   },
   {
@@ -231,6 +209,7 @@ export const companies: CompanyData[] = [
     name: 'Shopify',
     role: 'Senior Software Engineer',
     start: '2019-11',
+    end: '2024-02',
     note: `Senior developer role focusing on developing internal libraries to handle Shopify Payments' complex form variations, including legal, banking, product information, business details, and additional owners' information. Write, maintain, and deploy extensively tested solutions while training other developers and enforcing best coding practices. Specialize in implementing security measures and best practices for React and Node.js environments.`,
     bullets: [
       'Built internal libraries for Shopify Payments handling complex form flows: legal, banking, business details, and ownership verification',
