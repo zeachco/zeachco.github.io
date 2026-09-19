@@ -55,12 +55,16 @@
 
 		<h4>Have you noticed the AI experiment running in the background of this site?</h4>
 		<p>
-			It's a <a target="_blank" href="//www.olivier-rousseau-guyot.com/cells-ai/"
-				>live simulation of 5000 cells</a
-			>, each with a custom self-learning neural network of a few million parameters. It's currently
-			learning to navigate, reproduce and manage energy to survive, all training directly into a web
-			browser. Yes you read that correctly, single threaded neural network live learning written in
-			rust / web assembly as a proof of concept.
+			It's a <a
+				target="_blank"
+				href="//www.olivier-rousseau-guyot.com/phantom-game-ai-training/?game=circuit#circuit=0"
+				>live simulation of cars learning to drive!</a
+			><br />
+			Each with a custom self-learning neural network with variable deep hiiden neural network competing
+			for survival. It's currently learning to avoid and drift to the next waypoint, manage energy to
+			survive, all training directly into a web browser on a randomly generated track. Yes you read that
+			correctly, single threaded neural network live learning written in rust / web assembly as a proof
+			of concept.
 		</p>
 		<p>This is the kind of things I do just because I can.</p>
 	</PageTransition>
