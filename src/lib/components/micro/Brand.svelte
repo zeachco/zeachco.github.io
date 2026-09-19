@@ -2,7 +2,7 @@
 	export let name: string;
 	export let svg: string;
 	export let background = 'transparent';
-	const padding = background === 'transparent' ? '0' : '1em';
+	const padding = background === 'transparent' ? '0.4em 0.9em' : '0.6em 1em';
 </script>
 
 <div class="brand" data-glass-tooltip={name} data-placement="bottom">
@@ -11,23 +11,30 @@
 
 <style>
 	.brand {
-		opacity: 0.5;
 		position: relative;
-		transition: opacity 0.15s ease-out;
+		opacity: 0.55;
+		transition: opacity 0.2s ease, transform 0.2s ease;
 	}
 
 	.brand:hover,
 	.brand:focus-within {
 		opacity: 1;
+		transform: translateY(-2px);
 	}
 
 	img {
-		max-height: 4em;
-		max-width: 12em;
+		max-height: 2.8em;
+		max-width: 10em;
 		display: inline-block;
-		border-radius: 1em;
-		background: #fff;
-		padding: 0.5em;
-		box-shadow: inset 0 0 5px 0px #888, 0 0 2px black;
+		object-fit: contain;
+		border-radius: 0.7rem;
+		border: 1px solid var(--line);
+		background: transparent;
+		box-shadow: none;
+		transition: border-color 0.2s ease;
+	}
+
+	.brand:hover img {
+		border-color: var(--line-2);
 	}
 </style>

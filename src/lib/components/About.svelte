@@ -103,7 +103,7 @@
 			of neural networks takes a toll on retina displays and wide screens.
 		</p>
 		<p>
-			There's also <a href="https://ndax.zeachco.deno.net/">Ndax Bot</a> and
+			There's also <a href="https://ndax.up.railway.app/">Ndax Bot</a> and
 			<a href="https://yenom.up.railway.app/">Yenom</a>!<br />
 			{yenom.note}
 		</p>

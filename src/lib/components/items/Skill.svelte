@@ -48,82 +48,17 @@
 </details>
 
 <style>
-	details {
-		position: relative;
-		padding: 1.5rem;
-		margin-bottom: 1.5rem;
-
-		/* Apply glass blur effect using CSS variables */
-		background: var(--glass-bg);
-		backdrop-filter: blur(var(--glass-blur-amount)) saturate(var(--glass-saturate));
-		-webkit-backdrop-filter: blur(var(--glass-blur-amount)) saturate(var(--glass-saturate));
-		border: 2px solid var(--glass-border);
-		border-radius: 1rem;
-		box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1),
-			inset 0 -1px 0 rgba(0, 0, 0, 0.2);
-
-		transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-		filter: url(#liquid-glass-filter);
-	}
-
-	details:hover {
-		transform: perspective(1000px) rotateX(2deg) scale(1.01);
-		border-color: rgba(255, 149, 0, 0.5);
-		background: rgba(255, 149, 0, 0.08);
-		box-shadow: 0 12px 48px rgba(255, 149, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.15),
-			inset 0 -1px 0 rgba(0, 0, 0, 0.3);
-	}
-
-	details[open] {
-		background: rgba(255, 149, 0, 0.1);
-		border-color: rgba(255, 149, 0, 0.6);
-		transform: perspective(1000px) scale(1.02);
-		box-shadow: 0 16px 64px rgba(255, 149, 0, 0.25), inset 0 2px 0 rgba(255, 255, 255, 0.2),
-			inset 0 -2px 0 rgba(0, 0, 0, 0.4);
-	}
-
-	details[open] summary {
-		border-bottom: 1px solid rgba(255, 149, 0, 0.3);
-		padding-bottom: 1rem;
-		margin-bottom: 1rem;
-	}
-
 	summary {
-		cursor: pointer;
-		list-style: none;
-		padding: 0;
-		transition: all 0.2s ease;
-		position: relative;
-	}
-
-	summary::-webkit-details-marker {
-		display: none;
-	}
-
-	summary::before {
-		content: '▶';
-		display: inline-block;
-		margin-right: 0.75rem;
-		transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-		color: var(--pico-primary-background);
-		filter: drop-shadow(0 0 4px rgba(255, 149, 0, 0.6));
-	}
-
-	summary:hover::before {
-		filter: drop-shadow(0 0 8px rgba(255, 149, 0, 0.9));
-	}
-
-	details[open] summary::before {
-		transform: rotate(90deg);
+		align-items: center;
 	}
 
 	.meter {
 		display: inline-block;
-		width: 1.5rem;
-		height: 1.5rem;
+		width: 1.15rem;
+		height: 1.15rem;
 		border-radius: 50%;
-		margin-right: 0.5rem;
+		flex-shrink: 0;
 		background-color: #8884;
-		box-shadow: inset -3px 0 8px -3px #fff8, -1px 1px 3px -1px #000;
+		box-shadow: inset -2px -2px 5px rgba(0, 0, 0, 0.4), inset 2px 2px 4px rgba(255, 255, 255, 0.25);
 	}
 </style>

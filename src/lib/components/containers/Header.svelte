@@ -59,7 +59,7 @@
 	<ul>
 		<li>
 			<strong>
-				<a href="/" class:active={$page.url.pathname === '/'}>Olivier</a>
+				<a href="/" class:active={$page.url.pathname === '/'}>Oli</a>
 			</strong>
 		</li>
 	</ul>
@@ -94,7 +94,7 @@
 					data-glass-tooltip="Download CV"
 					data-placement="left"
 				>
-					📥 CV
+					CV
 				</a>
 				{#if showDropdown}
 					<div class="cv-dropdown">
@@ -129,31 +129,20 @@
 </nav>
 
 <style>
-	nav ul {
-		gap: 0.5rem;
-	}
-
 	.cv-dropdown-container {
 		position: relative;
 	}
 
 	.cv-dropdown {
 		position: absolute;
-		top: 100%;
+		top: calc(100% + 0.5rem);
 		right: 0;
-		margin-top: 0.5rem;
-
-		/* Apply glass blur effect */
-		background: var(--glass-bg);
-		backdrop-filter: blur(var(--glass-blur-amount)) saturate(var(--glass-saturate));
-		-webkit-backdrop-filter: blur(var(--glass-blur-amount)) saturate(var(--glass-saturate));
-		border: 2px solid var(--glass-border);
-		border-radius: 1rem;
-		box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1),
-			inset 0 -1px 0 rgba(0, 0, 0, 0.2);
-
-		padding: 1rem;
-		min-width: 200px;
+		background: #1a1712;
+		border: 1px solid var(--line-2);
+		border-radius: 12px;
+		box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55), 0 4px 12px rgba(0, 0, 0, 0.4);
+		padding: 1.1rem;
+		min-width: 230px;
 		z-index: 1000;
 	}
 
@@ -161,50 +150,61 @@
 		margin-bottom: 1rem;
 		display: flex;
 		flex-direction: column;
-		gap: 0.5rem;
+		gap: 0.45rem;
 	}
 
 	.dropdown-section strong {
 		display: block;
-		margin-bottom: 0.25rem;
-		font-size: 0.875rem;
+		margin: 0 0 0.15rem;
+		font-size: 0.66rem;
+		font-weight: 600;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+		color: var(--text-3);
 	}
 
 	.dropdown-section label {
 		display: flex;
 		align-items: center;
-		gap: 0.5rem;
+		gap: 0.6rem;
 		cursor: pointer;
-		font-size: 0.875rem;
+		font-size: 0.88rem;
+		color: var(--text-2);
 		margin: 0;
+		transition: color 0.15s ease;
+	}
+
+	.dropdown-section label:hover {
+		color: var(--text);
 	}
 
 	.dropdown-section input[type='checkbox'],
 	.dropdown-section input[type='radio'] {
 		margin: 0;
-		/* width: auto; */
 	}
 
 	.dropdown-actions {
-		margin-top: 1rem;
-		padding-top: 1rem;
-		border-top: 1px solid var(--pico-border-color);
+		margin-top: 0.25rem;
+		padding-top: 0.9rem;
+		border-top: 1px solid var(--line);
 	}
 
 	.download-btn {
 		display: block;
 		width: 100%;
 		text-align: center;
-		padding: 0.5rem;
-		background: var(--pico-primary);
-		color: #fff;
-		border-radius: var(--pico-border-radius);
-		text-decoration: none;
+		padding: 0.6em 1em;
+		background: var(--accent);
+		color: var(--on-accent);
+		font-size: 0.9rem;
 		font-weight: 600;
+		border-radius: var(--radius-control);
+		text-decoration: none;
+		transition: background 0.15s ease;
 	}
 
 	.download-btn:hover {
-		background: var(--pico-primary-hover);
-		color: #fff !important;
+		background: var(--accent-2);
+		color: var(--on-accent) !important;
 	}
 </style>

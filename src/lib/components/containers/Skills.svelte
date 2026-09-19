@@ -104,6 +104,9 @@
 		);
 	}
 
+	// role keys typed once so the template stays cast-free
+	const roleKeys = Object.keys(skills[0].score) as Role[];
+
 	function enumarate(items: string[]) {
 		const comaSeparated = items.slice(0, -1).join(', ');
 		const lastItem = items.slice(-1);
@@ -111,7 +114,7 @@
 	}
 </script>
 
-<div class="container mx-auto px-4">
+<div class="skills-page">
 	<div class="print" />
 	<div class="no-print">
 		<h3>
@@ -126,12 +129,15 @@
 				bind:this={searchInput}
 				placeholder="Search skills (try: frontend, backend, fullstack, or any term)..."
 				bind:value={searchTerm}
-				class="search-input"
 			/>
 		</div>
 		<div class="selectors">
-			{#each Object.keys(skills[0].score) as role}
-				<label class="inline-flex items-center cursor-pointer" style="max-width:200px">
+			{#each roleKeys as role}
+				<label
+					class="role-chip"
+					class:active={$selectedRolesStore.includes(role)}
+					class:locked={selectedRoles !== undefined}
+				>
 					<input
 						type="checkbox"
 						name="sortCriteria"
@@ -139,7 +145,7 @@
 						bind:group={$selectedRolesStore}
 						disabled={selectedRoles !== undefined}
 					/>
-					<span class="ml-2">{role}</span>
+					{role}
 				</label>
 			{/each}
 		</div>
@@ -147,104 +153,240 @@
 	{#if currentSelectedRoles.length > 0}
 		<h4>Relevant skills for {enumarate(currentSelectedRoles)}:</h4>
 	{:else}
-		<div class="empty">Select at lease one role</div>
+		<div class="empty">Select at least one role</div>
 	{/if}
 
-	<div class="space-y-4">
+	<div class="skill-list">
 		{#each sortedSkills as skill}
 			<div class="skill-card">
-				<div class="flex-grow">
-					<div class="w-full flex gap-4">
-						<h3 class="text-lg font-semibold">
-							{skill.name}
-							{#if !skill.softskill}
-								<small class="text-sm text-gray-600">
-									{howMuchTimeElapsed(skill.start, skill.end)} of experience
-								</small>
-							{/if}
-						</h3>
-					</div>
-
-					<p class="text-sm mb-2">{skill.note ?? ''}</p>
-
-					<div class="flex flex-wrap gap-1 no-print">
-						{#each skill.labels ?? '' as label}
-							<span class="px-2 py-1 bg-gray-200 text-gray-700 text-xs rounded-full">
-								{label}
-							</span>
+				<div class="skill-top">
+					<h3 class="skill-name">{skill.name}</h3>
+					<small class="skill-relevance no-print">
+						Relevance {(calculateCombinedScore(skill) * 100).toFixed(1)}%
+					</small>
+				</div>
+				{#if !skill.softskill}
+					<small class="skill-duration">
+						{howMuchTimeElapsed(skill.start, skill.end)} of experience
+					</small>
+				{/if}
+				{#if skill.note}
+					<p class="skill-note">{skill.note}</p>
+				{/if}
+				{#if skill.labels}
+					<div class="skill-labels no-print">
+						{#each skill.labels as label}
+							<span>{label}</span>
 						{/each}
 					</div>
-					<div class="text-right">
-						<i class="text-xs opacity-50">
-							Relevance: {(calculateCombinedScore(skill) * 100).toFixed(1)}%
-						</i>
-					</div>
-				</div>
+				{/if}
+				<span
+					class="relevance-bar no-print"
+					style="width: {calculateCombinedScore(skill) * 100}%"
+				/>
 			</div>
 		{/each}
 	</div>
 </div>
 
 <style>
-	h3 {
-		margin-top: 2rem;
-		margin-bottom: 1rem;
-	}
 	.filter-count {
 		margin-left: 0.5rem;
-		font-weight: normal;
-		opacity: 0.7;
+		font-weight: 400;
+		font-size: 0.78rem;
+		opacity: 0.75;
+		vertical-align: middle;
 	}
+
+	.search-box {
+		margin: 1.25rem 0 1rem;
+	}
+
+	.search-box input {
+		width: 100%;
+		padding: 0.8rem 1rem;
+		font-size: 0.95rem;
+		font-family: inherit;
+		background: #12100d;
+		border: 1px solid var(--line);
+		border-radius: 10px;
+		color: var(--text);
+		outline: none;
+		transition: border-color 0.2s ease, box-shadow 0.2s ease;
+	}
+
+	.search-box input::placeholder {
+		color: var(--text-3);
+	}
+
+	.search-box input:focus {
+		border-color: var(--accent-line);
+		box-shadow: 0 0 0 3px rgba(229, 155, 61, 0.14);
+	}
+
 	.selectors {
-		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-		grid-gap: 1rem;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
 		margin-bottom: 2rem;
 	}
-	.search-input {
-		width: 100%;
-		padding: 0.75rem 1rem;
-		font-size: 1rem;
-		border: 2px solid #e5e7eb;
-		border-radius: 0.5rem;
-		outline: none;
-		transition: border-color 0.2s;
+
+	.role-chip {
+		position: relative;
+		display: inline-flex;
+		align-items: center;
+		padding: 0.45em 1.05em;
+		border: 1px solid var(--line);
+		border-radius: 999px;
+		font-size: 0.85rem;
+		font-weight: 500;
+		letter-spacing: 0.01em;
+		color: var(--text-2);
+		cursor: pointer;
+		user-select: none;
+		transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
 	}
-	.search-input:focus {
-		border-color: #3b82f6;
+
+	.role-chip input {
+		position: absolute;
+		opacity: 0;
+		pointer-events: none;
 	}
-	.bg-gray-200 {
-		text-shadow: none !important;
+
+	.role-chip:hover {
+		border-color: var(--line-2);
+		color: var(--text);
 	}
+
+	.role-chip.active {
+		color: var(--accent);
+		border-color: var(--accent-line);
+		background: var(--accent-soft);
+	}
+
+	.role-chip.locked {
+		opacity: 0.55;
+		cursor: default;
+	}
+
 	.empty {
 		margin-bottom: 2em;
-		color: brown;
-		font-weight: 600;
+		padding: 2.25rem 1rem;
+		text-align: center;
+		color: var(--text-2);
+		font-weight: 500;
+		border: 1px dashed var(--line-2);
+		border-radius: var(--radius-card);
+		background: rgba(232, 224, 208, 0.02);
 	}
+
+	.skill-list {
+		display: flex;
+		flex-direction: column;
+		gap: 0.9rem;
+	}
+
 	.skill-card {
 		position: relative;
-		display: flex;
 		overflow: hidden;
-		padding: 1.5rem;
-		margin-bottom: 1.5rem;
-
-		/* Apply glass blur effect using CSS variables */
-		background: var(--glass-bg);
-		backdrop-filter: blur(var(--glass-blur-amount)) saturate(var(--glass-saturate));
-		-webkit-backdrop-filter: blur(var(--glass-blur-amount)) saturate(var(--glass-saturate));
-		border: 2px solid var(--glass-border);
-		border-radius: 1rem;
-		box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1),
-			inset 0 -1px 0 rgba(0, 0, 0, 0.2);
-
-		transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-		filter: url(#liquid-glass-filter);
+		background: var(--surface);
+		border: 1px solid var(--line);
+		border-radius: var(--radius-card);
+		padding: 1.15rem 1.25rem 1.35rem;
+		transition: border-color 0.2s ease, background 0.2s ease;
 	}
+
 	.skill-card:hover {
-		transform: perspective(1000px) rotateX(2deg) scale(1.01);
-		border-color: rgba(255, 149, 0, 0.5);
-		background: rgba(255, 149, 0, 0.08);
-		box-shadow: 0 12px 48px rgba(255, 149, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.15),
-			inset 0 -1px 0 rgba(0, 0, 0, 0.3);
+		border-color: var(--line-2);
+		background: var(--surface-2);
+	}
+
+	.skill-top {
+		display: flex;
+		align-items: baseline;
+		justify-content: space-between;
+		gap: 1rem;
+	}
+
+	.skill-name {
+		font-family: 'DM Sans', system-ui, sans-serif;
+		font-size: 1.02rem;
+		font-weight: 600;
+		color: var(--text);
+		margin: 0;
+		letter-spacing: 0.01em;
+	}
+
+	.skill-relevance {
+		font-size: 0.72rem;
+		color: var(--text-3);
+		white-space: nowrap;
+	}
+
+	.skill-duration {
+		display: block;
+		margin-top: 0.2rem;
+		font-size: 0.72rem;
+		letter-spacing: 0.02em;
+	}
+
+	.skill-note {
+		margin: 0.55rem 0 0;
+		font-size: 0.85rem;
+		line-height: 1.55;
+		color: var(--text-2);
+	}
+
+	.skill-labels {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.35rem;
+		margin-top: 0.7rem;
+	}
+
+	.skill-labels span {
+		font-size: 0.7rem;
+		font-weight: 500;
+		letter-spacing: 0.03em;
+		color: var(--text-2);
+		background: rgba(232, 224, 208, 0.06);
+		border: 1px solid var(--line);
+		border-radius: 999px;
+		padding: 0.22rem 0.65rem;
+	}
+
+	.relevance-bar {
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		height: 2px;
+		background: linear-gradient(90deg, var(--accent), var(--accent-2));
+		opacity: 0.85;
+	}
+
+	@media print {
+		.skill-card {
+			padding: 0.4rem 0;
+			border: none;
+			border-bottom: 1px solid #ddd;
+		}
+
+		.skill-top {
+			display: block;
+		}
+
+		.skill-note {
+			color: #333;
+		}
+
+		.skill-labels {
+			margin-top: 0.25rem;
+		}
+
+		.skill-labels span {
+			border: none;
+			background: none;
+			color: #555;
+		}
 	}
 </style>

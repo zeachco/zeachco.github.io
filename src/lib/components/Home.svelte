@@ -55,29 +55,58 @@
 
 		<h4>Have you noticed the AI experiment running in the background of this site?</h4>
 		<p>
-			It's a <a target="_blank" href="//www.olivier-rousseau-guyot.com/cells-ai/">live simulation of 5000 cells</a>, each with a custom self-learning neural network of a few
-			million parameters. It's currently learning to navigate, reproduce and manage energy to
-			survive, all training directly into a web browser. Yes you read that correctly, single
-			threaded neural network live learning written in rust / web assembly as a proof of concept.
+			It's a <a target="_blank" href="//www.olivier-rousseau-guyot.com/cells-ai/"
+				>live simulation of 5000 cells</a
+			>, each with a custom self-learning neural network of a few million parameters. It's currently
+			learning to navigate, reproduce and manage energy to survive, all training directly into a web
+			browser. Yes you read that correctly, single threaded neural network live learning written in
+			rust / web assembly as a proof of concept.
 		</p>
 		<p>This is the kind of things I do just because I can.</p>
 	</PageTransition>
 </section>
 
 <style>
+	h3 {
+		font-size: 2.7rem;
+		margin-bottom: 0.6rem;
+	}
+
+	/* the CTA paragraph carries the page's main links — let them glow */
+	p a {
+		color: var(--accent);
+	}
+
+	p a:hover {
+		color: var(--accent-2);
+	}
+
+	h4 {
+		font-size: 0.78rem;
+		font-weight: 600;
+		letter-spacing: 0.18em;
+		text-transform: uppercase;
+		color: var(--text-3);
+		margin-top: 3rem;
+		margin-bottom: 1.4rem;
+	}
+
 	.brands-container {
 		overflow: hidden;
 		position: relative;
 		width: 100%;
-		padding-bottom: 3em;
+		padding-bottom: 2em;
+		mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+		-webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
 	}
 
 	.brands {
 		display: flex;
-		gap: 2em;
+		gap: 1.25em;
 		flex-wrap: nowrap;
 		animation: scroll-brands 30s linear infinite;
 		width: fit-content;
+		padding: 1rem 0;
 	}
 
 	.brands-container:hover .brands {

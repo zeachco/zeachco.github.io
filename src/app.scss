@@ -1,39 +1,357 @@
-/* Custom Brown/Pumpkin Theme for Pico v2 */
+/* Zeachco — warm graphite & amber, editorial dark */
 
-// Configure Pico with pumpkin theme (brown/orange tones)
-// Available themes: amber, azure, blue, cyan, fuchsia, green, grey, indigo,
-// jade, lime, orange, pink, pumpkin, purple, red, sand, slate, violet, yellow, zinc
+// Pico base (structure only; the palette is overridden below)
 @use '@picocss/pico/scss/pico' with (
 	$theme-color: 'pumpkin'
 );
 
-// CSS variables for mouse-driven animation (with defaults)
+// ── Design tokens ─────────────────────────────────────────────────────
 :root {
-	// Glass blur effect variables
-	--glass-blur-amount: 6px;
-	--glass-saturate: 150%;
-	--glass-bg: rgba(255, 149, 0, 0.05);
-	--glass-border: rgba(255, 149, 0, 0.3);
+	--bg: #0f0e0c04;
+	--surface: #171511;
+	--surface-2: #1d1a15;
+	--line: rgba(232, 224, 208, 0.1);
+	--line-2: rgba(232, 224, 208, 0.22);
+	--text: #e8e3d9;
+	--text-2: #a49c8d;
+	--text-3: #6f695e;
+	--accent: #e59b3d;
+	--accent-2: #f2b465;
+	--on-accent: #1c1206;
+	--accent-soft: rgba(229, 155, 61, 0.12);
+	--accent-line: rgba(229, 155, 61, 0.4);
+
+	--radius-card: 12px;
+	--radius-control: 8px;
 }
 
-// Composable glass blur effect class
-.glass-blur {
-	background: var(--glass-bg);
-	backdrop-filter: blur(var(--glass-blur-amount)) saturate(var(--glass-saturate));
-	-webkit-backdrop-filter: blur(var(--glass-blur-amount)) saturate(var(--glass-saturate));
-	border: 2px solid var(--glass-border);
-	border-radius: 1rem;
-	box-shadow:
-		0 8px 32px rgba(0, 0, 0, 0.3),
-		inset 0 1px 0 rgba(255, 255, 255, 0.1),
-		inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+// ── Pico dark-theme overrides ─────────────────────────────────────────
+[data-theme='dark'] {
+	--pico-background-color: var(--bg);
+	--pico-color: #cfc9bd;
+	--pico-muted-color: var(--text-3);
+
+	--pico-h1-color: #f1ece2;
+	--pico-h2-color: #f1ece2;
+	--pico-h3-color: #ede7db;
+	--pico-h4-color: #e8e3d9;
+	--pico-h5-color: #e8e3d9;
+	--pico-h6-color: #e8e3d9;
+
+	--pico-border-color: var(--line);
+	--pico-muted-border-color: rgba(232, 224, 208, 0.06);
+
+	--pico-primary: var(--accent);
+	--pico-primary-background: var(--accent);
+	--pico-primary-border: var(--accent);
+	--pico-primary-underline: rgba(229, 155, 61, 0.45);
+	--pico-primary-hover: var(--accent-2);
+	--pico-primary-hover-background: var(--accent-2);
+	--pico-primary-hover-border: var(--accent-2);
+	--pico-primary-focus: rgba(229, 155, 61, 0.4);
+	--pico-primary-inverse: var(--on-accent);
+
+	--pico-font-family: 'DM Sans', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue',
+		Arial, sans-serif;
+	--pico-font-weight: 400;
+	--pico-line-height: 1.65;
+
+	--pico-form-element-background-color: #12100d;
+	--pico-form-element-border-color: var(--line);
+	--pico-form-element-active-background-color: #171410;
+	--pico-form-element-active-border-color: var(--line-2);
+	--pico-form-element-focus-color: var(--accent-line);
+
+	--pico-check-radio-background-color: transparent;
+	--pico-check-radio-border-color: var(--line-2);
+	--pico-check-radio-checked-background-color: var(--accent);
+	--pico-check-radio-checked-border-color: var(--accent);
+	--pico-check-radio-indeterminate-background-color: var(--accent);
+
+	--pico-tooltip-background-color: #211d17;
+	--pico-tooltip-color: var(--text);
+	--pico-tooltip-border-color: var(--line-2);
 }
 
-// Custom HTML5 Tooltip Styling (for data-glass-tooltip attributes)
+// ── Document ──────────────────────────────────────────────────────────
+html {
+	// background: var(--bg);
+	color-scheme: dark;
+}
+
+body {
+	background: radial-gradient(1100px 520px at 50% -100px, rgba(229, 155, 61, 0.07), transparent 65%)
+			no-repeat,
+		var(--bg);
+	min-height: 100vh;
+}
+
+::selection {
+	background: var(--accent-soft);
+	color: var(--text);
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+}
+::-webkit-scrollbar-track {
+	background: transparent;
+}
+::-webkit-scrollbar-thumb {
+	background: #2b2721;
+	border-radius: 5px;
+	border: 2px solid var(--bg);
+}
+::-webkit-scrollbar-thumb:hover {
+	background: #3a342c;
+}
+
+// ── Typography ────────────────────────────────────────────────────────
+h1,
+h2,
+h3 {
+	font-family: 'DM Serif Display', Georgia, 'Times New Roman', serif;
+	font-weight: 400;
+	letter-spacing: 0.005em;
+	line-height: 1.15;
+}
+
+h1 {
+	font-size: 2.4rem;
+}
+
+h2 {
+	font-size: 1.9rem;
+}
+
+h3 {
+	font-size: 1.5rem;
+}
+
+h4,
+h5,
+h6 {
+	font-family: 'DM Sans', system-ui, sans-serif;
+	font-weight: 600;
+	letter-spacing: 0.01em;
+}
+
+p {
+	line-height: 1.7;
+}
+
+small {
+	color: var(--text-3);
+}
+
+i {
+	color: var(--text-2);
+}
+
+a {
+	text-decoration: none;
+}
+
+// ── Nav ───────────────────────────────────────────────────────────────
+nav.container {
+	position: sticky;
+	top: 0;
+	z-index: 100;
+	max-width: 76rem;
+	margin: 0 auto;
+	background: rgba(15, 14, 12, 0.78);
+	backdrop-filter: blur(14px) saturate(1.4);
+	-webkit-backdrop-filter: blur(14px) saturate(1.4);
+	border-bottom: 1px solid var(--line);
+}
+
+nav.container ul {
+	display: flex;
+	align-items: center;
+	gap: 0.15rem;
+	min-height: 3.4rem;
+	padding: 0 1rem;
+}
+
+nav.container ul:last-child {
+	margin-left: auto;
+}
+
+nav a {
+	position: relative;
+	color: var(--text-2);
+	font-size: 0.9rem;
+	font-weight: 500;
+	text-decoration: none;
+	padding: 0.45em 0.85em;
+	border-radius: var(--radius-control);
+	transition: color 0.15s ease, background 0.15s ease;
+
+	&:hover {
+		color: var(--text);
+		background: rgba(232, 224, 208, 0.06);
+	}
+}
+
+nav a.active {
+	color: var(--accent);
+
+	&::after {
+		content: '';
+		position: absolute;
+		left: 0.85em;
+		right: 0.85em;
+		bottom: 0.12em;
+		height: 2px;
+		border-radius: 1px;
+		background: var(--accent);
+	}
+}
+
+nav strong a {
+	font-family: 'DM Serif Display', Georgia, serif;
+	font-size: 1.2rem;
+	font-weight: 400;
+	letter-spacing: 0.01em;
+	color: var(--text);
+
+	&:hover {
+		background: none;
+		color: var(--accent);
+	}
+
+	&.active {
+		color: var(--text);
+
+		&::after {
+			display: none;
+		}
+	}
+}
+
+// Content links — quiet by default, amber on hover
+main a,
+article a,
+section a {
+	color: var(--text-2);
+	transition: color 0.15s ease;
+
+	&:hover {
+		color: var(--accent);
+	}
+}
+
+// ── Cards (details/summary) ───────────────────────────────────────────
+details {
+	position: relative;
+	background: var(--surface);
+	border: 1px solid var(--line);
+	border-radius: var(--radius-card);
+	padding: 1.1rem 1.25rem;
+	margin-bottom: 0.9rem;
+	transition: border-color 0.2s ease, background 0.2s ease;
+
+	&:hover {
+		border-color: var(--line-2);
+		background: var(--surface-2);
+	}
+
+	&[open] {
+		border-color: var(--line-2);
+
+		summary {
+			margin-bottom: 0.9rem;
+			padding-bottom: 0.9rem;
+			border-bottom: 1px solid var(--line);
+		}
+
+		summary::before {
+			color: var(--accent);
+		}
+	}
+}
+
+// Pico renders its own arrow on every details summary — we use our own marker
+details summary::after {
+	display: none !important;
+}
+
+summary {
+	cursor: pointer;
+	list-style: none;
+	display: flex;
+	align-items: baseline;
+	gap: 0.65em;
+	color: var(--text);
+	font-size: 0.98rem;
+	font-weight: 600;
+	transition: color 0.15s ease;
+
+	&::-webkit-details-marker {
+		display: none;
+	}
+
+	&::before {
+		content: '›';
+		display: inline-block;
+		font-size: 1.25em;
+		line-height: 0.8;
+		color: var(--text-3);
+		transform: translateY(0.1em);
+		transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.15s ease;
+	}
+
+	&:hover::before {
+		color: var(--accent);
+	}
+
+	small {
+		font-size: 0.72rem;
+		font-weight: 400;
+		color: var(--text-3);
+		letter-spacing: 0.02em;
+	}
+}
+
+details[open] summary::before {
+	transform: translateY(0.1em) rotate(90deg);
+}
+
+details > ul {
+	margin: 0.4rem 0 0 1.1em;
+	padding: 0;
+
+	li {
+		margin-bottom: 0.3rem;
+		line-height: 1.6;
+		color: #cfc9bd;
+	}
+}
+
+// ── Labels / chips ────────────────────────────────────────────────────
+.labels {
+	display: block;
+	margin-bottom: 0.75rem;
+}
+
+.labels span {
+	display: inline-block;
+	font-size: 0.72rem;
+	font-weight: 500;
+	letter-spacing: 0.03em;
+	color: var(--text-2);
+	background: rgba(232, 224, 208, 0.06);
+	border: 1px solid var(--line);
+	border-radius: 999px;
+	padding: 0.3rem 0.8rem;
+	margin: 0.2rem 0.35rem 0.2rem 0;
+}
+
+// ── Tooltips (data-glass-tooltip) ─────────────────────────────────────
 [data-glass-tooltip] {
 	position: relative;
 
-	// Tooltip box with glassmorphism effect
 	&::before {
 		content: attr(data-glass-tooltip);
 		position: absolute;
@@ -41,33 +359,23 @@
 		left: 50%;
 		transform: translateX(-50%) translateY(-0.5rem);
 
-		// Use glass blur with custom tooltip variables
-		--glass-blur-amount: 2px;
-		--glass-saturate: 180%;
-		--glass-bg: rgba(10, 10, 10, 0.75);
-		--glass-border: rgba(255, 149, 0, 0.5);
-		background: var(--glass-bg);
-		backdrop-filter: blur(var(--glass-blur-amount)) saturate(var(--glass-saturate));
-		-webkit-backdrop-filter: blur(var(--glass-blur-amount)) saturate(var(--glass-saturate));
-		border: 2px solid var(--glass-border);
-		box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4),
-		            inset 0 1px 0 rgba(255, 255, 255, 0.1);
-
-		color: rgba(255, 255, 255, 0.95);
-		padding: 0.5rem 0.75rem;
-		border-radius: 0.5rem;
-		font-size: 0.875rem;
+		background: #211d17;
+		border: 1px solid var(--line-2);
+		color: var(--text);
+		padding: 0.4rem 0.7rem;
+		border-radius: var(--radius-control);
+		font-size: 0.75rem;
+		font-weight: 500;
 		line-height: 1.25;
 		white-space: nowrap;
+		box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
 		z-index: 1000;
 		pointer-events: none;
 		opacity: 0;
 		visibility: hidden;
 		transition: opacity 0.15s ease-in-out, visibility 0.15s ease-in-out;
-		filter: url(#glass-filter);
 	}
 
-	// Show tooltip instantly on hover/focus
 	&:hover::before,
 	&:focus::before {
 		opacity: 1;
@@ -75,14 +383,12 @@
 		transition-delay: 0s;
 	}
 
-	// Bottom placement
 	&[data-placement='bottom']::before {
 		bottom: auto;
 		top: 100%;
 		transform: translateX(-50%) translateY(0.5rem);
 	}
 
-	// Left placement
 	&[data-placement='left']::before {
 		bottom: auto;
 		top: 50%;
@@ -91,7 +397,6 @@
 		transform: translateY(-50%) translateX(-0.5rem);
 	}
 
-	// Right placement
 	&[data-placement='right']::before {
 		bottom: auto;
 		top: 50%;
@@ -100,19 +405,12 @@
 	}
 }
 
-// Dark background layer
-body::before {
-	content: '';
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background: #0a0a0a;
-	z-index: -2;
+// Hidden helper (was provided by the old Tailwind CDN preflight)
+.hidden {
+	display: none !important;
 }
 
-// Animated cells-ai background
+// ── Animated background (cells-ai iframe) ─────────────────────────────
 .animated-background {
 	position: fixed;
 	top: 0;
@@ -122,123 +420,12 @@ body::before {
 	z-index: -1;
 	border: none;
 	pointer-events: none;
-	opacity: 0.2;
+	opacity: 0.14;
 }
 
+// ── Print ─────────────────────────────────────────────────────────────
 .print {
 	display: none;
-}
-
-nav a {
-	color: var(--pico-primary-background);
-	transition: all 0.2s ease;
-
-	&:hover {
-		color: var(--pico-primary-hover-background) !important;
-		background: var(--glass-bg);
-		backdrop-filter: blur(var(--glass-blur-amount)) saturate(var(--glass-saturate));
-		-webkit-backdrop-filter: blur(var(--glass-blur-amount)) saturate(var(--glass-saturate));
-		border-radius: 0.5rem;
-	}
-
-	&.active {
-		background: var(--glass-bg) !important;
-		backdrop-filter: blur(var(--glass-blur-amount)) saturate(var(--glass-saturate)) !important;
-		-webkit-backdrop-filter: blur(var(--glass-blur-amount)) saturate(var(--glass-saturate)) !important;
-		border-radius: 0.5rem !important;
-		box-shadow: inset 0 0 0 1px var(--glass-border);
-	}
-}
-
-// Content links in bright orange
-main a,
-article a,
-section a {
-	color: var(--pico-primary-background);
-
-	&:hover {
-		color: var(--pico-primary-hover-background);
-	}
-}
-
-// Liquid Glass Deformation Effect for Details/Summary
-details {
-	position: relative;
-	padding: 1.5rem;
-	margin-bottom: 1.5rem;
-
-	// Apply glass blur effect
-	background: var(--glass-bg);
-	backdrop-filter: blur(var(--glass-blur-amount)) saturate(var(--glass-saturate));
-	-webkit-backdrop-filter: blur(var(--glass-blur-amount)) saturate(var(--glass-saturate));
-	border: 2px solid var(--glass-border);
-	border-radius: 1rem;
-	box-shadow:
-		0 8px 32px rgba(0, 0, 0, 0.3),
-		inset 0 1px 0 rgba(255, 255, 255, 0.1),
-		inset 0 -1px 0 rgba(0, 0, 0, 0.2);
-
-	transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-	filter: url(#liquid-glass-filter);
-
-	// Deformation effect on hover
-	&:hover {
-		transform: perspective(1000px) rotateX(2deg) scale(1.01);
-		border-color: rgba(255, 149, 0, 0.5);
-		background: rgba(255, 149, 0, 0.08);
-		box-shadow:
-			0 12px 48px rgba(255, 149, 0, 0.2),
-			inset 0 1px 0 rgba(255, 255, 255, 0.15),
-			inset 0 -1px 0 rgba(0, 0, 0, 0.3);
-	}
-
-	// Enhanced effect when open
-	&[open] {
-		background: rgba(255, 149, 0, 0.1);
-		border-color: rgba(255, 149, 0, 0.6);
-		transform: perspective(1000px) scale(1.02);
-		box-shadow:
-			0 16px 64px rgba(255, 149, 0, 0.25),
-			inset 0 2px 0 rgba(255, 255, 255, 0.2),
-			inset 0 -2px 0 rgba(0, 0, 0, 0.4);
-
-		summary {
-			border-bottom: 1px solid rgba(255, 149, 0, 0.3);
-			padding-bottom: 1rem;
-			margin-bottom: 1rem;
-		}
-	}
-
-	summary {
-		cursor: pointer;
-		list-style: none;
-		padding: 0;
-		transition: all 0.2s ease;
-		position: relative;
-
-		// Remove default marker
-		&::-webkit-details-marker {
-			display: none;
-		}
-
-		// Custom marker with glow
-		&::before {
-			content: '▶';
-			display: inline-block;
-			margin-right: 0.75rem;
-			transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-			color: var(--pico-primary-background);
-			filter: drop-shadow(0 0 4px rgba(255, 149, 0, 0.6));
-		}
-
-		&:hover::before {
-			filter: drop-shadow(0 0 8px rgba(255, 149, 0, 0.9));
-		}
-	}
-
-	&[open] summary::before {
-		transform: rotate(90deg);
-	}
 }
 
 @media print {
@@ -248,6 +435,7 @@ details {
 		background-image: none !important;
 		box-shadow: none !important;
 		text-shadow: none !important;
+		border-radius: 0 !important;
 	}
 
 	body {
@@ -265,7 +453,8 @@ details {
 	.no-print,
 	.no-print *,
 	.animated-background-2,
-	.animated-background {
+	.animated-background,
+	nav {
 		display: none !important;
 	}
 
@@ -275,28 +464,33 @@ details {
 		text-decoration: none !important;
 	}
 
-	h1, h2, h3, h4, h5, h6 {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
 		color: #000 !important;
+		font-family: 'DM Sans', system-ui, sans-serif !important;
 	}
 
-	// Remove all badge/tag backgrounds
-	span, div, article, section {
+	span,
+	div,
+	article,
+	section {
 		background-color: transparent !important;
 	}
 
-	// Ensure borders are minimal
 	*:not(table):not(td):not(th) {
 		border-color: #ddd !important;
 	}
 
-	// Reset details/summary for print
 	details {
-		padding: 0 !important;
+		padding: 0.25rem 0 !important;
 		margin-bottom: 0.5rem !important;
-		background: transparent !important;
-		backdrop-filter: none !important;
 		border: none !important;
-		border-radius: 0 !important;
+		border-bottom: 1px solid #ddd !important;
+		backdrop-filter: none !important;
 		filter: none !important;
 		transform: none !important;
 
@@ -306,14 +500,20 @@ details {
 			margin-bottom: 0 !important;
 
 			&::before {
-				filter: none !important;
+				content: '•';
+				color: #555 !important;
+				transform: none !important;
 			}
 		}
 
-		&[open] summary {
+		&[open] {
 			border-bottom: 1px solid #ddd !important;
-			padding-bottom: 0.25rem !important;
-			margin-bottom: 0.5rem !important;
+
+			summary {
+				border-bottom: 1px solid #eee !important;
+				padding-bottom: 0.25rem !important;
+				margin-bottom: 0.4rem !important;
+			}
 		}
 	}
 }

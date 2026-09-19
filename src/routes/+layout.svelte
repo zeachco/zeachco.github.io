@@ -3,7 +3,6 @@
 	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
 	import Header from '$lib/components/containers/Header.svelte';
-	import AnimatedBackground from '$lib/components/AnimatedBackground.svelte';
 	import '../app.scss';
 	import Contact from '$lib/components/items/Contact.svelte';
 
@@ -32,11 +31,9 @@
 	});
 </script>
 
-<AnimatedBackground />
-
 <iframe
 	class="animated-background"
-	src="https://www.olivier-rousseau-guyot.com/cells-ai?demo=true"
+	src="https://www.olivier-rousseau-guyot.com/phantom-game-ai-training/?demo=true&game=circuit#circuit=0"
 	title="Cells AI Background"
 	loading="lazy"
 />
@@ -55,29 +52,22 @@
 </footer>
 
 <style>
-	* {
-		text-shadow: 0 0px 3px black, 0 0 1px black;
-	}
-
 	main {
 		flex: 1;
 		display: flex;
 		flex-direction: column;
-		padding: 1rem;
 		width: 100%;
 		margin: 0 auto;
 		box-sizing: border-box;
-		background: #3238;
-		box-shadow: 0 0 20px 50px #3238;
-		border-radius: 2em;
+		padding: 2.75rem 1.25rem 1.5rem;
+		max-width: 76rem;
 	}
 
 	@media print {
 		main {
-			box-shadow: none;
 			padding: 0;
 			width: fit-content;
-			background: none;
+			max-width: none;
 		}
 	}
 
