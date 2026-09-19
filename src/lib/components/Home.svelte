@@ -63,8 +63,10 @@
 			Each with a custom self-learning neural network with variable deep hiiden neural network competing
 			for survival. It's currently learning to avoid and drift to the next waypoint, manage energy to
 			survive, all training directly into a web browser on a randomly generated track. Yes you read that
-			correctly, single threaded neural network live learning written in rust / web assembly as a proof
-			of concept.
+			correctly, single threaded neural network live learning written in javascript as a proof of concept.
+			This experiment let different neural architecture compete and also trains a separate neural network
+			to recognize which one perform the best for each frame that passes and model can be hot swapped
+			while the car is running
 		</p>
 		<p>This is the kind of things I do just because I can.</p>
 	</PageTransition>

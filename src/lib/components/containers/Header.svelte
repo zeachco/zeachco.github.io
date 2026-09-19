@@ -55,7 +55,7 @@
 	});
 </script>
 
-<nav class="container">
+<nav class="container-fluid">
 	<ul>
 		<li>
 			<strong>
@@ -129,6 +129,11 @@
 </nav>
 
 <style>
+	nav.container-fluid {
+		max-width: 100%;
+		overflow-x: auto;
+	}
+
 	.cv-dropdown-container {
 		position: relative;
 	}
