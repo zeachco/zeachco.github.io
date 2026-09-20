@@ -84,8 +84,7 @@
 		.filter((s) => s.softskill && s.percent >= 50 && avgScore(s, selectedRoles) >= 0.3)
 		.map((s) => {
 			const pct = s.percent;
-			const level =
-				pct >= 95 ? 'native' : pct >= 75 ? 'fluent' : 'conversational';
+			const level = pct >= 95 ? 'native' : pct >= 75 ? 'fluent' : 'conversational';
 			return { name: s.name.split(' ').slice(1).join(' '), level };
 		});
 
@@ -152,7 +151,10 @@
 					{#each skillGroups as { g, items }}
 						<div class="skill-row">
 							<dt class="skill-cat">{g}</dt>
-							<dd class="skill-val">{#each items as s, i}{#if s.percent >= 85}<strong>{s.name}</strong>{:else}{s.name}{/if}{i < items.length - 1 ? ', ' : ''}{/each}</dd>
+							<dd class="skill-val">
+								{#each items as s, i}{#if s.percent >= 85}<strong>{s.name}</strong
+										>{:else}{s.name}{/if}{i < items.length - 1 ? ', ' : ''}{/each}
+							</dd>
 						</div>
 					{/each}
 				</dl>

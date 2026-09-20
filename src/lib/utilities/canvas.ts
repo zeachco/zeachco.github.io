@@ -6,7 +6,7 @@ function animateAll() {
 	updates.forEach((anim) => anim());
 }
 
-export function startAnimation(name: string, cb: Function) {
+export function startAnimation(name: string, cb: () => void) {
 	updates.set(name, cb);
 	if (!currentAnimation) {
 		currentAnimation = 1;

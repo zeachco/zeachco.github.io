@@ -24,7 +24,7 @@
 		notes = company.note;
 	}
 
-	const bullets = !small ? (company.bullets ?? []) : [];
+	const bullets = !small ? company.bullets ?? [] : [];
 
 	const labels = company.labels || [];
 </script>

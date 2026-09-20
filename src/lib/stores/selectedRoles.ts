@@ -44,7 +44,7 @@ function createSelectedRolesStore() {
 		subscribe,
 		set,
 		update,
-		reset: () => set([...roles])
+		reset: () => set([...roles]),
 	};
 }
 
