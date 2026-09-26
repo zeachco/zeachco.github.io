@@ -32,7 +32,7 @@
 		<p><b>20+ years</b> shipping systems at scale.</p>
 		<i>Gaming, web, security, neural networks, telecoms or banking...</i>
 		<p>I speed up development flows through platform, management or automated tooling work.</p>
-		<p>I make the impossible, possible.</p>
+		<p>I rationalize the impossible and find solutions.</p>
 		<p>
 			Check out my <a href="https://github.com/zeachco">GitHub</a>, my
 			<a href="https://www.linkedin.com/in/zeachco/">LinkedIn</a>, my
@@ -60,7 +60,7 @@
 				href="//www.olivier-rousseau-guyot.com/phantom-game-ai-training/?game=circuit#circuit=0"
 				>live simulation of cars learning to drive!</a
 			><br />
-			Each with a custom self-learning neural network with variable deep hiiden neural network competing
+			Each with a custom self-learning neural network with variable deep hidden neural network competing
 			for survival. It's currently learning to avoid and drift to the next waypoint, manage energy to
 			survive, all training directly into a web browser on a randomly generated track. Yes you read that
 			correctly, single threaded neural network live learning written in javascript as a proof of concept.
