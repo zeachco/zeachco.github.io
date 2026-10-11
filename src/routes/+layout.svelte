@@ -5,8 +5,11 @@
 	import Header from '$lib/components/containers/Header.svelte';
 	import '../app.scss';
 	import Contact from '$lib/components/items/Contact.svelte';
+	import { phantomGame, initPhantomGame, phantomGameBackgroundUrl } from '$lib/stores/phantomGame';
 
 	onMount(() => {
+		initPhantomGame();
+
 		const handleKeyDown = (e: KeyboardEvent) => {
 			// Check for Ctrl+K (Windows/Linux) or Cmd+K (Mac)
 			if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
@@ -33,8 +36,8 @@
 
 <iframe
 	class="animated-background"
-	src="https://www.olivier-rousseau-guyot.com/phantom-game-ai-training/?demo=true&game=circuit#circuit=0"
-	title="Cells AI Background"
+	src={$phantomGame ? phantomGameBackgroundUrl($phantomGame) : undefined}
+	title="Phantom AI experiment background"
 	loading="lazy"
 />
 

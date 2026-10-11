@@ -7,6 +7,7 @@
 	import videotron from '../icons/videotron.svg';
 	import stay22 from '../icons/s22.webp';
 	import playtika from '../icons/playtika.jpg';
+	import { phantomGame, phantomGameFullUrl, switchPhantomGame } from '$lib/stores/phantomGame';
 	import wosp from '../icons/wsop.png';
 	import appdirect from '../icons/appdirect.png';
 	import adt from '../icons/adt.svg';
@@ -53,21 +54,40 @@
 			</div>
 		</div>
 
-		<h4>Have you noticed the AI experiment running in the background of this site?</h4>
-		<p>
-			It's a <a
-				target="_blank"
-				href="//www.olivier-rousseau-guyot.com/phantom-game-ai-training/?game=circuit#circuit=0"
-				>live simulation of cars learning to drive!</a
-			><br />
-			Each with a custom self-learning neural network with variable deep hidden neural network competing
-			for survival. It's currently learning to avoid and drift to the next waypoint, manage energy to
-			survive, all training directly into a web browser on a randomly generated track. Yes you read that
-			correctly, single threaded neural network live learning written in javascript as a proof of concept.
-			This experiment let different neural architecture compete and also trains a separate neural network
-			to recognize which one perform the best for each frame that passes and model can be hot swapped
-			while the car is running
-		</p>
+		<div class="experiment-header">
+			<h4>Have you noticed the AI experiment running in the background of this site?</h4>
+			<button class="game-switch" type="button" on:click={switchPhantomGame}>
+				{#if $phantomGame === 'cave'}switch to the circuit{:else}switch to the cave{/if}
+			</button>
+		</div>
+		{#if $phantomGame === 'cave'}
+			<p>
+				It's a <a target="_blank" href={phantomGameFullUrl('cave')}
+					>live simulation of balls racing into an infinitely generated cave!</a
+				><br />
+				Each with a custom self-learning neural network with variable deep hidden neural network competing
+				for survival. It's currently learning to dodge obstacles, clear jumps and claim the gates in
+				order, all training directly into a web browser while racing into a streamed 3D cave that generates
+				a fresh random tunnel every time a ball completes it. Yes you read that correctly, single threaded
+				neural network live learning written in javascript as a proof of concept. This experiment lets
+				different neural architectures compete and also trains a separate neural network to recognize
+				which one performs the best for each frame that passes and the model can be hot swapped while
+				the ball is running
+			</p>
+		{:else}
+			<p>
+				It's a <a target="_blank" href={phantomGameFullUrl('circuit')}
+					>live simulation of cars learning to drive!</a
+				><br />
+				Each with a custom self-learning neural network with variable deep hidden neural network competing
+				for survival. It's currently learning to avoid and drift to the next waypoint, manage energy
+				to survive, all training directly into a web browser on a randomly generated track. Yes you read
+				that correctly, single threaded neural network live learning written in javascript as a proof
+				of concept. This experiment let different neural architecture compete and also trains a separate
+				neural network to recognize which one perform the best for each frame that passes and model can
+				be hot swapped while the car is running
+			</p>
+		{/if}
 		<p>This is the kind of things I do just because I can.</p>
 	</PageTransition>
 </section>
@@ -95,6 +115,34 @@
 		color: var(--text-3);
 		margin-top: 3rem;
 		margin-bottom: 1.4rem;
+	}
+
+	.experiment-header {
+		display: flex;
+		align-items: baseline;
+		justify-content: space-between;
+		gap: 1rem;
+		flex-wrap: wrap;
+	}
+
+	.game-switch {
+		font-family: inherit;
+		font-size: 0.72rem;
+		font-weight: 600;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+		color: var(--text-3);
+		background: none;
+		border: 1px solid var(--line);
+		border-radius: var(--radius-control);
+		padding: 0.4rem 0.75rem;
+		cursor: pointer;
+		transition: color 0.2s, border-color 0.2s;
+	}
+
+	.game-switch:hover {
+		color: var(--accent);
+		border-color: var(--accent-line);
 	}
 
 	.brands-container {
