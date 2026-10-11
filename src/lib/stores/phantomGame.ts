@@ -28,8 +28,8 @@ export function phantomGameFullUrl(game: PhantomGame): string {
 }
 
 /**
- * Resolve the background game once per page load: a random pick between the
- * two games, stable across reloads for the duration of the visit.
+ * Resolve the background game once per page load: circuit by default, unless
+ * the visitor already switched it (remembered for the duration of the visit).
  */
 export function initPhantomGame(): void {
 	if (!browser) return;
@@ -38,12 +38,11 @@ export function initPhantomGame(): void {
 		try {
 			const visited = sessionStorage.getItem(STORAGE_KEY);
 			if (isPhantomGame(visited)) return visited;
-			const next = Math.random() < 0.5 ? 'cave' : 'circuit';
-			sessionStorage.setItem(STORAGE_KEY, next);
-			return next;
+			sessionStorage.setItem(STORAGE_KEY, 'circuit');
 		} catch {
-			return 'circuit';
+			// storage unavailable: circuit applies for this page load
 		}
+		return 'circuit';
 	});
 }
 
