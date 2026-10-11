@@ -17,9 +17,14 @@ function isPhantomGame(value: string | null): value is PhantomGame {
  */
 export const phantomGame = writable<PhantomGame | null>(null);
 
-/** Background animation: demo mode hides the game panels. */
+/**
+ * Background animation: demo mode hides the game panels.
+ * The cave starts zoomed out (scale=4) so its wider layout fits behind the site.
+ */
 export function phantomGameBackgroundUrl(game: PhantomGame): string {
-	return `${BASE_URL}?demo=true&game=${game}`;
+	const params = new URLSearchParams({ demo: 'true', game });
+	if (game === 'cave') params.set('scale', '4');
+	return `${BASE_URL}?${params}`;
 }
 
 /** Full game page for the "watch it" link: no demo, all panels on. */
