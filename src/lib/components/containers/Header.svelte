@@ -134,6 +134,7 @@
 	nav.container-fluid {
 		max-width: 100%;
 		position: relative;
+		padding: 0;
 	}
 
 	.nav-scroll {
@@ -142,6 +143,15 @@
 		justify-content: space-between;
 		align-items: center;
 		overflow-x: auto;
+		padding: 0 var(--pico-nav-element-spacing-horizontal);
+	}
+
+	.nav-scroll > ul:first-of-type {
+		margin-left: 0;
+	}
+
+	.nav-scroll > ul:last-of-type {
+		margin-right: 0;
 	}
 
 	.cv-dropdown {
