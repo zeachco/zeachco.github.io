@@ -5,7 +5,16 @@
 	import Header from '$lib/components/containers/Header.svelte';
 	import '../app.scss';
 	import Contact from '$lib/components/items/Contact.svelte';
-	import { phantomGame, initPhantomGame, phantomGameBackgroundUrl } from '$lib/stores/phantomGame';
+	import {
+		phantomGame,
+		initPhantomGame,
+		phantomGameBackgroundUrl,
+		switchPhantomGame,
+	} from '$lib/stores/phantomGame';
+
+	function handleBackgroundCycle() {
+		switchPhantomGame();
+	}
 
 	onMount(() => {
 		initPhantomGame();
@@ -41,6 +50,7 @@
 			src={phantomGameBackgroundUrl($phantomGame)}
 			title="Phantom AI experiment background"
 			loading="lazy"
+			on:animationend={handleBackgroundCycle}
 		/>
 	{/key}
 {/if}

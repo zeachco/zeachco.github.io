@@ -421,15 +421,20 @@ details > ul {
 	border: none;
 	pointer-events: none;
 	opacity: 0;
-	animation: phantom-background-fade-in 1s ease-in 3s forwards;
+	animation: phantom-background-carousel 50s linear forwards;
 }
 
-@keyframes phantom-background-fade-in {
-	from {
+@keyframes phantom-background-carousel {
+	0%,
+	6% {
 		opacity: 0;
 	}
-	to {
-		opacity: 0.33;
+	8%,
+	98% {
+		opacity: 0.25;
+	}
+	100% {
+		opacity: 0;
 	}
 }
 
