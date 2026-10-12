@@ -34,12 +34,16 @@
 	});
 </script>
 
-<iframe
-	class="animated-background"
-	src={$phantomGame ? phantomGameBackgroundUrl($phantomGame) : undefined}
-	title="Phantom AI experiment background"
-	loading="lazy"
-/>
+{#if $phantomGame}
+	{#key $phantomGame}
+		<iframe
+			class="animated-background"
+			src={phantomGameBackgroundUrl($phantomGame)}
+			title="Phantom AI experiment background"
+			loading="lazy"
+		/>
+	{/key}
+{/if}
 
 <Header />
 

@@ -420,7 +420,17 @@ details > ul {
 	z-index: -1;
 	border: none;
 	pointer-events: none;
-	opacity: 0.14;
+	opacity: 0;
+	animation: phantom-background-fade-in 1s ease-in 3s forwards;
+}
+
+@keyframes phantom-background-fade-in {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 0.33;
+	}
 }
 
 // ── Print ─────────────────────────────────────────────────────────────
