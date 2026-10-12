@@ -1,13 +1,20 @@
 import { writable } from 'svelte/store';
 import { browser } from '$app/environment';
 
-export type PhantomGame = 'cave' | 'circuit';
+export type PhantomGame = 'circuit' | 'cave' | 'climb';
 
 const BASE_URL = 'https://www.olivier-rousseau-guyot.com/phantom-game-ai-training/';
 const STORAGE_KEY = 'phantom-game';
 
+const GAME_CYCLE: PhantomGame[] = ['circuit', 'cave', 'climb'];
+
 function isPhantomGame(value: string | null): value is PhantomGame {
-	return value === 'cave' || value === 'circuit';
+	return value === 'circuit' || value === 'cave' || value === 'climb';
+}
+
+export function nextPhantomGame(game: PhantomGame | null): PhantomGame {
+	const index = GAME_CYCLE.indexOf(game ?? 'circuit');
+	return GAME_CYCLE[(index + 1) % GAME_CYCLE.length];
 }
 
 /**
@@ -51,10 +58,10 @@ export function initPhantomGame(): void {
 	});
 }
 
-/** Switch the background to the other game (remembered for this visit). */
+/** Cycle the background to the next game (remembered for this visit). */
 export function switchPhantomGame(): void {
 	phantomGame.update((game) => {
-		const next: PhantomGame = game === 'cave' ? 'circuit' : 'cave';
+		const next: PhantomGame = nextPhantomGame(game);
 		try {
 			sessionStorage.setItem(STORAGE_KEY, next);
 		} catch {

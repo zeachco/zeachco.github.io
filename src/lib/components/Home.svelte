@@ -7,7 +7,12 @@
 	import videotron from '../icons/videotron.svg';
 	import stay22 from '../icons/s22.webp';
 	import playtika from '../icons/playtika.jpg';
-	import { phantomGame, phantomGameFullUrl, switchPhantomGame } from '$lib/stores/phantomGame';
+	import {
+		phantomGame,
+		phantomGameFullUrl,
+		nextPhantomGame,
+		switchPhantomGame,
+	} from '$lib/stores/phantomGame';
 	import wosp from '../icons/wsop.png';
 	import appdirect from '../icons/appdirect.png';
 	import adt from '../icons/adt.svg';
@@ -61,7 +66,7 @@
 		<div class="experiment-header">
 			<h4>Have you noticed the AI experiment running in the background of this site?</h4>
 			<button class="game-switch" type="button" on:click={switchPhantomGame}>
-				{#if $phantomGame === 'cave'}switch to the circuit{:else}switch to the cave{/if}
+				switch to the {nextPhantomGame($phantomGame)}
 			</button>
 		</div>
 		{#if $phantomGame === 'cave'}
@@ -74,6 +79,17 @@
 				to dodge obstacles, clear jumps and hit the gates in order. The cave streams in as the ball goes.
 				Every run gets a fresh random tunnel. A second network watches the pack and hot-swaps in the
 				winning architecture mid-run.
+			</p>
+		{:else if $phantomGame === 'climb'}
+			<p>
+				Climbers scaling an infinitely generated tower, <a
+					target="_blank"
+					href={phantomGameFullUrl('climb')}>live, in your browser.</a
+				><br />
+				Same training, in a platformer: each network architecture runs its own pool of climbers racing
+				up one-way platforms, with jump timing and stall-or-die height budgets. When the climbers get
+				high enough, the seed advances and the tower gets tighter. Every climber trains in the browser,
+				single-threaded, plain JavaScript, on a fresh random tower.
 			</p>
 		{:else}
 			<p>
