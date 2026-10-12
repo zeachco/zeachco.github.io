@@ -50,7 +50,7 @@
 
 <footer class="no-print">
 	<note>
-		<!-- <small>This site is automatically kept up-to-date</small> -->
+		<small>This site is automatically kept up-to-date</small>
 	</note>
 </footer>
 

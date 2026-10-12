@@ -6,7 +6,7 @@ export const skills: SkillData[] = [
 		start: '2006-05',
 		percent: 99,
 		labels: ['programming', 'client', 'server', 'hobbies', 'game'],
-		note: 'Deeply experienced with JavaScript since the ECMAScript 2 era. I have consistently adapted to its evolution, mastering modern standards and leveraging its full ecosystem for both client and server-side development.',
+		note: 'JavaScript since the ECMAScript 2 era, the full ecosystem, client and server.',
 		score: {
 			frontend: 1.0,
 			backend: 0.9,
@@ -19,7 +19,7 @@ export const skills: SkillData[] = [
 		start: '2025-08',
 		percent: 55,
 		labels: ['programming', 'platform', 'server'],
-		note: 'Automating the generation of Kubernetes manifests and Helm charts for Node.js applications. Investigating advanced features, including Operators and Custom Resources, to optimize deployment strategies and application lifecycle management.',
+		note: 'Automating the generation of Kubernetes manifests and Helm charts for Node.js applications. Investigating advanced features, including Operators and Custom Resources. Plus the Terraform/CDK8s side of infrastructure at Stay22.',
 		score: {
 			frontend: 0.1,
 			backend: 0.8,
@@ -58,7 +58,7 @@ export const skills: SkillData[] = [
 		start: '2020-08',
 		percent: 65,
 		labels: ['programming', 'client', 'server', 'llm', 'ai'],
-		note: 'Extensive experience applying neural networks using TensorFlow.js and ml5.js. Currently focused on developing zero-dependency implementations to enable AI execution in resource-constrained environments (e.g., mobile browsers, embedded devices). Notable achievement: Efficiently trained a 7,000-agent traffic simulation directly within a low-end mobile browser.',
+		note: 'Neural networks in the browser since 2020: TensorFlow.js and ml5.js, then from scratch: zero-dependency training loops that run in a low-end phone browser (a 7,000-agent traffic sim is the stress test).',
 		score: {
 			frontend: 0.7,
 			backend: 0.8,
@@ -71,7 +71,7 @@ export const skills: SkillData[] = [
 		start: '2021-10',
 		percent: 55,
 		labels: ['programming', 'client', 'server', 'llm', 'ai'],
-		note: 'Strong conceptual foundation in deep learning architectures. My current focus is on implementing lightweight, deployable models suitable for web and edge computing environments.',
+		note: 'Conceptual foundations plus practice: lightweight, deployable models for web and edge. See the browser training work under Neural Networks.',
 		score: {
 			frontend: 0.6,
 			backend: 0.7,
@@ -82,9 +82,9 @@ export const skills: SkillData[] = [
 	{
 		name: 'LLMs',
 		start: '2023-12',
-		percent: 40,
+		percent: 60,
 		labels: ['programming', 'ai', 'server', 'llm'],
-		note: 'Active development experience with Large Language Models (LLMs), including GPT-3 and GPT-4 integration. Projects include custom chatbots, code generation tools, and summarization engines. Proficient in deploying local models via Ollama and architecting Retrieval-Augmented Generation (RAG) solutions using vector databases.',
+		note: 'LLMs in production work since 2023: RAG pipelines, chatbots, MCP servers for partner onboarding, and a local llama.cpp router I run for my own tooling (model routing, and the debugging tooling around it, like sniff_llms, a packet-capture inspector). I use coding agents the way other people use a compiler: heavily.',
 		score: {
 			frontend: 0.2,
 			backend: 0.8,
@@ -97,7 +97,7 @@ export const skills: SkillData[] = [
 		start: '2021-04',
 		percent: 35,
 		labels: ['domain'],
-		note: 'Engineered a custom Ethereum miner utilizing Rust and CUDA, demonstrating low-level optimization skills. While my focus has shifted from cryptocurrency speculation, I maintain a strong technical interest in decentralized systems and blockchain architecture.',
+		note: 'Trading systems in Rust: n3000 simulates neural-forecast strategies on recorded ETH/BTC/DOT prices (TUI, benchmarks); ndax-bot records markets and hot-reloads strategies. Earlier: a custom Ethereum miner in Rust + CUDA.',
 		score: {
 			frontend: 0.4,
 			backend: 0.6,
@@ -110,7 +110,7 @@ export const skills: SkillData[] = [
 		start: '2018',
 		percent: 75,
 		labels: ['programming', 'client', 'server'],
-		note: "Leveraging broad Node.js background to adopt Deno for modern TypeScript runtimes. Successfully delivered substantial projects while navigating the ecosystem's early evolution and effectively bridging compatibility between Node.js and Deno environments.",
+		note: 'Deno in production (Yenom) and as a bridge between Node and modern TypeScript.',
 		score: {
 			frontend: 0.7,
 			backend: 0.8,
@@ -121,9 +121,9 @@ export const skills: SkillData[] = [
 	{
 		name: 'Rust',
 		start: '2022',
-		percent: 40,
+		percent: 65,
 		labels: ['programming', 'client', 'server'],
-		note: "Utilized for high-performance tasks including cryptocurrency mining and WebAssembly modules. Actively seeking opportunities to apply Rust's safety and concurrency features to large-scale system architecture.",
+		note: 'Trading simulators (n3000: neural forecasting, TUI, benchmarks), a Rust→WASM cell simulation (cells-ai), a packet-capture LLM inspector (sniff_llms), a TUI trading bot (ndax-bot), an audio visualizer cross-compiled to Raspberry Pi (dj-viz), and an all-purpose Rust web stack (r3000). My current default for new tools.',
 		score: {
 			frontend: 0.4,
 			backend: 0.6,
@@ -137,7 +137,7 @@ export const skills: SkillData[] = [
 		start: '2004-03',
 		end: '2013-07',
 		labels: ['programming', 'server'],
-		note: 'Foundational experience with the LAMP stack (Linux, Apache, MySQL, PHP), specifically versions 4.x through 5.3. This background provides a deep perspective on backend evolution, informing modern server-side architecture decisions in Node.js.',
+		note: 'Foundational experience with the LAMP stack (Linux, Apache, MySQL, PHP), specifically versions 4.x through 5.3.',
 		score: {
 			frontend: 0.3,
 			backend: 0.6,
@@ -162,7 +162,7 @@ export const skills: SkillData[] = [
 		name: 'React',
 		percent: 90,
 		labels: ['library', 'programming', 'client'],
-		note: 'Extensive experience migrating legacy jQuery applications to modern React architectures. Appart from building standard CRUD applications, I am also proficient in building hybrid applications integrating React with Angular, Backbone, or Vanilla JS. Key achievements include developing complex HTML5 games, WebGL-based 3D editors, and sophisticated WYSIWYG interfaces.',
+		note: 'Extensive experience migrating legacy jQuery applications to modern React architectures. Apart from building standard CRUD applications, I am also proficient in building hybrid applications integrating React with Angular, Backbone, or Vanilla JS. Key achievements include developing complex HTML5 games, WebGL-based 3D editors, and sophisticated WYSIWYG interfaces.',
 		start: '2013-08',
 		score: {
 			frontend: 1.0,
@@ -190,7 +190,7 @@ export const skills: SkillData[] = [
 		labels: ['library', 'programming', 'client'],
 		start: '2008',
 		end: '2018',
-		note: 'Extensive historical experience, dating back to IE5 support. Specialized in integrating jQuery with modern frameworks (Backbone, React, Angular) and managing legacy code migrations. This background provides critical insight into the evolution of the DOM and browser compatibility standards. Giving me experience in developing code that works on all browsers, all the time.',
+		note: 'Extensive historical experience, dating back to IE5 support. Specialized in integrating jQuery with modern frameworks (Backbone, React, Angular) and managing legacy code migrations, which is why I know what browser compatibility actually costs.',
 		score: {
 			frontend: 0.7,
 			backend: 0.3,
@@ -268,7 +268,7 @@ export const skills: SkillData[] = [
 		percent: 88,
 		labels: ['programming', 'client'],
 		start: '2019-12',
-		note: 'Proficient with major frameworks including Tailwind CSS, Bootstrap, Foundation, Material Design, Pico, and Bulma. Deep understanding of their architectural trade-offs allows for effective selection and implementation. Skilled in engineering custom design systems and hybridizing them with established frameworks.',
+		note: 'Shipped Tailwind, Bootstrap, Foundation, Material, Pico and Bulma; I build custom design systems when the frameworks stop fitting.',
 		score: {
 			frontend: 0.9,
 			backend: 0.3,
@@ -307,7 +307,7 @@ export const skills: SkillData[] = [
 		percent: 99,
 		labels: ['language'],
 		start: '1988',
-		note: 'Native Canadian-French speaker. Proficient in Standard French, ensuring clear professional communication across all Francophone regions.',
+		note: 'Native Canadian-French speaker.',
 		score: {
 			frontend: 0.1,
 			backend: 0.5,
@@ -320,7 +320,7 @@ export const skills: SkillData[] = [
 		name: '🇺🇸 English',
 		percent: 90,
 		labels: ['language'],
-		note: 'Used English as the primary language for professional communication, technical documentation, and international collaboration since 2005. Proficient in both written and verbal communication, enabling effective cross-cultural interactions and leadership in global teams.',
+		note: 'Primary working language since 2005: technical conversation, documentation and international collaboration.',
 		start: '2005-02',
 		score: {
 			frontend: 0.3,
@@ -399,6 +399,110 @@ export const skills: SkillData[] = [
 			management: 0.6,
 		},
 		softskill: true,
+	},
+	{
+		name: 'TypeScript',
+		start: '2017-06',
+		percent: 95,
+		labels: ['programming', 'client', 'server'],
+		note: 'The language of nearly everything since 2017: this site, Yenom, the tooling, and the Stay22 partner SDKs.',
+		score: {
+			frontend: 1.0,
+			backend: 0.9,
+			techlead: 0.9,
+			management: 0.6,
+		},
+	},
+	{
+		name: 'Go',
+		start: '2024-10',
+		percent: 70,
+		labels: ['programming', 'server'],
+		note: 'Stay22 edge services: APIs, static rendering via headless Chrome, monitoring daemons on micro edge-nodes, and Cloudflare Workers.',
+		score: {
+			frontend: 0.2,
+			backend: 0.8,
+			techlead: 0.5,
+			management: 0.3,
+		},
+	},
+	{
+		name: 'Terraform & IaC',
+		start: '2024-10',
+		percent: 60,
+		labels: ['platform', 'server'],
+		note: 'Infrastructure as code at Stay22: Terraform for the cloud estate, CDK8s for Kubernetes deployments, and the k8s app template the team builds from.',
+		score: {
+			frontend: 0.1,
+			backend: 0.7,
+			techlead: 0.7,
+			management: 0.3,
+		},
+	},
+	{
+		name: 'Snowflake & dbt',
+		start: '2024-10',
+		percent: 55,
+		labels: ['data', 'server'],
+		note: 'dbt models and data pipelines on Snowflake at Stay22: supplier-data unification, retail report ingestion, and ML scoring of partners.',
+		score: {
+			frontend: 0.1,
+			backend: 0.7,
+			techlead: 0.6,
+			management: 0.3,
+		},
+	},
+	{
+		name: 'Mobile & cross-platform SDKs',
+		start: '2024-10',
+		percent: 60,
+		labels: ['programming', 'client'],
+		note: 'Stay22 partner SDKs for notification-driven accommodation discovery: iOS (Swift), Android, Flutter (Dart) and Capacitor (C++).',
+		score: {
+			frontend: 0.7,
+			backend: 0.4,
+			techlead: 0.5,
+			management: 0.3,
+		},
+	},
+	{
+		name: 'Testing',
+		start: '2019-11',
+		percent: 85,
+		labels: ['programming', 'client', 'server'],
+		note: 'Jest and Playwright in production; integration-test suites and the Stay22 test infrastructure (unit, integration, e2e).',
+		score: {
+			frontend: 0.8,
+			backend: 0.8,
+			techlead: 0.7,
+			management: 0.5,
+		},
+	},
+	{
+		name: 'GraphQL & tRPC',
+		start: '2020-06',
+		percent: 70,
+		labels: ['programming', 'server'],
+		note: 'A GraphQL server (omniscient) powering the Smartmap app, and tRPC across the Node layer and React frontend at Pod.',
+		score: {
+			frontend: 0.4,
+			backend: 0.7,
+			techlead: 0.6,
+			management: 0.3,
+		},
+	},
+	{
+		name: 'C++',
+		start: '2010-01',
+		percent: 50,
+		labels: ['programming', 'client', 'server'],
+		note: 'Epic-era engine work (Linux shader compatibility), the DOOM 3 stencil-shadow viewer, and the Capacitor partner SDK.',
+		score: {
+			frontend: 0.4,
+			backend: 0.6,
+			techlead: 0.5,
+			management: 0.2,
+		},
 	},
 	{
 		name: 'Gaming',

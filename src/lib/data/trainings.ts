@@ -3,13 +3,6 @@ import type { TrainingData } from '$lib/types';
 export const trainings: TrainingData[] = (
 	[
 		{
-			name: 'Cégep Édouard-Montpetit Micro-edition and hypermedia',
-			start: '2005-08',
-			end: '2007-01',
-			notes:
-				'Advanced use of Word, Excel, Access, Adobe photoshop, Web design and JavaScript initiation',
-		},
-		{
 			name: 'Certification in Entrepreneurship',
 			start: '2012',
 			end: '2013',

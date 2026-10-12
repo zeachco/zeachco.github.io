@@ -118,7 +118,7 @@
 	<div class="print" />
 	<div class="no-print">
 		<h3>
-			Filter role specific skills
+			Filter skills by role
 			{#if searchTerm.length > 0}
 				<small class="filter-count">{sortedSkills.length}/{totalWithoutSearch}</small>
 			{/if}

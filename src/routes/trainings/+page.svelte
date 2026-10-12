@@ -3,8 +3,11 @@
 </script>
 
 <svelte:head>
-	<title>Trainings</title>
-	<meta name="description" content="Trainings" />
+	<title>Trainings | Olivier Rousseau-Guyot</title>
+	<meta
+		name="description"
+		content="Certifications and trainings: W3C web standards, OpenGL ES, WebGL, Google Analytics API and entrepreneurship."
+	/>
 </svelte:head>
 
 <Trainings />

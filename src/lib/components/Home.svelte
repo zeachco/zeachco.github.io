@@ -15,7 +15,7 @@
 
 	const brands = [
 		[shopify, 'Shopify', '#fff'],
-		[quebecor, 'Quebecor Media'],
+		[quebecor, 'Québecor'],
 		[wosp, 'World Series of Poker', '#fff'],
 		[appdirect, 'AppDirect', '#fff'],
 		[playtika, 'Playtika'],
@@ -30,10 +30,14 @@
 <section>
 	<PageTransition pathname="home">
 		<h3>Software Engineer</h3>
-		<p><b>20+ years</b> shipping systems at scale.</p>
-		<i>Gaming, web, security, neural networks, telecoms or banking...</i>
-		<p>I speed up development flows through platform, management or automated tooling work.</p>
-		<p>I rationalize the impossible and find solutions.</p>
+		<p><b>20+ years</b> shipping software: payments, games, and the infrastructure in between.</p>
+		<i
+			>Payments, gaming, telecoms, banking, and neural networks (one is running behind this page).</i
+		>
+		<p>
+			I build the unglamorous parts that keep teams fast: CI/CD, tooling, onboarding, integrations.
+		</p>
+		<p>I rationalize the impossible.</p>
 		<p>
 			Check out my <a href="https://github.com/zeachco">GitHub</a>, my
 			<a href="https://www.linkedin.com/in/zeachco/">LinkedIn</a>, my
@@ -62,33 +66,28 @@
 		</div>
 		{#if $phantomGame === 'cave'}
 			<p>
-				It's a <a target="_blank" href={phantomGameFullUrl('cave')}
-					>live simulation of balls racing into an infinitely generated cave!</a
+				Balls racing through an infinitely generated cave, <a
+					target="_blank"
+					href={phantomGameFullUrl('cave')}>live, in your browser.</a
 				><br />
-				Each with a custom self-learning neural network with variable deep hidden neural network competing
-				for survival. It's currently learning to dodge obstacles, clear jumps and claim the gates in
-				order, all training directly into a web browser while racing into a streamed 3D cave that generates
-				a fresh random tunnel every time a ball completes it. Yes you read that correctly, single threaded
-				neural network live learning written in javascript as a proof of concept. This experiment lets
-				different neural architectures compete and also trains a separate neural network to recognize
-				which one performs the best for each frame that passes and the model can be hot swapped while
-				the ball is running
+				Same setup, in 3D: each ball carries a self-learning net with variable depth, and the nets compete
+				to dodge obstacles, clear jumps and hit the gates in order. The cave streams in as the ball goes.
+				Every run gets a fresh random tunnel. A second network watches the pack and hot-swaps in the
+				winning architecture mid-run.
 			</p>
 		{:else}
 			<p>
-				It's a <a target="_blank" href={phantomGameFullUrl('circuit')}
-					>live simulation of cars learning to drive!</a
+				Cars learning to drive, <a target="_blank" href={phantomGameFullUrl('circuit')}
+					>live, in your browser.</a
 				><br />
-				Each with a custom self-learning neural network with variable deep hidden neural network competing
-				for survival. It's currently learning to avoid and drift to the next waypoint, manage energy
-				to survive, all training directly into a web browser on a randomly generated track. Yes you read
-				that correctly, single threaded neural network live learning written in javascript as a proof
-				of concept. This experiment let different neural architecture compete and also trains a separate
-				neural network to recognize which one perform the best for each frame that passes and model can
-				be hot swapped while the car is running
+				Each car runs a self-learning neural network with a variable-depth hidden layer, and the nets
+				compete for survival: drift to the next waypoint, manage energy, don't crash. Every car trains
+				in the browser, single-threaded, plain JavaScript, on a randomly generated track. A second network
+				watches the race and picks whichever architecture is winning. It gets hot-swapped in while the
+				car is still running.
 			</p>
 		{/if}
-		<p>This is the kind of things I do just because I can.</p>
+		<p>This is the kind of thing I do just because I can.</p>
 	</PageTransition>
 </section>
 

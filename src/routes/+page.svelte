@@ -3,8 +3,11 @@
 </script>
 
 <svelte:head>
-	<title>About</title>
-	<meta name="description" content="Home" />
+	<title>Olivier Rousseau-Guyot, Software Engineer</title>
+	<meta
+		name="description"
+		content="Full-stack engineer, 20+ years: payments (Shopify), gaming (Playtika / WSOP), telecoms, ecommerce and AI. TypeScript, Node.js, Rust, including neural networks trained live in the browser. CV, skills and projects."
+	/>
 </svelte:head>
 
 <Home />

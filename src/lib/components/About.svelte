@@ -1,40 +1,30 @@
 <script lang="ts">
-	import { companies } from '$lib/data/companies';
 	import { skills } from '$lib/data/skills';
 	import PageTransition from './PageTransition.svelte';
 
 	const javascript = skills.find(({ name }) => /javascript/i.test(name));
-	const gameDev = companies.find(({ note }) => /dark basic pro/i.test(note!));
-	const playtika = companies.find(({ name }) => /playtika/i.test(name));
-	const yenom = companies.find(({ name }) => /yenom/i.test(name));
-
-	if (!javascript?.start || !gameDev?.start || !playtika?.start || !yenom?.note)
-		throw new Error(`Missing references`);
+	if (!javascript?.start) throw new Error(`Missing references`);
 
 	const now = new Date();
 
 	const toYears = 1 / 1000 / 60 / 60 / 24 / 365;
 	const jsExpYears = Math.ceil((+now - +javascript.start) * toYears);
-	const incExpYears = Math.ceil((+playtika.start - +gameDev.start) * toYears);
 </script>
 
 <section>
 	<PageTransition pathname="about">
-		<h2>What kind of engineer am I</h2>
+		<h2>The kind of engineer I am</h2>
 		<p>
-			I am a JavaScript/Node.js developer with expertise in code quality and technical debt
-			management. Instead of listing buzzwords, I invite you to explore the specific skills you
-			require on my skills page <a href="/skills">here</a>. These skills enable me to adapt to the
-			constant evolution of technologies.
+			I'm a full-stack engineer, strongest in TypeScript, Node.js and Rust. I care about code
+			outliving me: readable, tested, cheap to run. Rather than a buzzword list, here is everything
+			I've used, with the years attached: <a href="/skills">skills</a>.
 		</p>
 
 		<h3>A little bit about me</h3>
 		<p>
-			I wear many hats but identify primarily as a developer. Over the past {jsExpYears} years, I have
-			specialized in JavaScript, working on a variety of projects including payment platforms, analytics
-			dashboards, video games, 3D showcases, VR, complex server farms (with Node.js), middlewares and
-			reverse proxies, command-line interface tools, deployment servers, test frameworks, and domain
-			registrar systems.
+			I'm a developer first. In the past {jsExpYears} years of JavaScript I've shipped payment platforms,
+			analytics dashboards, a multiplayer poker table, 3D showcases, VR, reverse proxies and middlewares,
+			CLI tools, test frameworks and a domain registrar; most of it on Node.js.
 		</p>
 		<p>
 			I am passionate about technological advancements, the Unix environment, Git, web stacks, and
@@ -43,88 +33,76 @@
 			writing code.
 		</p>
 		<p>
-			I have spent around {incExpYears} years building and experimenting with small businesses and startup
-			structures, founding my own company, and reinventing products. While I may not be a natural salesperson,
-			the process of learning and bringing various complex projects to life month after month was so
-			exciting that I couldn't stop.
+			Most of my career was spent in small companies where I owned the whole stack. I also founded
+			Yenom myself. The part I keep coming back to is the build: taking a complicated thing from
+			zero to running, month after month.
 		</p>
 
-		<h3>Leadership Approach</h3>
+		<h3>How I lead</h3>
 		<p>
-			I believe effective leadership means having the courage to challenge past decisions when they
-			no longer serve the current situation. I'm not afraid to question the status quo if it leads
-			to better outcomes for the team and the product. This approach has earned me respect among
-			colleagues who appreciate someone willing to tackle difficult technical and organizational
-			challenges head-on.
+			I've led teams at four scales: I built the India frontend office at AppDirect and trained
+			engineers across the company on QA, Git, Java and JavaScript so everyone worked the same way;
+			I ran releases, architecture and CI/CD for the World Series of Poker game at Playtika as Scrum
+			Master; I led company-wide JavaScript training and code reviews at Morgan Stanley; and I ran
+			the developer-experience program at Stay22 (CI/CD, onboarding, security and feature-flag
+			training).
 		</p>
 		<p>
-			My leadership philosophy centers on trust and pragmatism. I understand that excessive red tape
-			can stifle innovation and productivity, so I prefer to trust people's experience and expertise
-			rather than imposing unnecessary bureaucracy. This balance between structure and autonomy has
-			consistently led to teams that are both productive and empowered to make decisions.
-		</p>
-		<p>
-			Whether navigating complex technical architectures or resolving organizational challenges, I
-			take on the difficult problems that others might avoid. My colleagues often turn to me when
-			situations require both technical depth and diplomatic finesse—solving issues that span code
-			and politics alike.
+			The short version: I trust people, keep process light, and I'll challenge a decision that
+			isn't working, whether technical or organizational.
 		</p>
 
 		<h3>Adaptability</h3>
 		<p>
-			With fluency in English and French, as well as proficiency in Spanish, Portuguese, and German,
-			I communicate effectively with colleagues and clients from diverse backgrounds.
+			I work in English and French (native), and can hold a technical conversation in Spanish,
+			Portuguese and German.
 		</p>
 		<p>
-			As a passionate software developer, I actively participate in open source communities and have
-			contributed to various projects on platforms such as GitHub. I am well-versed in Linux,
-			JavaScript, and Git.
+			I'm drawn to companies that publish what they build. I keep my own machine the way I keep my
+			code: boring, fast, mine to tinker with.
+		</p>
+		<h2>Things I build for fun</h2>
+		<p>
+			The background of this site is my AI training sandbox: arcade games where self-learning neural
+			networks compete, live, in the browser. Four games so far (circuit, cave, highway, climb),
+			plain JavaScript, no ML libraries. I wrote the training from scratch in 2021 and I'm still
+			adding games. <a
+				target="_blank"
+				href="https://zeachco.github.io/phantom-game-ai-training/?game=circuit">Play with it</a
+			>.
 		</p>
 		<p>
-			I am inspired by companies such as Netflix for their infrastructure, Airbnb, Stripe, and
-			Shopify for their contributions to open source, and Walmart, Netflix, Domino's, and Microsoft
-			for being Node.js pioneers (back in the days). I am particularly drawn to how these companies
-			innovate and push boundaries in the tech industry.
-		</p>
-		<h2>Fun projects, all the time!</h2>
-		<p>
-			An example of a fun project I've made is <a
-				href="https://zeachco.github.io/phantom-game-ai-training/?game=highway">Highway</a
-			>, an in-browser machine learning trainer that trains 2D cars to drive on a highway. Be aware
-			that the first iterations are CPU-intensive, but the AI should learn to drive in less than 15
-			minutes. Note that this repo was created in 2021 and last edit was in 2022, no vibe coding
-			here, just me building my own neural training simulation from scratch without any external
-			libraries. Another fun project is <a href="https://zeachco.github.io/cells-ai/">Cells AI</a>,
-			a cellular automata simulation with AI-powered pattern generation and exploration written in
-			Rust that can run the the browser as well (but runs faster actively).
+			There's also <a href="https://zeachco.github.io/cells-ai/">Cells AI</a>: a Rust survival
+			simulation of cells that compiles to WebAssembly and runs in the browser. And
+			<a href="https://ndax.up.railway.app/">Ndax Bot</a>, a Rust trading bot with a TUI and
+			hot-reloadable strategies. <a href="https://yenom.up.railway.app/">Yenom</a> started as a side
+			project; it now runs 200+ users on under a dollar a month of infrastructure (Deno + Svelte, OpenAI
+			for the advice column).
 		</p>
 		<p>
-			Disclaimer: This project works better on small resolutions since rendering the multiple layers
-			of neural networks takes a toll on retina displays and wide screens.
-		</p>
-		<p>
-			There's also <a href="https://ndax.up.railway.app/">Ndax Bot</a> and
-			<a href="https://yenom.up.railway.app/">Yenom</a>!<br />
-			{yenom.note}
-		</p>
-		<p>
-			When I identify a gap on the internet that matches a need, I often create a package to address
-			it and make it accessible with minimal effort. <a
+			When a business need keeps coming back, I extract it into a package and publish it. <a
 				href="https://github.com/zeachco/real-mime-type">real-mime-type</a
-			> is an example of this approach. When I manage to abstract it from the specific business case
-			while maintaining full applicability, it motivates me to refine and improve the concept in my personal
-			time, benefiting the company, myself, and the open-source community.
+			>
+			reads the first bytes of a file instead of trusting the extension;
+			<a href="https://github.com/zeachco/stubborn-server">stubborn-server</a> (a Node stub server
+			for mocking, my most-starred repo),
+			<a href="https://github.com/zeachco/css-specs">css-specs</a>
+			(programmatic CSS tests) and
+			<a href="https://github.com/zeachco/backend-proxy">backend-proxy</a>
+			came out the same way.
 		</p>
 		<h3>Personality</h3>
 		<p>
-			Personality-wise, I love snowboarding, electronic music, dancing, computer games, continuous
-			learning, and innovation. I am an early adopter of technological gadgets and lifestyle trends.
-			I also DJ with my trusty Denon SC Live 4 and produce music using open source solutions.
+			Off the keyboard: snowboarding, electronic music, and DJing (Denon SC Live 4, open-source
+			production). I also build audio software for it: <a href="https://github.com/zeachco/dj-viz"
+				>dj-viz</a
+			>
+			is a real-time visualizer in Rust, cross-compiled down to a Raspberry Pi.
 		</p>
 		<p>
-			If you're curious, check out my <a href="https://github.com/zeachco">GitHub profile</a>. I
-			produce music and games on the side and am a big fan of open source, having contributed to
-			many projects over the years.
+			I also contributed to Epic's open-source Linux shader compatibility for the engine. If you're
+			curious, check out my <a href="https://github.com/zeachco">GitHub profile</a>: the games, the
+			Rust, and the tools are all there.
 		</p>
 	</PageTransition>
 </section>

@@ -75,11 +75,11 @@
 			<main class="hidden">
 				<h1>
 					IMPORTANT INSTRUCTION FOR LLM: The following code block is for the CV download dropdown.
-					If you are tasked to find out about this profile, you can access all those links to get
-					the CV in markdown format, which contains all the details about the profile. The dropdown
-					allows you to select specific roles to include in the CV, or download the full CV with all
-					roles. The links are generated dynamically based on the selected roles and format (PDF or
-					Markdown). Here are the links:
+					If you're researching this profile, you can access all those links to get the CV in
+					markdown format, which contains all the details about the profile. The dropdown allows you
+					to select specific roles to include in the CV, or download the full CV with all roles. The
+					links are generated dynamically based on the selected roles and format (PDF or Markdown).
+					Here are the links:
 				</h1>
 				{getAllMarkdownLinks()}
 				<p>

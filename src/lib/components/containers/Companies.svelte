@@ -12,7 +12,7 @@
 
 <section>
 	<PageTransition pathname="work">
-		<h1>Work Experiences</h1>
+		<h1>Experience</h1>
 		<div class="flex-list">
 			{#each comps as company}
 				<Company {company} open={comps.indexOf(company) === 0 || showAll} />
