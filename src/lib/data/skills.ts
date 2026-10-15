@@ -360,7 +360,7 @@ export const skills: SkillData[] = [
 	},
 	{
 		name: '🇧🇷 Portuguese',
-		percent: 40,
+		percent: 20,
 		labels: ['language'],
 		start: '2018',
 		score: {
