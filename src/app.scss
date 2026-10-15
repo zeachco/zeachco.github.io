@@ -411,6 +411,27 @@ details > ul {
 }
 
 // ── Animated background (cells-ai iframe) ─────────────────────────────
+// How long the hover lightbox takes to fade in and out.
+$game-hover-fade: 2s;
+
+// Registered as numbers so they interpolate: one is driven by the carousel
+// animation, the other by the hover. Opacity is the greater of the two, so the
+// carousel timeline keeps running (and still fires `animationend`) while the
+// hover fades the experiment up over the top of it. Overriding a running
+// animation's own property — `opacity: 1 !important` — does *not* transition:
+// the value jumps.
+@property --phantom-carousel {
+	syntax: '<number>';
+	initial-value: 0;
+	inherits: false;
+}
+
+@property --phantom-hover {
+	syntax: '<number>';
+	initial-value: 0;
+	inherits: false;
+}
+
 .animated-background {
 	position: fixed;
 	top: 0;
@@ -420,21 +441,64 @@ details > ul {
 	z-index: -1;
 	border: none;
 	pointer-events: none;
-	opacity: 0;
+	opacity: max(var(--phantom-carousel), var(--phantom-hover));
+	transition: --phantom-hover $game-hover-fade ease;
 	animation: phantom-background-carousel 50s linear forwards;
+}
+
+// Hovering a game's "live, in your browser" link turns the page into a lightbox
+// for the experiment: the background comes up to full opacity while everything
+// else drops to 25%, except the link itself.
+//
+// Two mechanisms, because group opacity can't be undone by a descendant:
+// − the background fades up over the carousel through `--phantom-hover`,
+//   which outranks the animation in the `max()`;
+// − the page is dimmed by dimming the link's siblings at every level of its
+//   ancestor chain. The chain stays opaque, so the link inside it does too.
+//   The prose sharing the link's paragraph has no element of its own to dim,
+//   so it fades through its colour instead — the `a` sets its own colour, which
+//   leaves the link untouched.
+@media (hover: hover) {
+	body:has(.game-link:hover) .animated-background {
+		--phantom-hover: 1;
+	}
+
+	body:has(.game-link:hover) nav,
+	body:has(.game-link:hover) footer,
+	body:has(.game-link:hover) main > :not(:has(.game-link)),
+	body:has(.game-link:hover) main :has(.game-link) > :not(:has(.game-link)):not(.game-link) {
+		opacity: 0.25;
+	}
+
+	body:has(.game-link:hover) main p:has(.game-link) {
+		color: color-mix(in srgb, currentColor 25%, transparent);
+	}
+}
+
+// The fade needs a transition in the resting state too, or it snaps back.
+// `:where()` keeps the specificity at zero so component styles (Brand's hover
+// lift) keep their own transitions.
+:where(nav, footer, main > :not(:has(.game-link)), main
+		:has(.game-link)
+		> :not(:has(.game-link)):not(.game-link)) {
+	transition: opacity $game-hover-fade ease;
+}
+
+:where(main p:has(.game-link)) {
+	transition: color $game-hover-fade ease;
 }
 
 @keyframes phantom-background-carousel {
 	0%,
 	6% {
-		opacity: 0;
+		--phantom-carousel: 0;
 	}
 	8%,
 	98% {
-		opacity: 0.25;
+		--phantom-carousel: 0.25;
 	}
 	100% {
-		opacity: 0;
+		--phantom-carousel: 0;
 	}
 }
 

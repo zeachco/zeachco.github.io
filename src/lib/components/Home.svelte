@@ -72,6 +72,7 @@
 		{#if $phantomGame === 'cave'}
 			<p>
 				Balls racing through an infinitely generated cave, <a
+					class="game-link"
 					target="_blank"
 					href={phantomGameFullUrl('cave')}>live, in your browser.</a
 				><br />
@@ -83,6 +84,7 @@
 		{:else if $phantomGame === 'climb'}
 			<p>
 				Climbers scaling an infinitely generated tower, <a
+					class="game-link"
 					target="_blank"
 					href={phantomGameFullUrl('climb')}>live, in your browser.</a
 				><br />
@@ -93,8 +95,10 @@
 			</p>
 		{:else}
 			<p>
-				Cars learning to drive, <a target="_blank" href={phantomGameFullUrl('circuit')}
-					>live, in your browser.</a
+				Cars learning to drive, <a
+					class="game-link"
+					target="_blank"
+					href={phantomGameFullUrl('circuit')}>live, in your browser.</a
 				><br />
 				Each car runs a self-learning neural network with a variable-depth hidden layer, and the nets
 				compete for survival: drift to the next waypoint, manage energy, don't crash. Every car trains
