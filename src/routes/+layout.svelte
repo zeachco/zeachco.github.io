@@ -43,6 +43,20 @@
 	});
 </script>
 
+<svelte:head>
+	<meta property="og:type" content="website" />
+	<meta property="og:site_name" content="Olivier Rousseau-Guyot" />
+	<meta property="og:image" content="https://www.olivier-rousseau-guyot.com/og-image.png" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
+	<meta
+		property="og:image:alt"
+		content="Olivier Rousseau-Guyot, Software Engineer — 20+ years shipping payments, games, and the infrastructure in between"
+	/>
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:image" content="https://www.olivier-rousseau-guyot.com/og-image.png" />
+</svelte:head>
+
 {#if $phantomGame}
 	{#key $phantomGame}
 		<iframe

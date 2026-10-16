@@ -93,6 +93,16 @@
 
 <svelte:head>
 	<title>{contact.name} — CV</title>
+	<meta
+		name="description"
+		content="Download Olivier Rousseau-Guyot's CV as PDF or Markdown, filterable by role: frontend, backend, tech lead and management."
+	/>
+	<meta property="og:title" content="{contact.name} — CV" />
+	<meta
+		property="og:description"
+		content="Download Olivier Rousseau-Guyot's CV as PDF or Markdown, filterable by role: frontend, backend, tech lead and management."
+	/>
+	<meta property="og:url" content="https://www.olivier-rousseau-guyot.com/cv" />
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
 	<link

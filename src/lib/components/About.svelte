@@ -13,6 +13,7 @@
 
 <section>
 	<PageTransition pathname="about">
+		<h1>About</h1>
 		<h2>The kind of engineer I am</h2>
 		<p>
 			I'm a full-stack engineer, strongest in TypeScript, Node.js and Rust. I care about code

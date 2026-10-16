@@ -9,6 +9,12 @@
 		name="description"
 		content="Original projects by Olivier Rousseau-Guyot: browser neural-network games, Rust trading tools, WASM simulations and Node utilities."
 	/>
+	<meta property="og:title" content="Projects | Olivier Rousseau-Guyot" />
+	<meta
+		property="og:description"
+		content="Original projects by Olivier Rousseau-Guyot: browser neural-network games, Rust trading tools, WASM simulations and Node utilities."
+	/>
+	<meta property="og:url" content="https://www.olivier-rousseau-guyot.com/projects" />
 </svelte:head>
 
 <section>

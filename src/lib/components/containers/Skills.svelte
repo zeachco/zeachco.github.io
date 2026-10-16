@@ -117,6 +117,7 @@
 <div class="skills-page">
 	<div class="print" />
 	<div class="no-print">
+		<h1>Skills</h1>
 		<h3>
 			Filter skills by role
 			{#if searchTerm.length > 0}

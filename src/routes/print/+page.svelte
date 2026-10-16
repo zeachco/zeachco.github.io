@@ -36,7 +36,13 @@
 
 <svelte:head>
 	<title>Printable CV</title>
-	<meta name="description" content="Printable CV" />
+	<meta name="description" content="A print-friendly version of Olivier Rousseau-Guyot's CV." />
+	<meta property="og:title" content="Printable CV | Olivier Rousseau-Guyot" />
+	<meta
+		property="og:description"
+		content="A print-friendly version of Olivier Rousseau-Guyot's CV."
+	/>
+	<meta property="og:url" content="https://www.olivier-rousseau-guyot.com/print" />
 </svelte:head>
 
 <div class="pagebreak">

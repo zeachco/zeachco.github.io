@@ -34,7 +34,8 @@
 
 <section>
 	<PageTransition pathname="home">
-		<h3>Software Engineer</h3>
+		<h1>Olivier Rousseau-Guyot</h1>
+		<p class="role">Software Engineer</p>
 		<p><b>20+ years</b> shipping software: payments, games, and the infrastructure in between.</p>
 		<i
 			>Payments, gaming, telecoms, banking, and neural networks (one is running behind this page).</i
@@ -112,9 +113,17 @@
 </section>
 
 <style>
-	h3 {
+	h1 {
 		font-size: 2.7rem;
-		margin-bottom: 0.6rem;
+		margin-bottom: 0.3rem;
+	}
+
+	.role {
+		font-family: 'DM Serif Display', Georgia, 'Times New Roman', serif;
+		font-size: 1.7rem;
+		line-height: 1.15;
+		color: var(--text-2);
+		margin-bottom: 1.3rem;
 	}
 
 	/* the CTA paragraph carries the page's main links — let them glow */
