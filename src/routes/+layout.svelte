@@ -44,6 +44,7 @@
 </script>
 
 <svelte:head>
+	<link rel="canonical" href={`https://www.olivier-rousseau-guyot.com${$page.url.pathname}`} />
 	<meta property="og:type" content="website" />
 	<meta property="og:site_name" content="Olivier Rousseau-Guyot" />
 	<meta property="og:image" content="https://www.olivier-rousseau-guyot.com/og-image.png" />
