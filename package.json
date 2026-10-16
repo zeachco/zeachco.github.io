@@ -10,6 +10,7 @@
 		"list-variants": "bun run scripts/list-variants.ts",
 		"generate-single-variant": "bun run scripts/generate-single-variant.ts",
 		"generate-og-image": "bun run scripts/generate-og-image.ts",
+		"sitemap": "bun run scripts/generate-sitemap.ts",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "prettier --plugin-search-dir . --check . && eslint .",
