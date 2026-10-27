@@ -5,7 +5,7 @@
 	import { companies } from '$lib/data/companies';
 	import { skills } from '$lib/data/skills';
 	import { trainings } from '$lib/data/trainings';
-	import type { Role, SkillData } from '$lib/types';
+	import { roles, type CompanyData, type Role, type SkillData } from '$lib/types';
 
 	let selectedRoles: Role[] = [];
 
@@ -45,9 +45,25 @@
 	const fmt = (d: Date) => `${MO[d.getUTCMonth()]} ${d.getUTCFullYear()}`;
 	const yr = (d: Date) => String(d.getUTCFullYear());
 
-	$: visibleCompanies = companies
-		.filter((c) => c.note && avgScore(c, selectedRoles) >= 0.7)
-		.sort((a, b) => b.start.getTime() - a.start.getTime());
+	// Role filtering curates detail, not the timeline: every company keeps its name, role and
+	// dates so specialised variants (for example, management) never show employment gaps.
+	// Entries that miss the selected roles drop their description instead of the entry.
+	const DETAIL_THRESHOLD = 0.6;
+
+	// Svelte only tracks variables named in the reactive statement itself, so keep the target
+	// roles in their own statement instead of reading selectedRoles inside the map callback.
+	$: targets = selectedRoles.length ? selectedRoles : [...roles];
+
+	type CvCompany = CompanyData & { detailed: boolean };
+
+	$: visibleCompanies = [...companies]
+		.sort((a, b) => b.start.getTime() - a.start.getTime())
+		.map(
+			(c): CvCompany => ({
+				...c,
+				detailed: targets.some((r) => (c.score[r] ?? 0) >= DETAIL_THRESHOLD),
+			}),
+		);
 
 	function getGroup(s: SkillData): string {
 		const l = s.labels;
@@ -142,12 +158,14 @@
 						<span class="exp-date">{fmt(c.start)} – {c.end ? fmt(c.end) : 'present'}</span>
 					</div>
 					{#if c.role}<p class="exp-title">{c.role}</p>{/if}
-					{#if c.bullets}
+					{#if c.detailed && c.bullets}
 						<ul class="exp-bullets">
 							{#each c.bullets as b}<li>{b}</li>{/each}
 						</ul>
-					{:else if c.note}
+					{:else if c.detailed && c.note}
 						<p class="exp-body">{c.note}</p>
+					{:else}
+						<p class="exp-on-demand">More information available on demand.</p>
 					{/if}
 				</div>
 			{/each}
@@ -409,6 +427,15 @@
 		font-size: 0.85em;
 		font-weight: 300;
 		color: #333;
+		line-height: 1.6;
+	}
+
+	.exp-on-demand {
+		margin: 0;
+		font-size: 0.85em;
+		font-weight: 300;
+		color: #888;
+		font-style: italic;
 		line-height: 1.6;
 	}
 
