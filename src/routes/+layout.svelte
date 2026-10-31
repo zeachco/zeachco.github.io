@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { get } from 'svelte/store';
 	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
 	import Header from '$lib/components/containers/Header.svelte';
@@ -10,15 +11,49 @@
 		initPhantomGame,
 		phantomGameBackgroundUrl,
 		switchPhantomGame,
+		backgroundOn,
+		initBackgroundOn,
+		toggleBackgroundOn,
 	} from '$lib/stores/phantomGame';
 	import type { VisitorSim } from '$lib/sim';
+
+	// How long the background fades to zero before the iframe is removed.
+	// Keep in sync with $game-hover-fade in app.scss.
+	const BACKGROUND_FADE_MS = 2000;
+
+	let backgroundMounted = true;
+	let backgroundFading = false;
+	let fadeToken = 0;
 
 	function handleBackgroundCycle() {
 		switchPhantomGame();
 	}
 
+	function handleBackgroundToggle() {
+		fadeToken++;
+		if ($backgroundOn) {
+			// Off: fade the alpha away, then remove the iframe.
+			backgroundFading = true;
+			const token = fadeToken;
+			setTimeout(() => {
+				if (token !== fadeToken) return;
+				backgroundFading = false;
+				backgroundMounted = false;
+			}, BACKGROUND_FADE_MS + 50);
+		} else {
+			// On: put the iframe back. Its carousel restarts from zero opacity,
+			// so it fades itself back in.
+			backgroundFading = false;
+			backgroundMounted = true;
+		}
+		toggleBackgroundOn();
+	}
+
 	onMount(() => {
 		initPhantomGame();
+		initBackgroundOn();
+		// A background saved off must not mount its iframe at all.
+		if (!get(backgroundOn)) backgroundMounted = false;
 
 		// The visitor simulation is its own module: load it after hydration so
 		// it stays a separate chunk, never runs on the server, and only starts
@@ -83,10 +118,11 @@
 	<meta name="twitter:image" content="https://www.olivier-rousseau-guyot.com/og-image.png" />
 </svelte:head>
 
-{#if $phantomGame}
+{#if $phantomGame && backgroundMounted}
 	{#key $phantomGame}
 		<iframe
 			class="animated-background"
+			class:is-off={backgroundFading}
 			src={phantomGameBackgroundUrl($phantomGame)}
 			title="Phantom AI experiment background"
 			loading="lazy"
@@ -95,7 +131,7 @@
 	{/key}
 {/if}
 
-<Header />
+<Header onToggleBackground={handleBackgroundToggle} />
 
 <main class="container">
 	<slot />

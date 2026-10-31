@@ -4,6 +4,14 @@
 	import { onMount } from 'svelte';
 	import { roles } from '$lib/types';
 	import { selectedRoles } from '$lib/stores/selectedRoles';
+	import { backgroundOn } from '$lib/stores/phantomGame';
+
+	/** Called by the layout to run the fade/unmount dance around the store. */
+	export let onToggleBackground: (() => void) | undefined = undefined;
+
+	function handleBackgroundToggleClick() {
+		onToggleBackground?.();
+	}
 
 	const staticLabels = {
 		'/companies': ['Companies'],
@@ -63,6 +71,39 @@
 					<a href="/" class:active={$page.url.pathname === '/'}>Oli</a>
 				</strong>
 			</li>
+			{#if browser}
+				<li>
+					<button
+						type="button"
+						class="bg-toggle"
+						class:off={!$backgroundOn}
+						aria-pressed={$backgroundOn}
+						aria-label="Toggle the animated background"
+						data-glass-tooltip="Toggle the animated background"
+						data-placement="right"
+						on:click={handleBackgroundToggleClick}
+					>
+						<!-- ghost: the phantom experiment behind the page -->
+						<svg
+							width="16"
+							height="16"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="2"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							aria-hidden="true"
+						>
+							<path
+								d="M12 2a8 8 0 0 0-8 8v12l3-3 2.5 2.5L12 19l2.5 2.5L17 19l3 3V10a8 8 0 0 0-8-8z"
+							/>
+							<path d="M9 10h.01" />
+							<path d="M15 10h.01" />
+						</svg>
+					</button>
+				</li>
+			{/if}
 		</ul>
 		<ul class="no-print">
 			{#each Object.entries(staticLabels) as [link, labels]}
@@ -230,5 +271,47 @@
 	.download-btn:hover {
 		background: var(--accent-2);
 		color: var(--on-accent) !important;
+	}
+
+	/* An icon-only nav item: strip Pico's form chrome, keep the quiet link look. */
+	.bg-toggle {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		background: none;
+		border: none;
+		margin: 0;
+		padding: 0.45em;
+		color: var(--text-3);
+		border-radius: var(--radius-control);
+		cursor: pointer;
+		transition: color 0.15s ease, background 0.15s ease, opacity 0.15s ease;
+	}
+
+	.bg-toggle:hover {
+		color: var(--text);
+		background: rgba(232, 224, 208, 0.06);
+	}
+
+	/* The tooltip hangs off the icon's right edge, into the page. On narrow
+	   screens there is no room for it, so hide it. */
+	@media (max-width: 479px) {
+		.bg-toggle::before {
+			display: none;
+		}
+	}
+
+	.bg-toggle:focus-visible {
+		outline: 2px solid var(--accent-line);
+		outline-offset: 1px;
+	}
+
+	.bg-toggle.off {
+		opacity: 0.45;
+	}
+
+	/* Group opacity would dim the tooltip too — restore full strength on hover. */
+	.bg-toggle.off:hover {
+		opacity: 1;
 	}
 </style>

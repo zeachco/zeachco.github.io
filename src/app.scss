@@ -446,6 +446,16 @@ $game-hover-fade: 2s;
 	animation: phantom-background-carousel 50s linear forwards;
 }
 
+// Background-off toggle: kill the carousel so its opacity stops driving the
+// element, then fade the alpha to zero. The layout removes the iframe once the
+// fade has had its time; a fresh iframe fades back in on its own, because the
+// carousel always starts at zero opacity.
+.animated-background.is-off {
+	animation: none;
+	opacity: 0;
+	transition: opacity $game-hover-fade ease;
+}
+
 // Hovering a game's "live, in your browser" link turns the page into a lightbox
 // for the experiment: the background comes up to full opacity while everything
 // else drops to 25%, except the link itself.
