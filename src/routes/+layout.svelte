@@ -11,6 +11,7 @@
 		phantomGameBackgroundUrl,
 		switchPhantomGame,
 	} from '$lib/stores/phantomGame';
+	import type { VisitorSim } from '$lib/sim';
 
 	function handleBackgroundCycle() {
 		switchPhantomGame();
@@ -18,6 +19,24 @@
 
 	onMount(() => {
 		initPhantomGame();
+
+		// The visitor simulation is its own module: load it after hydration so
+		// it stays a separate chunk, never runs on the server, and only starts
+		// watching once the page is actually up.
+		let sim: VisitorSim | null = null;
+		let simRenderer: (() => void) | undefined;
+		let unsubscribePage: (() => void) | undefined;
+		let simDisposed = false;
+		import('$lib/sim').then((simModule) => {
+			if (simDisposed) return;
+			sim = simModule.initVisitorSim();
+			unsubscribePage = page.subscribe(({ url }) => sim?.navigate(url.pathname));
+			// the network renderer is a dev-only extra, localhost only
+			const isLocal = ['localhost', '127.0.0.1'].includes(window.location.hostname);
+			if (isLocal) {
+				simRenderer = simModule.initSimRenderer(sim, document.body);
+			}
+		});
 
 		const handleKeyDown = (e: KeyboardEvent) => {
 			// Check for Ctrl+K (Windows/Linux) or Cmd+K (Mac)
@@ -38,6 +57,12 @@
 		window.addEventListener('keydown', handleKeyDown);
 
 		return () => {
+			simDisposed = true;
+			simRenderer?.();
+			simRenderer = undefined;
+			unsubscribePage?.();
+			sim?.dispose();
+			sim = null;
 			window.removeEventListener('keydown', handleKeyDown);
 		};
 	});
