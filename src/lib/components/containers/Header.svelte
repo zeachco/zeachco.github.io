@@ -135,7 +135,7 @@
 <style>
 	nav.container-fluid {
 		max-width: 100%;
-		position: relative;
+		position: sticky;
 		padding: 0;
 	}
 
