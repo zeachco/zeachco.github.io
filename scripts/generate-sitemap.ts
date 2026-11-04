@@ -54,6 +54,14 @@ const PAGES: PageEntry[] = [
 		],
 	},
 	{
+		path: '/websites',
+		files: [
+			'src/routes/websites/+page.svelte',
+			'src/routes/websites/+page.ts',
+			'src/lib/components/Websites.svelte',
+		],
+	},
+	{
 		path: '/projects',
 		files: [
 			'src/routes/projects/+page.svelte',

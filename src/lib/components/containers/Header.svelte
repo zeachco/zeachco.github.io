@@ -17,6 +17,7 @@
 		'/companies': ['Companies'],
 		'/skills': ['Skills'],
 		'/trainings': ['Trainings'],
+		'/websites': ['Websites'],
 	} as const;
 
 	let showDropdown = false;
