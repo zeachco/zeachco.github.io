@@ -51,6 +51,11 @@
 			<a data-glass-tooltip="[Ctrl/Cmd + k]" data-placement="bottom" href="/skills">Skills</a>
 			or just read <a href="/about">About me</a>
 		</p>
+		<p>
+			I also design and build websites for clients; the details are on the <a
+				href="/websites">Websites</a
+			> page.
+		</p>
 
 		<h4>A few companies I worked for</h4>
 		<div class="brands-container">
