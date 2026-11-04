@@ -6,6 +6,7 @@
 	<a href={`mailto:${contact.email}`}>{contact.email}</a>
 	<a href={`tel:${contact.phone}`}>{contact.phone}</a>
 	<a target="_blank" href="https://github.com/zeachco">Github/zeachco</a>
+	<a target="_blank" href="https://gitlab.com/zeachco">Gitlab/zeachco</a>
 	<a target="_blank" href="https://www.linkedin.com/in/zeachco">LinkedIn/zeachco</a>
 </section>
 

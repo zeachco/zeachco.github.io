@@ -46,6 +46,7 @@
 		<p>I rationalize the impossible.</p>
 		<p>
 			Check out my <a href="https://github.com/zeachco">GitHub</a>, my
+			<a href="https://gitlab.com/zeachco">GitLab</a>, my
 			<a href="https://www.linkedin.com/in/zeachco/">LinkedIn</a>, my
 			<a data-glass-tooltip="[Ctrl/Cmd + k]" data-placement="bottom" href="/skills">Skills</a>
 			or just read <a href="/about">About me</a>

@@ -139,6 +139,7 @@
 				<a href="mailto:{contact.email}">{contact.email}</a>
 				<span>{contact.phone}</span>
 				<a href="https://github.com/zeachco">github.com/zeachco</a>
+				<a href="https://gitlab.com/zeachco">gitlab.com/zeachco</a>
 				<a href="https://linkedin.com/in/zeachco">linkedin.com/in/zeachco</a>
 				<a href="/about" class="no-print">about me</a>
 			</address>
