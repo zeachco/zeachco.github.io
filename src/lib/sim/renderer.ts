@@ -1,8 +1,9 @@
 /**
  * A little live renderer of the session's single neural network.
  *
- * Only mounted when the site is served from localhost (the root layout
- * checks), so it never ships to real visitors. It redraws a few times a
+ * Only mounted when the site is served from localhost and the browser is a
+ * real one (the root layout checks both), so it never ships to real visitors
+ * and never lands in the generated CV PDFs. It redraws a few times a
  * second: every node is a neuron, every line a weight (blue = positive,
  * pink = negative, alpha ∝ |w|), input nodes lit by the current feature
  * values, hidden nodes by activation, output nodes by probability.
@@ -21,6 +22,9 @@ const BUCKETS = 4;
 
 export function initSimRenderer(sim: VisitorSim, container: HTMLElement): () => void {
 	const wrap = document.createElement('div');
+	// "no-print" is the site-wide print-hiding class (app.scss): printing the CV from
+	// the dev server must not carry the network view onto the page.
+	wrap.className = 'no-print';
 	wrap.style.cssText = [
 		'position:fixed',
 		'left:12px',

@@ -66,9 +66,11 @@
 			if (simDisposed) return;
 			sim = simModule.initVisitorSim();
 			unsubscribePage = page.subscribe(({ url }) => sim?.navigate(url.pathname));
-			// the network renderer is a dev-only extra, localhost only
+			// The network renderer is a dev-only extra: localhost only, and never in an
+			// automated browser. The CV generator loads the site over localhost, and a
+			// fixed-position overlay would print on every page of the PDF.
 			const isLocal = ['localhost', '127.0.0.1'].includes(window.location.hostname);
-			if (isLocal) {
+			if (isLocal && !navigator.webdriver) {
 				simRenderer = simModule.initSimRenderer(sim, document.body);
 			}
 		});
