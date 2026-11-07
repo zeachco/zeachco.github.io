@@ -52,8 +52,8 @@
 			or just read <a href="/about">About me</a>
 		</p>
 		<p>
-			I also design and build websites for clients; the details are on the <a
-				href="/websites">Websites</a
+			I also design and build websites for clients; the details are on the <a href="/websites"
+				>Websites</a
 			> page.
 		</p>
 
@@ -114,7 +114,6 @@
 				car is still running.
 			</p>
 		{/if}
-		<p>This is the kind of thing I do just because I can.</p>
 	</PageTransition>
 </section>
 

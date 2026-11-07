@@ -53,10 +53,36 @@
 			isn't working, whether technical or organizational.
 		</p>
 
+		<h2>The businesses I take over</h2>
+		<p>
+			Some of my work always starts the same way. A company has been on the web since 1999, and the
+			site that got them there is now the thing in the way: a CMS nobody updates, a host that goes
+			down on the days that matter, a form that quietly stopped delivering enquiries months ago, a
+			stack where the one person who understood it left years back. They don't want a redesign
+			pitch. They want it working, and they want it cheap to keep working.
+		</p>
+		<p>
+			I take those over. I don't show up with a framework I'd rather be using. I learn what they're
+			already on &mdash; old PHP, a database nobody can name, pages someone has hand-edited for a
+			decade &mdash; and I work inside it first, because a live business can't wait for the rewrite
+			I would have chosen. Then I modernize what's worth keeping, move it off whatever it was about
+			to fall off, and set up the rest so it costs almost nothing.
+		</p>
+		<p>
+			The bar I hold myself to is deliberately boring: when I'm gone, the site is still up, it costs
+			almost nothing to run, and nobody is on call for it as most of it is automated with
+			self-healing features. My customers buy resilience and stability without surprises, I'm not
+			the hero that they call every time there's an issue because there isn't that much issues.
+		</p>
+
 		<h3>Adaptability</h3>
 		<p>
 			I work in English and French (native), and can hold a technical conversation in Spanish,
 			Portuguese and German.
+		</p>
+		<p>
+			The same goes for stacks. I don't ask which framework a company uses before I take the job,
+			and I'd rather be useful in someone else's choice than wait to be handed mine.
 		</p>
 		<p>
 			I'm drawn to companies that publish what they build. I keep my own machine the way I keep my
